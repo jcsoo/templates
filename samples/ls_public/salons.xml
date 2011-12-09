@@ -1,0 +1,16 @@
+<page parent="_site.xml">
+<chunk id="area"><include path="_area_talk.xml"/></chunk>
+<chunk id="main">
+<div id="salons">
+  <ul>
+	 <loop key="_records">
+		<li class="salon">
+		  <a href="{id}/"><img src="{_data.photo.v200w}"/></a>
+		  <h1><a href="{id}/">{title}</a></h1>
+		</li>
+	 </loop>
+  </ul>
+  <div style="clear: both"/>
+</div>
+</chunk>
+</page>

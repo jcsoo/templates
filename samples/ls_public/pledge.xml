@@ -1,0 +1,33 @@
+<page parent="_twocol.xml">
+<chunk id="c1">
+  <div class="instructions">
+	 <h2><text id="header">[Pledge Details]</text></h2>
+	 <text id="instructions">[Instructions]</text>
+  </div>
+</chunk>
+<chunk id="c2">
+	 <div>
+		<dl class="details">
+		  <dt>Fund</dt>
+		  <dd>{_action.title}</dd>
+		  <dt>Close Date</dt>
+		  <dd>{_action._project.deadline|dt:%-m/%-d/%Y}</dd>
+		  <dt>Non Profit</dt>
+		  <dd>{_organization.organization}</dd>
+		  <dt>Pledge Status</dt>
+		  <dd>{_pledge.status}</dd>
+		  <dt>Pledge Date</dt>
+		  <dd>{_pledge.created}</dd>
+		  <dt>Pledge Amount</dt>
+		  <dd>{_pledge.pledged|money}</dd>
+		</dl>
+		<form method="POST">
+		<div class="actions" style="text-align: left;">
+		  <!--<input type="submit" name="_change" value="Change Pledge Amount"/>-->
+		  <input class="FundBG" type="submit" name="_cancel" value="Withdraw Pledge"/>
+		</div>
+		</form>
+
+	 </div>
+</chunk>
+</page>

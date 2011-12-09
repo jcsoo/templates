@@ -1,0 +1,10 @@
+<page parent="_site.xml">
+<chunk id="main">
+<div id="signup">
+  <div class="message">
+	 Your account has been successfully created! 
+  </div>
+</div>
+  
+</chunk>
+</page>

@@ -1,0 +1,32 @@
+<page parent="_site.xml">
+<chunk id="main">
+<table class="browse">
+  <tr>
+	 <th>ID</th>
+	 <th>Status</th>
+	 <th>Email</th>
+
+	 <th>Last Name</th>
+	 <th>First Name</th>
+	 <th class="r">Pledged</th>
+	 <th class="r">Net</th>
+  </tr>
+  <loop key="_records">
+	 <tr href="member;id={id}/">
+		<td>{id}</td>
+		<td>{status}</td>
+		<td>{email}</td>
+		<td>{last_name}</td>
+		<td>{first_name}</td>
+		<td class="r">{pledged}</td>
+		<td class="r">{net}</td>
+	 </tr>
+  </loop>
+</table>
+<form method="POST">
+  <div class="actions">
+	 <input type="submit" name="_create" value="Create"/>
+  </div>
+</form>
+</chunk>
+</page>

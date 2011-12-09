@@ -1,0 +1,7 @@
+<li class="action">
+  <a href="/action/{id}/"><img src="{photo.t210}"/></a>
+  <b><a href="/action/{id}/">{title}</a></b><br/>
+  <with source="_people" key="sponsor"><a href="/people/{id}/">{first_name} {last_name}</a></with></loop>
+  <div class="description">{description|p}</div>
+  <div style="clear: both"/>
+</li>

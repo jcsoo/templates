@@ -1,0 +1,51 @@
+<page parent="_site.xml">
+<chunk id="main">
+<div id="main">
+<div id="search-page">
+  <table class="results">
+  <tr>
+  <td  class="col">
+  <dl>
+	 <dt class="People">Leaders</dt>
+	 <dd>
+		<ul>
+		  <loop key="_record.people"><include path="_person_med.xml"/></loop>
+		  <div style="clear: both"/>
+		</ul>
+	 </dd>
+  </dl>
+ </td>
+<td class="space"/>
+<td  class="col">
+  <dl>
+	 <dt class="Talk">Conversations</dt>
+	 <dd>
+		<ul>
+		  <with key="_record"><include path="_talk_med.xml"/></with>
+		  <div style="clear: both"/>
+		</ul>
+	 </dd>
+  </dl>
+</td>
+<td class="space"/>
+<td class="col">
+  <dl>
+	 <dt class="Action">Funds</dt>
+	 <dd>
+		<ul>
+		  <ifnot key="_record.actions">
+			 <li><i>No Matching Funds</i></li>
+		  </ifnot>
+		<loop key="_record.actions" sort="title"><include path="_action_med.xml"/></loop>
+		<div style="clear: both"/>
+		</ul>
+	 </dd>
+  </dl>
+</td>
+</tr>
+</table>
+  <div style="clear: both"/>
+</div>
+</div>
+</chunk>
+</page>

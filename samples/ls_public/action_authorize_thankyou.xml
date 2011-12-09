@@ -1,0 +1,16 @@
+<page parent="_twocol.xml">
+<chunk id="c2">
+	 <div>
+		<h1>Fund Authorized</h1>
+		<h2>{_record.title}</h2>
+		<form method="POST">
+		<p>[ Thank you for authorizing payments for this fund. ]</p>
+		<br/><br/>
+		<div class="actions" style="text-align: left;">
+		  <input type="submit" name="_dashboard" value="Return to Profile"/>
+		</div>
+		</form>
+
+	 </div>
+</chunk>
+</page>

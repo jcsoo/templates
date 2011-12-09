@@ -1,0 +1,16 @@
+<page parent="_site.xml">
+<chunk id="main">
+<div id="main">
+<div id="login">
+<with key="_record">
+  <dl>
+	 <dt>Reply Sent</dt>
+	 <dd>Your reply was sent.</dd>
+	 <dd><form method="POST"><input type="submit" name="_continue" value="Continue"/></form></dd>
+  </dl>
+  <div style="clear:both"/>
+</with>
+</div>
+</div>
+</chunk>
+</page>

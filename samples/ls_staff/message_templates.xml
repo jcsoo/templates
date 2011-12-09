@@ -1,0 +1,24 @@
+<page parent="_site.xml">
+<chunk id="main">
+<table class="browse">
+  <tr>
+	 <th>ID</th>
+	 <th>Name</th>
+	 <th>Subject</th>
+  </tr>
+  <loop key="_records">
+	 <tr href="message_template;id={id}/">
+		<td>{id}</td>
+		<td>{name}</td>
+		<td>{subject}</td>
+	 </tr>
+  </loop>
+</table>
+<form method="POST">
+  <div class="actions">
+	 <input type="submit" name="_create" value="Create"/>
+	 <input type="submit" name="_publish" value="Publish Message Templates" onclick="confirm('Publish Message Templates?')"/>
+  </div>
+</form>
+</chunk>
+</page>

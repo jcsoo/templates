@@ -1,0 +1,14 @@
+<page parent="_site.xml">
+<chunk id="area"><include path="_area_people.xml"/></chunk>
+<chunk id="main">
+<div id="member" class="panel">
+  <switch key="_view">
+	 <case value="edit"><include path="member_edit.xml"/></case>
+	 <case value="invites"><include path="member_invites.xml"/></case>
+	 <case value="comments"><include path="member_comments.xml"/></case>
+	 <case><include path="member_profile.xml"/></case>
+  </switch>  
+</div>
+
+</chunk>
+</page>

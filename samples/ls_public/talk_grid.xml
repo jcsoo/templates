@@ -1,0 +1,5 @@
+<div id="tg" class="grid">
+  <loop key="_grid">
+	 <a id="i-{_n}" class="cell {_class}" style="{_style}" href="/talk/{id}/" title="{title}"><div style="width: {_width}" class="name">{title}</div></a>
+  </loop>
+</div>

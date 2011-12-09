@@ -1,0 +1,8 @@
+<page parent="_site.xml">
+<chunk id="main">
+  <form method="POST">
+	 <input type="submit" name="_convert_collaborators" value="Convert Collaborators"/>
+	 <input type="submit" name="_convert_hosts" value="Convert Hosts"/>
+  </form>
+</chunk>
+</page>

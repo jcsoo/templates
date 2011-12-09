@@ -1,0 +1,29 @@
+<form method="POST" enctype="multipart/form-data">
+  <with key="_record">
+	 <table class="detail">
+		<if key="id">
+		  <tr><th>ID</th><td>{id}</td></tr>
+		</if>
+		<tr><th>Admin</th><td><select name="admin"><option/><loop key="_people" sort="last_name,first_name"><option value="{id}">{last_name}, {first_name} ({email})</option></loop></select> <if key="host"><a href="/people/person;id={host}/">View Host</a></if></td></tr>
+		<tr><th>Status</th><td><select name="status"><option/><option>Created</option><option>Pending</option><option>Approved</option><option>Not Approved</option></select></td></tr>
+		<tr><th>Organization</th><td><input type="text" name="organization" size="50"/></td></tr>
+		<tr><th>Address</th><td><input type="text" name="address_1" size="50"/></td></tr>
+		<tr><th></th><td><input type="text" name="address_2" size="50"/></td></tr>
+		<tr><th>City</th><td><input type="text" name="city" size="50"/></td></tr>
+		<tr><th>State</th><td><input type="text" name="state" size="2"/></td></tr>
+		<tr><th>ZIP</th><td><input type="text" name="zip" size="15"/></td></tr>
+		<tr><th>Web Site</th><td><input type="text" name="web_site" size="50"/></td></tr>
+		<tr><th>Description</th><td><textarea name="description" rows="8" cols="80"/></td></tr>
+		<tr><th>Documentation</th><td><if key="documentation"><a target="_blank" href="{documentation.original}">View Documentation</a></if> <input type="file" name="documentation"/></td></tr>
+	 </table>
+
+	 <div class="actions">
+		<if key="id">
+		  <input type="submit" name="_update" value="Update"/>
+		  <input type="submit" name="_delete" value="Delete"/>
+		  <else/>
+		  <input type="submit" name="_create" value="Create"/>
+		</if>
+	 </div>	 	 
+  </with>
+</form>

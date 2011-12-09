@@ -1,0 +1,20 @@
+<with key="_record">
+  <form method="POST" enctype="multipart/form-data">
+	 <table class="detail">
+		<tr><th>First Name</th><td><input type="text" name="first_name" size="50"/></td></tr>
+		<tr><th>Last Name</th><td><input type="text" name="last_name" size="50"/></td></tr>
+		<tr><th>Title</th><td><input type="text" name="title" size="50"/></td></tr>
+		<tr><th>Organization</th><td><input type="text" name="organization" size="50"/></td></tr>
+		<tr><th>Address</th><td><input type="text" name="address_1" size="50"/></td></tr>
+		<tr><th></th><td><input type="text" name="address_2" size="50"/></td></tr>
+		<tr><th>City</th><td><input type="text" name="city" size="50"/></td></tr>
+		<tr><th>State</th><td><input type="text" name="state" size="2"/></td></tr>
+		<tr><th>ZIP</th><td><input type="text" name="zip" size="15"/></td></tr>
+		<tr><th>Photo</th><td><input type="file" name="_upload.photo"/></td></tr>
+		<tr><th>Biography</th><td><textarea name="_data.bio" rows="6" cols="80"/></td></tr>
+	 </table>
+	 <div class="actions">
+		<input type="submit" name="_update" value="Update Profile"/>
+	 </div>
+  </form>
+</with>

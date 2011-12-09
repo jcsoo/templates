@@ -1,0 +1,29 @@
+<page parent="_site.xml">
+<chunk id="main">
+<table class="browse">
+  <tr>
+	 <th>Date</th>
+	 <th>Project</th>
+	 <th>Member</th>
+	 <th>Status</th>
+	 <th class="r">Pledged</th>
+	 <th class="r">Net</th>
+  </tr>
+  <loop key="_records">
+	 <tr href="pledge;id={id}/">
+		<td>{created|dt}</td>
+		<td><with source="_actions" key="project">{title}</with></td>
+		<td><with source="_people" key="member">{first_name} {last_name}</with></td>
+		<td>{status}</td>
+		<td class="r">{pledged}</td>
+		<td class="r">{net}</td>
+	 </tr>
+  </loop>
+</table>
+<form method="POST">
+  <div class="actions">
+	 <input type="submit" name="_create" value="Create"/>
+  </div>
+</form>
+</chunk>
+</page>

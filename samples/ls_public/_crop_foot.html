@@ -1,0 +1,25 @@
+<script>
+(function() {
+   var Dom = YAHOO.util.Dom, Event = YAHOO.util.Event;
+   var log = function(v) { console.log(v); }
+
+   var f = Dom.get('crop');   
+   if (!f.left.value) {   
+      var attr = {'ratio' : true, 'initWidth' : 210, 'initHeight' : 130};
+   } else {
+      var attr = {'ratio' : true, 'initialXY' : [f.left.value, f.top.value], 'initWidth' : f.width.value, 'initHeight' : f.height.value};
+   }
+   var crop = new YAHOO.widget.ImageCropper('photo',attr);
+
+   function do_crop(e) {
+
+      var c = crop.getCropCoords();
+      f.top.value = c.top;
+      f.left.value = c.left;
+      f.width.value = c.width;
+      f.height.value = c.height;
+   }
+
+   Event.on('crop','submit', do_crop)
+})();
+</script>

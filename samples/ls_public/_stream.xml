@@ -1,0 +1,10 @@
+	 <if key="updates">
+		<div class="stream">
+		  <h4>The Stream:</h4>	  
+		  <ul>
+			 <loop key="updates" sort="posted desc">
+				<li><b>{posted|d:%-m/%-d}:</b> {body|br}</li>
+			 </loop>
+		  </ul>
+		</div>
+	 </if>

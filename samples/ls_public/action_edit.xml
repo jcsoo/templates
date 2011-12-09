@@ -1,0 +1,102 @@
+<page parent="_site.xml">
+<chunk id="head-page"><get path="_calendar.html"/></chunk>
+<chunk id="main">
+<with key="_record">
+<div id="main">
+<div id="talk-edit">
+<table class="two-col">
+<tr>
+  <td class="c1">
+	 <div class="instructions">
+		<h2>Fund Instructions Here</h2>
+		<p>Sed mattis sollicitudin gravida. Proin nulla diam, dignissim rhoncus dignissim id, consectetur posuere purus. Aliquam lorem odio, vestibulum non vestibulum eget, tempor ac justo. Pellentesque elementum malesuada egestas.</p>
+		<p>Vivamus laoreet tortor eu lectus vehicula at auctor enim aliquet. Vivamus in lorem ante, quis dapibus mi. Nam vulputate ultricies nunc nec dictum. Cras vitae tortor a neque venenatis vulputate a quis neque. Phasellus commodo, risus ac pellentesque pulvinar, lorem sem sodales lacus, a molestie nunc quam ac turpis. Nunc dui magna, faucibus sed adipiscing eu, mollis ut erat. Suspendisse interdum nisl a diam aliquam malesuada.</p>
+		<p>Etiam sit amet metus arcu, nec semper enim. Cras tortor arcu, volutpat ac ultricies a, tincidunt in massa. Maecenas quis quam ut metus congue commodo. Curabitur tempus lorem quis dui pulvinar at porta eros sollicitudin. Praesent congue adipiscing ligula non sollicitudin. Vivamus et tincidunt orci.</p>
+	 </div>
+  </td>
+  <td class="c2">
+	 <form method="POST" enctype="multipart/form-data">
+		<if key="id">
+		  <h2>Update Your Fund</h2>
+		  <else/>
+		  <h2>Suggest A Fund</h2>
+		</if>
+		<table class="edit">
+		  <tr>
+			 <th>Associated Talk</th>
+			 <td><with source="_talks" key="talk">{title}</with></td>
+		  </tr>
+		  <tr>
+			 <th>Organization</th>
+			 <td><select id="orgselect" name="organization"><option value="">-- Select Organization--</option><loop key="_member_organizations"><option value="{id}">{organization}</option></loop><option value="create">&#187; Add a New Organization</option></select></td>
+		  </tr>
+		</table>
+		<div id="org" class="hidden">
+		<h3 style="margin-top: 16px">Organization Details</h3>
+		<table class="edit">
+		  <tr>
+			 <th>Name of Organization</th>
+			 <td><input type="text" name="org.organization" size="25"/></td>
+		  </tr>
+		  <tr>
+			 <th>Organization Web Site</th>
+			 <td><input type="text" name="org.web_site" size="25"/></td>
+		  </tr>
+		  <tr>
+			 <th>Organization Description</th>
+			 <td><textarea name="org.description" rows="16" cols="25"/></td>
+		  </tr>
+		  <tr>
+			 <th>Organization Photo or Logo</th>
+			 <td><input type="file" name="org.photo"/></td>
+		  </tr>
+		  <tr>
+			 <th>Organization IRS Documentation for Non-Profit status</th>
+			 <td><input type="file" name="org.documentation"/></td>
+		  </tr>
+		</table>
+		</div>
+		<h3 style="margin-top: 16px">Fund Details</h3>
+		<table class="edit">
+		  <tr>
+			 <th>Fund Title</th>
+			 <td><input type="text" name="title" size="25"/></td>
+		  </tr>
+		  <tr>
+			 <th>Fund Description</th>
+			 <td><textarea name="description" rows="16" cols="25"/></td>
+		  </tr>
+		  <tr>
+			 <th>Fund Photo or Logo</th>
+			 <td><input type="file" name="photo"/></td>
+		  </tr>
+		  <tr>
+			 <th>Fundraising Goal</th>
+			 <td><input type="text" name="goal" size="25"/></td>
+		  </tr>
+		  <!--
+		  <tr>
+			 <th>Launch Date</th>
+			 <td><input type="text" name="launch" size="25"/></td>
+		  </tr>
+		  -->
+		  <tr>
+			 <th>Expiration Date</th>
+			 <td><input id="calendar-text" type="text" name="deadline" size="25" value="{deadline|d:%m/%d/%Y}" /><div id="calendar" style="position: absolute;" date="{deadline|d:%m/%d/%Y}" month="{deadline|d:%m/%Y}"/></td>
+		  </tr>
+
+		</table>
+		<div class="actions">
+		  <input type="submit" name="_update" value="Save Fund"/>
+		</div>		
+	 </form>
+  </td>
+</tr>
+</table>
+<br/>
+</div>
+</div>
+</with>
+</chunk>
+<chunk id="foot-page"><get path="_action_edit_script.html"/></chunk>
+</page>

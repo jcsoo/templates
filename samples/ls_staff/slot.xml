@@ -1,0 +1,7 @@
+<page parent="_site.xml">
+<chunk id="main">
+  <switch key="_view">
+	 <case><include path="slot_details.xml"/></case>
+  </switch>
+</chunk>
+</page>

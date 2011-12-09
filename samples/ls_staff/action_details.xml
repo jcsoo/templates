@@ -1,0 +1,59 @@
+<form method="POST" enctype="multipart/form-data">
+  <with key="_record">
+	 <table class="detail">
+		<if key="id">
+		  <tr><th>ID</th><td>{id}</td></tr>
+		</if>
+		<tr>
+		  <th>Created</th>
+		  <td><input type="text" name="created" size="30"/></td>
+		</tr>
+		<tr>
+		  <th>Status</th>
+		  <td><select name="status"><option/><option>Created</option><option>Approved</option><option>Authorized</option><option>Active</option><option>Closed</option></select></td>
+		</tr>
+		<tr>
+		  <th>Duration</th>
+		  <td><select name="duration"><option/><option>3 Months</option><option>6 Months</option></select></td>
+		</tr>
+		<tr><th>Sponsor</th><td><select name="sponsor"><option/><loop key="_people" sort="last_name,first_name"><option value="{id}">{last_name}, {first_name}</option></loop></select> <if key="sponsor"><a href="/people/person;id={sponsor}/">View Sponsor</a></if></td></tr>
+		<tr><th>Organization</th><td><select name="organization"><option/><loop key="_organizations" sort="organization"><option value="{id}">{organization}</option></loop></select> <if key="organization"><a href="/organizations/organization;id={organization}/">View Organization</a></if></td></tr>
+
+
+		<!--
+		  <tr>
+			 <th>Collaborator 1</th>
+			 <td><select name="collaborator_1"><option/><loop key="_people" sort="last_name, first_name"><option value="{id}">{last_name}, {first_name}</option></loop></select></td>
+		  </tr>
+		  <tr>
+			 <th>Collaborator 2</th>
+			 <td><select name="collaborator_2"><option/><loop key="_people" sort="last_name, first_name"><option value="{id}">{last_name}, {first_name}</option></loop></select></td>
+		  </tr>
+		  <tr>
+			 <th>Collaborator 3</th>
+			 <td><select name="collaborator_3"><option/><loop key="_people" sort="last_name, first_name"><option value="{id}">{last_name}, {first_name}</option></loop></select></td>
+		  </tr>
+		  -->
+		  <!--<tr><th>Talk</th><td><select name="talk"><option/><loop key="_talks"><option value="{id}">{title}</option></loop></select></td></tr>-->
+		  <tr><th>Talk</th><td><with source="_talks" key="talk"><a href="/talks/talk;id={id}/">{title}</a></with></td></tr>
+
+		<tr><th>Title</th><td><input type="text" name="title" size="50"/></td></tr>
+		<!--
+		<tr><th>Goal</th><td><input type="text" name="goal" size="15" value="{_project.goal}"/></td></tr>
+		<tr><th>Deadline</th><td><input type="text" name="deadline" size="15" value="{_project.deadline|d:%Y-%m-%d}"/></td></tr>
+		-->
+		<tr><th>Short Description</th><td><input type="text" name="description_short" size="80"/></td></tr>
+		<tr><th>Description</th><td><textarea name="description" rows="8" cols="80"/></td></tr>
+		<tr><th>Thank You Message</th><td><textarea name="thank_you" rows="8" cols="80"/></td></tr>
+		<tr><th>Tags</th><td><input type="text" size="80" name="tags"/></td></tr>
+	 </table>
+	 <div class="actions">
+		<if key="id">
+		  <input type="submit" name="_update" value="Update"/>
+		  <input type="submit" name="_delete" value="Delete"/>
+		  <else/>
+		  <input type="submit" name="_create" value="Create"/>
+		</if>
+	 </div>
+  </with>
+</form>

@@ -1,0 +1,63 @@
+<page><doctype>HTML</doctype>
+<html>
+<head>
+ <chunk id="title"><title>Learning Streams | {_title}</title></chunk>
+ <chunk id="head">
+ <get path="_head.html"/>
+ </chunk>
+ <chunk id="head-page"/>
+</head>
+<body class="yui-skin-sam site-{_config.site}">
+  <div id="body">
+  <chunk id="banner"><include path="_banner.xml"/></chunk>
+  <div id="menu">
+    <if key="_section"><div id="section" class="{_section}">{_section}</div></if>
+	 <chunk id="sortby"/>
+	 <if key="_session">
+		<div id="utility"><span style="margin-right: 8px">Hello, {_session.f}!</span> <a href="{_logout_url}">sign out</a> | <a href="/dashboard/">my profile</a></div>
+		<else/>
+		<div id="utility"><a href="/login/">sign in</a> | <a href="/login/">sign up</a></div>
+	 </if>
+	 <div id="search"><form action="/search/"><input type="text" name="q" placeholder="search"/></form></div>
+  </div>
+  <chunk id="main"><div id="main"/></chunk>
+  <chunk id="footer"><include path="_footer.xml"/></chunk>
+  <div id="pagedebug" style="color: #ffffff;">
+	 <table>
+		<tr>
+		  <th>Time</th>
+		  <td>{_now}</td>
+		  <if key="_session">
+			 <th>User:</th>
+			 <td>{_session.e}</td>
+		  </if>
+		  <th>URL:</th>
+		  <td>{_full_uri_query}</td>
+		  <th>Browser:</th>
+		  <td>{_environ.HTTP_USER_AGENT}</td>
+		</tr>
+	 </table>
+	 <table>
+		<tr>
+		  <th>Page:</th>
+		  <td>{_page_class}</td>
+		  <th>Template:</th>
+		  <td>{_template_path}</td>
+		  <if key="_view">
+			 <th>View:</th>
+			 <td>{_view}</td>
+		  </if>
+		  <if key="_filter">
+			 <th>Filter:</th>
+			 <td>{_filter}</td>
+		  </if>
+		</tr>
+	 </table>
+  </div>
+
+  </div>
+  <chunk id="foot"><get path="_foot.html"/></chunk>
+  <chunk id="foot-page"/>
+</body>
+</html>
+</page>

@@ -1,0 +1,11 @@
+<page parent="_site.xml">
+<chunk id="main">
+<form method="POST">
+<div id="login">
+  <div class="message">
+	 A reset code was sent to {email}. 
+  </div>
+</div>
+</form>
+</chunk>
+</page>

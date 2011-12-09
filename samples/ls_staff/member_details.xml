@@ -1,0 +1,34 @@
+<form method="POST" enctype="multipart/form-data">
+  <with key="_record">
+	 <table class="detail">
+		<if key="id">
+		  <tr><th>ID</th><td>{id}</td></tr>
+		  <tr><th>Type</th><td><select name="type"><option/><option>Member</option><option>Champion</option><option>Staff</option></select></td></tr>
+		  <tr><th>Status</th><td><select name="status"><option>Verified</option><option>Unverified</option></select></td></tr>
+		</if>
+		<tr><th>Email</th><td><input type="text" name="email" size="50"/></td></tr>
+		<tr><th>Password</th><td><input type="password" name="password_1" size="15"/> <input type="password" name="password_2" size="15"/></td></tr>
+		<tr><th>First Name</th><td><input type="text" name="first_name" size="50"/></td></tr>
+		<tr><th>Last Name</th><td><input type="text" name="last_name" size="50"/></td></tr>
+		<tr><th>Title</th><td><input type="text" name="title" size="50"/></td></tr>
+		<tr><th>Organization</th><td><input type="text" name="organization" size="50"/></td></tr>
+		<tr><th>Web Site</th><td><input type="text" name="website" size="50"/></td></tr>
+		<tr><th>Address</th><td><input type="text" name="address_1" size="50"/></td></tr>
+		<tr><th></th><td><input type="text" name="address_2" size="50"/></td></tr>
+		<tr><th>City</th><td><input type="text" name="city" size="50"/></td></tr>
+		<tr><th>State</th><td><input type="text" name="state" size="2"/></td></tr>
+		<tr><th>ZIP</th><td><input type="text" name="zip" size="15"/></td></tr>
+		<tr><th>Tags</th><td><input type="text" size="80" name="tags"/></td></tr>
+		<tr><th>Biography</th><td><textarea name="biography" rows="8" cols="80"/></td></tr>
+	 </table>
+
+	 <div class="actions">
+		<if key="id">
+		  <input type="submit" name="_update" value="Update"/>
+		  <input type="submit" name="_delete" value="Delete"/>
+		  <else/>
+		  <input type="submit" name="_create" value="Create"/>
+		</if>
+	 </div>	 	 
+  </with>
+</form>

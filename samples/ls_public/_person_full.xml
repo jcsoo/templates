@@ -1,0 +1,7 @@
+<li class="person">
+  <a href="/people/{id}/"><img src="{photo.t210}"/></a>
+  <b><a href="/people/{id}/">{first_name} {last_name}</a></b><br/>
+  <i><a href="/people/{id}/">{organization}</a></i><br/>
+  <div class="description">{biography|p}</div>			 
+  <div style="clear: both"/>
+</li>

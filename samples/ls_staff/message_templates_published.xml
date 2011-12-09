@@ -1,0 +1,10 @@
+<page parent="_site.xml">
+<chunk id="main">
+  <h1>Message Templates have been Published</h1>
+<form method="POST">
+  <div class="actions">
+	 <input type="submit" name="_continue" value="Continue"/>
+  </div>
+</form>
+</chunk>
+</page>

@@ -1,0 +1,55 @@
+<page parent="_site.xml">
+<chunk id="main">
+<div id="main">
+<div id="talks">
+<table id="l1">
+<tr>
+  <td id="lc">
+	 sort by: 
+	 <ul class="sort">
+		<li class="{_sort_followed} {_sort_default}"><a href="?s=followed">most followed</a></li>
+		<li class="{_sort_recent}"><a href="?s=recent">most recent</a></li>
+
+	 </ul>
+  </td>
+  <td id="rc">
+	 <div id="talks">
+		<include path="talk_grid.xml"/>
+		<!--
+	  <table class="zebra">
+		 <thead>
+		 <tr>
+			<th >Title</th>
+			<th width="120">People</th>
+			<th width="180">Related Action</th>
+		 </tr>
+		 </thead>
+		 <tbody>
+			<loop key="_talks" sort="title">
+			  <tr class="odd">
+				 <td><a class="title" href="/talk/{id}/">{title}</a>{description_short}</td>
+				 <td><with source="_people" key="host"><a class="person host" href="/people/{id}/">{first_name} {last_name}</a></with><loop key="collaborators"><with source="_people" key="_"><a class="person" href="/people/{id}/">{first_name} {last_name}</a></with></loop></td>
+				 <td><if key="action"><with source="_actions" key="action"><a href="/actions/{id}/">{title}</a></with><else/>None</if></td>
+			  </tr>
+			</loop>
+		 </tbody>
+	  </table>
+	  -->
+		<!--
+	 <div id="placeholder">
+		<ul>
+		  <loop key="_talks" sort="title">
+			 <li><a href="/talk/{id}/">{title}</a></li>
+		  </loop>
+		</ul>
+	 </div>
+	 -->
+	 </div>
+  </td>
+</tr>
+</table>
+
+</div>
+</div>
+</chunk>
+</page>

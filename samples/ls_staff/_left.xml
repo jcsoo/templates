@@ -1,0 +1,17 @@
+<div id="left">
+  <ul>
+	 <li><a class="/" href="/">Home</a></li>
+	 <li><a href="/people/">People</a></li>
+	 <li><a href="/talks/">Conversations</a></li>
+	 <li><a href="/organizations/">Organizations</a></li>
+	 <li><a href="/actions/">Funds</a></li>
+	 <li><a href="/pledges/">Pledges</a></li>
+	 <li><a href="/invites/">Invites</a></li>
+	 <!--<li><a href="/private_messages/">Private Messages</a></li>-->
+	 <li><a href="/slots/">Slots</a></li>
+	 <li><a href="/message_templates/">Message Templates</a></li>
+	 <li><a href="/messages/">Messages</a></li>
+	 <li><a href="/text_items/">Text Items</a></li>
+	 <li><a href="/billing/">Billing</a></li>
+  </ul>
+</div>

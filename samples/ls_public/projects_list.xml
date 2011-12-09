@@ -1,0 +1,12 @@
+<div id="projects">
+  <ul>
+	 <loop key="_records">
+		<li class="project">
+		  <include path="_project_thumb.xml"/>
+		  <h1><a href="{id}/">{title}</a></h1>
+		  <div class="description">{description|h}</div>
+		</li>
+	 </loop>
+  </ul>
+  <div style="clear: both"/>
+</div>

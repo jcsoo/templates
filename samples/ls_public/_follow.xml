@@ -1,0 +1,48 @@
+<form id="follow" method="POST">
+  <switch key="_section">	 
+	 <case value="Talk">
+		<if key="_is_follower">
+		  <input type="submit" name="_unfollow" value="stop following this talk"/>
+		  <else/>
+		  <if key="_session">
+			 <input type="submit" name="_follow" value="follow this talk"/>
+		  </if>
+		</if>
+		<input type="submit" name="_email" value="email this talk"/>
+		<if key="_is_editor">
+		  <input class="edit-button" type="submit" name="_edit" value="edit this talk"/>
+		  <input class="edit-button" type="submit" name="_photo" value="edit this photo"/>
+		</if>
+	 </case>
+	 <case value="Action">
+		<if key="_is_follower">
+		  <input type="submit" name="_unfollow" value="stop following this action"/>
+		  <else/>
+		  <if key="_session">
+			 <input type="submit" name="_follow" value="follow this action"/>
+		  </if>
+		</if>
+		<input type="submit" name="_email" value="email this action"/>
+		<if key="_is_editor">
+		  <input class="edit-button" type="submit" name="_edit" value="edit this action"/>
+		  <input class="edit-button" type="submit" name="_photo" value="edit this photo"/>
+		</if>
+	 </case>
+	 <case value="People">
+		<if key="_is_follower">
+		  <input type="submit" name="_unfollow" value="stop following {first_name}"/>
+		  <else/>
+		  <if key="_session">
+			 <input type="submit" name="_follow" value="follow {first_name}"/>
+		  </if>
+		</if>
+		<if key="_session">
+		  <div class="private-message-form">
+			 <!--<div><input type="text" name="subject" size="24"/></div>-->
+			 <div><textarea name="body" rows="4" cols="30"/></div>
+		  </div>
+		  <input type="submit" name="_send_message" value="send a private message to {first_name}"/>
+		</if>
+	 </case>
+  </switch>
+</form>

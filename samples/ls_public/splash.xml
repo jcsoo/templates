@@ -1,0 +1,22 @@
+<page><doctype>HTML</doctype>
+<html>
+<head>
+ <chunk id="title"><title>Learning Streams</title></chunk>
+ <chunk id="head">
+ <get path="_head.html"/>
+ </chunk>
+</head>
+<body id="splash" style="">
+  <a class="login" href="/login/">Existing Account Login</a>
+  <form method="POST">
+	 <div><input type="text" name="name" size="25" placeholder="name"/></div>
+	 <div><input type="text" name="email" size="25" placeholder="email"/></div>
+	 <div><textarea name="leader" rows="3" cols="80" placeholder="leader's name and why they should be on the list"/></div>
+	 <div><textarea name="body" rows="8" cols="80" placeholder="comments"/></div>
+	 <div class="action"><input type="submit" name="_send" value="SUBMIT"/></div>		  
+  </form>
+ <get path="_foot.html"/>
+ <script src="/static/splash.js"/>
+</body>
+</html>
+</page>

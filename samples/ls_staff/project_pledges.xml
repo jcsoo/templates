@@ -1,0 +1,36 @@
+<form method="POST" enctype="multipart/form-data">
+  <with key="_record">
+    <if key="_pledges">	 
+		<table class="browse">
+		  <tr>
+			 <th>ID</th>
+			 <th>Date</th>
+			 <th>Status</th>
+			 <th>Member</th>
+			 <th class="r">Pledged</th>
+			 <th class="r">Paid</th>
+			 <th class="r">Refunded</th>
+			 <th class="r">Net</th>
+		  </tr>
+		  <loop key="_pledges">
+			 <tr href="/pledges/pledge;id={id}/">
+				<td>{id}</td>
+				<td>{created|dt:%y-%m-%d %H:%M}</td>
+				<td>{status}</td>
+				<td>{member}</td>
+				<td class="r">{pledged}</td>
+				<td class="r">{paid}</td>
+				<td class="r">{refunded}</td>
+				<td class="r">{net}</td>
+			 </tr>
+		  </loop>
+		</table>
+	 </if>
+	 <div class="actions">
+		<if key="id">
+		  <include path="_project_actions.xml"/>
+		</if>
+	 </div>
+  </with>
+</form>
+  

@@ -1,0 +1,45 @@
+  <with key="_record">
+	 <form method="POST">
+	 <table class="browse">
+		<tr>
+		  <th></th>
+		  <th>Posted</th>
+		  <th>Poster</th>
+		  <th>Comment</th>
+		</tr>
+		<ifnot key="comments">
+		  <tr><td colspan="4">No Comments</td></tr>
+		</ifnot>
+		<loop key="comments">
+		  <tr>
+			 <td width="15"><input type="checkbox" name="comment" value="{id}"/></td>
+			 <td width="60">{posted|d}</td>
+			 <td width="150"><a href="/people/person;id={poster.id}/"><with source="_people" key="poster.id">{first_name} {last_name}</with></a></td>
+			 <td>{body}</td>
+		  </tr>
+		</loop>
+	 </table>
+	 <if key="comments">
+		<div class="actions">
+		  <input type="submit" name="_delete_comments" value="Delete Selected Comments"/>
+		</div>
+	 </if>
+	 </form>
+	 <br/>
+	 <form method="POST">
+		<table class="detail">
+		  <tr>
+			 <th>Poster</th>
+			 <td><select name="poster"><loop key="_people" sort="last_name, first_name"><option value="{id}">{last_name}, {first_name}</option></loop></select></td>
+		  </tr>
+		  <tr>
+			 <th>Comment</th>
+			 <td><textarea name="body" rows="4" cols="120"/></td>
+		  </tr>
+		</table>
+		<div class="actions">
+		  <input type="submit" name="_comment" value="Post Comment"/>
+		  <input style="float: right" type="submit" name="_clear_comments" value="Clear Comments"/>
+		</div>
+	 </form>	 
+  </with>

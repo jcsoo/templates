@@ -1,0 +1,11 @@
+<div id="banner">
+  <div id="title"><a href="/"><img src="/static/img/newlogo.png"/></a></div>
+  <div id="pta">
+	 <switch key="_section">
+		<case value="Leaders"><a class="p" href="/people/"><img src="/static/img/leadersLarge.png"/></a><a class="t small" href="/talk/"><img src="/static/img/conversations.png"/></a><a class="a small" href="/action/"><img src="/static/img/funds.png"/></a></case>
+		<case value="Conversation"><a class="p small" href="/people/"><img src="/static/img/leaders.png"/></a><a class="t" href="/talk/"><img src="/static/img/conversationsLarge.png"/></a><a class="a small" href="/action/"><img src="/static/img/funds.png"/></a></case>
+		<case value="Funds"><a class="p small" href="/people/"><img src="/static/img/leaders.png"/></a><a class="t small" href="/talk/"><img src="/static/img/conversations.png"/></a><a class="a" href="/action/"><img src="/static/img/fundsLarge.png"/></a></case>
+		<case><a class="p small" href="/people/"><img src="/static/img/leaders.png"/></a><a class="t small" href="/talk/"><img src="/static/img/conversations.png"/></a><a class="a small" href="/action/"><img src="/static/img/funds.png"/></a></case>
+	 </switch>
+  </div>
+</div>

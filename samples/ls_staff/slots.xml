@@ -1,0 +1,32 @@
+<page parent="_site.xml">
+<chunk id="main">
+  <paginate key="_records" page="{_parameters.p}" page_size="25">
+	 <table class="browse">
+		<tr>
+		  <th>Type</th>
+		  <th>Status</th>
+		  <th>Date</th>
+		  <th>Time</th>
+		  <th>Location</th>
+		  <th>Conversation</th>
+		</tr>		
+		<loop key="_records" sort="start, end">
+		  <tr href="slot;id={id}/">
+			 <td>{type}</td>
+			 <td>{status}</td>
+			 <td>{start|d}</td>
+			 <td>{start|t:%I:%M %p} - {end|t:%I:%M %p}</td>
+			 <td>{city}, {state}</td>
+			 <td><loop key="_talks"><div>{title}</div></loop></td>
+		  </tr>
+		</loop>
+	 </table>
+	 <include path="_page_nav.xml"/>
+  </paginate>
+  <form method="POST">
+	 <div class="actions">
+		<input type="submit" name="_create" value="Create"/>
+	 </div>
+  </form>
+</chunk>
+</page>

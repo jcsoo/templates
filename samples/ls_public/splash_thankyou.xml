@@ -1,0 +1,69 @@
+<page><doctype>HTML</doctype>
+<html>
+<head>
+ <chunk id="title"><title>Learning Streams | {_title}</title></chunk>
+ <chunk id="head">
+ <get path="_head.html"/>
+ </chunk>
+ <chunk id="head-page"/>
+</head>
+<body class="yui-skin-sam site-{_config.site}">
+  <div id="body">
+	 <chunk id="banner"><include path="_banner.xml"/></chunk>
+	 <div id="main">
+		<div>
+		  <table class="two-col">
+			 <tr>
+				<td class="c1">
+				</td>
+				<td class="c2">
+				  <div>
+					 <h1><text id="header">[Splash Thank You]</text></h1>
+					 <p><text id="message">[Thanks for contacting us.]</text></p>
+					 
+				  </div>
+				</td>
+			 </tr>
+		  </table>
+		</div>
+	 </div>
+
+	 <chunk id="footer"><include path="_footer.xml"/></chunk>
+	 <div id="pagedebug">
+		<table>
+		  <tr>
+			 <th>Time</th>
+			 <td>{_now}</td>
+			 <if key="_session">
+				<th>User:</th>
+				<td>{_session.e}</td>
+			 </if>
+			 <th>URL:</th>
+			 <td>{_full_uri_query}</td>
+			 <th>Browser:</th>
+			 <td>{_environ.HTTP_USER_AGENT}</td>
+		  </tr>
+		</table>
+		<table>
+		  <tr>
+			 <th>Page:</th>
+			 <td>{_page_class}</td>
+			 <th>Template:</th>
+			 <td>{_template_path}</td>
+			 <if key="_view">
+				<th>View:</th>
+				<td>{_view}</td>
+			 </if>
+			 <if key="_filter">
+				<th>Filter:</th>
+				<td>{_filter}</td>
+			 </if>
+		  </tr>
+		</table>
+	 </div>
+
+  </div>
+  <chunk id="foot"><get path="_foot.html"/></chunk>
+</body>
+</html>
+</page>

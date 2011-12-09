@@ -1,0 +1,53 @@
+<page parent="_site.xml">
+<chunk id="main">
+<div id="main">
+<div id="actions">
+<table id="l1">
+<tr>
+  <td id="lc">
+	 sort by: 
+	 <ul class="sort">
+		<li class="{_sort_followed} {_sort_default}"><a href="?s=followed">most followed</a></li>
+		<li class="{_sort_recent}"><a href="?s=recent">most recent</a></li>
+		<li class="{_sort_deadline}"><a href="?s=deadline">ending soonest</a></li>
+	 </ul>
+  </td>
+  <td id="rc">
+	 <div id="actions">
+		<include path="action_grid.xml"/>
+		<!--
+	  <table class="zebra">
+		 <thead>
+		 <tr>
+			<th >Title</th>
+			<th width="120">People</th>
+		 </tr>
+		 </thead>
+		 <tbody>
+			<loop key="_actions" sort="title">
+			  <tr class="odd">
+				 <td><a class="title" href="/action/{id}/">{title}</a>{description_short}</td>
+				 <td><with source="_people" key="sponsor"><a class="person host" href="/people/{id}/">{first_name} {last_name}</a></with><loop key="collaborators"><with source="_people" key="_"><a class="person" href="/people/{id}/">{first_name} {last_name}</a></with></loop></td>
+			  </tr>
+			</loop>
+		 </tbody>
+	  </table>
+	  -->
+		<!--
+	 <include path="_grid.xml"/>
+	 <div id="placeholder">
+		<ul>
+		  <loop key="_actions" sort="title">
+			 <li><a href="/action/{id}/">{title}</a></li>
+		  </loop>
+		</ul>
+	 </div>
+	 -->
+	 </div>
+  </td>
+</tr>
+</table>
+</div>
+</div>
+</chunk>
+</page>

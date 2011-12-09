@@ -1,0 +1,36 @@
+<form method="POST" enctype="multipart/form-data">
+  <with key="_record">
+	 <table class="detail">
+		<if key="id">
+		  <tr><th>ID</th><td>{id}</td></tr>
+		</if>
+		<if key="_slot_talks">
+		  <tr><th>Conversation</th><td><loop key="_slot_talks"><div><a href="/talks/talk;id={id}/">{title}</a></div></loop></td></tr>
+		</if>
+
+		<tr><th>Type</th><td><select name="type"><option/><option>Standard Slot</option></select></td></tr>
+		<tr><th>Status</th><td><select name="status"><option/><option>Inactive</option><option>Available</option><option>Filled</option></select></td></tr>
+
+		<tr><th>Start Date / Time</th><td><input type="text" name="start" size="20"/></td></tr>
+		<tr><th>End Date / Time</th><td><input type="text" name="end" size="20"/></td></tr>
+		<tr><th>Address</th><td><input type="text" name="address_1" size="50"/></td></tr>
+		<tr><th></th><td><input type="text" name="address_2" size="50"/></td></tr>
+		<tr><th>City</th><td><input type="text" name="city" size="50"/></td></tr>
+		<tr><th>State</th><td><input type="text" name="state" size="2"/></td></tr>
+		<tr><th>ZIP</th><td><input type="text" name="zip" size="15"/></td></tr>
+		<tr><th>Description</th><td><textarea name="description" rows="8" cols="80"/></td></tr>
+		<tr><th>Notes</th><td><textarea name="notes" rows="8" cols="80"/></td></tr>
+	
+	 </table>
+
+	 <div class="actions">
+		<if key="id">
+		  <input type="submit" name="_update" value="Update"/>
+		  <input type="submit" name="_copy" value="Copy"/>
+		  <input type="submit" name="_delete" value="Delete"/>
+		  <else/>
+		  <input type="submit" name="_create" value="Create"/>
+		</if>
+	 </div>	 	 
+  </with>
+</form>

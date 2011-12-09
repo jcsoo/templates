@@ -1,0 +1,1 @@
+<if key="_data.photo.t64"><a href="{id}/"><img class="thumb64" src="{_data.photo.t64}"/></a><else/><img class="thumb64" src="/static/img/project_64.png"/></if>

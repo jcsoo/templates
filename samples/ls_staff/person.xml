@@ -1,0 +1,14 @@
+<page parent="_site.xml">
+<chunk id="main">
+  <switch key="_view">
+	 <case value="photo"><include path="person_photo.xml"/></case>
+	 <case value="updates"><include path="_updates.xml"/></case>
+	 <case value="comments"><include path="_comments.xml"/></case>
+	 <case value="talks"><include path="person_talks.xml"/></case>
+	 <case value="actions"><include path="person_actions.xml"/></case>
+	 <case value="messages"><include path="person_messages.xml"/></case>
+	 <case value="data"><include path="_data.xml"/></case>
+	 <case><include path="person_details.xml"/></case>
+  </switch>
+</chunk>
+</page>

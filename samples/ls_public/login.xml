@@ -1,0 +1,43 @@
+<page parent="_site.xml">
+<chunk id="main">
+<div id="main">
+<div id="login">
+  <dl>
+	 <dt>Sign In</dt>
+	 <dd>
+		<form method="POST">
+		  <if key="login_error"><div class="error">{login_error}</div></if>
+		  <div><input type="text" name="email" size="25" placeholder="email"/></div>
+		  <div><input type="password" name="password" size="25" placeholder="password" /></div>
+		  <div>remember me <input type="checkbox" name="remember" value="yes"/></div>
+		  <div><a href="/reset/">can't remember your password?</a> <input type="submit" name="_login" value="Sign In"/></div>
+		</form>
+	 </dd>
+  </dl>
+  <ifnot key="_config.authenticate_public">
+  <form method="POST">
+  <dl >
+	 <dt>Sign Up</dt>
+	 <dd>
+		<div><input type="text" name="first_name" size="25" placeholder="first name"/></div>
+		<div><input type="text" name="last_name" size="25" placeholder="last name" /></div>
+		<div><input type="text" name="email" size="25" placeholder="email" value=""/></div>
+		<div><input type="password" name="password_1" size="25" placeholder="password"/></div>
+		<div><input type="password" name="password_2" size="25" placeholder="re-enter password"/></div>
+		<div><input type="text" name="code" size="25" placeholder="referral code (optional)"/></div>
+
+		<div id="terms" class="accept-terms"><include path="_terms.xml"/></div>
+		<div><input type="checkbox" name="terms_accepted" value="yes"/> I have read and accept the <a target="_blank" href="/terms/" >Terms of Use</a></div>
+		
+		<div><input type="submit" name="_signup" value="Sign Up"/></div>		  
+
+	 </dd>
+
+  </dl>
+  </form>
+  </ifnot>
+  <div style="clear:both"/>
+</div>
+</div>
+</chunk>
+</page>

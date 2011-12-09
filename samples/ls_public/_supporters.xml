@@ -1,0 +1,9 @@
+<div>
+  <ul class="supporters">
+	 <ifnot key="_pledges">No supporters so far.</ifnot>
+	 <loop key="_pledges">
+		<with source="_people" key="member"><li><if key="photo"><a href="/people/{id}/" class="fthumb" style="background-image: url('{photo.t60}')"/></if><div class="name"><a href="/people/{id}/">{first_name} {last_name}</a></div><if key="title"><div class="title">{title}</div></if><if key="organization"><div class="organization">{organization}</div></if></li></with>
+	 </loop>
+	 <div style="clear: both"/>
+  </ul>
+</div>

@@ -1,0 +1,49 @@
+<form method="POST">
+  <table class="browse">
+	 <tr>
+		<th>ID</th>
+		<th>Type</th>
+		<th>Status</th>
+		<th>Created</th>
+		<th>Accepted</th>
+		<th>Recipient</th>
+	 </tr>
+	 <loop key="_invites">
+		<tr>
+		  <td>{id}</td>
+		  <td>{type}</td>
+		  <td>{status}</td>
+		  <td>{created|d}</td>
+		  <td>{accepted|d}</td>
+		  <td>{first_name} {last_name} &lt;{email}&gt;</td>
+		</tr>
+	 </loop>	  
+  </table>  
+  <br/>
+  <h3>Invite a Member</h3>
+  <table class="detail">
+	 <tr>
+		<th>Type</th>
+		<td><select name="type"><option>Member</option><option>Champion</option></select></td>
+	 </tr>
+	 <tr>
+		<th>Email</th>
+		<td><input type="text" name="email" size="50"/></td>
+	 </tr>
+	 <tr>
+		<th>First Name</th>
+		<td><input type="text" name="first_name" size="50"/></td>
+	 </tr>
+	 <tr>
+		<th>Last Name</th>
+		<td><input type="text" name="last_name" size="50"/></td>
+	 </tr>
+	 <tr>
+		<th>Message</th>
+		<td><textarea name="message" rows="4" cols="80"/></td>
+	 </tr>
+  </table>
+  <div class="action">
+	 <input type="submit" name="_invite" value="Send Invitation"/>
+  </div>
+</form>

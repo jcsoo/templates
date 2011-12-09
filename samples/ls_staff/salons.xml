@@ -1,0 +1,29 @@
+<page parent="_site.xml">
+<chunk id="main">
+<table class="browse">
+  <tr>
+	 <th>ID</th>
+	 <th>Type</th>
+	 <th>Status</th>
+	 <th>Date</th>
+	 <th>Time</th>
+	 <th>Title</th>
+  </tr>
+  <loop key="_records">
+	 <tr href="salon;id={id}/">
+		<td>{id}</td>
+		<td>{type}</td>
+		<td>{status}</td>
+		<td>{salon_start|d}</td>
+		<td><if key="salon_start">{salon_start|dt:%I:%M %p} - {salon_end|dt:%I:%M %p}</if></td>
+		<td>{title}</td>
+	 </tr>
+  </loop>
+</table>
+<form method="POST">
+  <div class="actions">
+	 <input type="submit" name="_create" value="Create"/>
+  </div>
+</form>
+</chunk>
+</page>

@@ -1,0 +1,28 @@
+<form method="POST" enctype="multipart/form-data">
+  <with key="_record">
+	 <with key="_project">
+	 <table class="detail">
+		<if key="id">
+		  <tr><th>ID</th><td>{id}</td></tr>
+		</if>
+		<tr><th>Status</th><td>{status}</td></tr>
+		<tr><th>Title</th><td><input type="text" name="title" size="50"/></td></tr>
+		<tr><th>Deadline</th><td><input type="text" name="deadline" size="15" value="{_project.deadline|d:%Y-%m-%d}"/></td></tr>
+		<tr><th>Goal</th><td><input type="text" name="goal" size="15" value="{_project.goal}"/></td></tr>
+		<tr><th>Pledged</th><td>{_project.pledged}</td></tr>
+		<tr><th>Paid</th><td>{_project.paid}</td></tr>
+		<tr><th>Refunded</th><td>{_project.refunded}</td></tr>
+		<tr><th>Net</th><td>{_project.net}</td></tr>
+		<tr><th>Pledges</th><td>{_project.pledges}</td></tr>
+		<tr><th>Percent Funded</th><td>{_project.percent_funded}%</td></tr>
+	 </table>
+	 </with>
+	 <div class="actions">
+		<if key="id">
+		  <input type="submit" name="_update" value="Update"/>
+		  <input type="submit" name="_recalculate" value="Recalculate"/>
+		  <!--<input type="submit" name="_authorize" value="Authorize"/>-->
+		</if>
+	 </div>
+  </with>
+</form>

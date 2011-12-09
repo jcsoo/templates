@@ -1,0 +1,6 @@
+<li>
+  <a class="photo" href="/people/{id}/"><if key="photo"><img src="{photo.t122}"/><else/><img src="/static/img/GPeople_60.png"/></if></a>
+  <div class="name"><a href="/people/{id}/">{first_name} {last_name}</a></div>
+  <if key="title"><div class="title">{title}</div></if>
+  <with source="_organizations" key="organization"><div class="organization">{organization}</div></with>
+</li>

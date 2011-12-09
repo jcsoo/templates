@@ -1,0 +1,21 @@
+<page parent="_site.xml">
+<chunk id="main">
+<with key="_record">
+<div id="main">
+<div>
+<table class="two-col">
+<tr>
+  <td class="c1">
+	 <chunk id="c1"/>
+  </td>
+  <td class="c2">
+	 <chunk id="c2"/>
+  </td>
+</tr>
+</table>
+<br/>
+</div>
+</div>
+</with>
+</chunk>
+</page>

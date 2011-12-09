@@ -1,0 +1,7 @@
+<with key="_record">
+  <table class="detail">
+	 <if key="_data._members">
+		<tr><th>Unfollow Member</th><td><form method="POST"><select name="member"><option/><loop key="_data._members"><option value="{id}">{first_name} {last_name}</option></loop></select> <input type="submit" name="_unfollow" value="Unfollow"/></form></td></tr>
+	 </if>
+  </table>
+</with>

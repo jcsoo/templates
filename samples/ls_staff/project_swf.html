@@ -1,0 +1,13 @@
+<script type="text/javascript">
+  var flashvars = {
+        file: video_file,
+        image: video_img,
+        height: 480,
+        width: 640,
+        provider: "rtmp",
+        streamer: "rtmp://s2i55n5uqhbr7f.cloudfront.net/cfx/st"
+  };
+  var attributes = { id:"video-container", name: "video1"};
+  var params = { allowfullscreen: "true", allowscriptaccess: "always"};
+  swfobject.embedSWF("/static/player.swf","video-container","640","504","9.0.115","false",flashvars, params, attributes);
+</script>

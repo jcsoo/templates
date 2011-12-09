@@ -1,0 +1,22 @@
+<form method="POST" enctype="multipart/form-data">
+  <with key="_record">
+	 <include path="_pledge.xml"/>
+    <if key="_pledges">	 
+		<table class="pledges">
+		  <loop key="_pledges">
+			 <tr class="pledge">
+				<td class="c1"><img width="50" height="50" src="{_member._data.photo.t50}"/></td>
+				<td class="c2">
+				  <div class="p">
+				  <div class="meta"><a class="name" href="{id}/">{_member.first_name} {_member.last_name}</a> at <span class="date">{created|dt:%H:%M %p} on {created|dt:%A, %b %d}</span></div>
+				  <if key="_is_owner"><div class="status">{id}: {status}</div></if>
+				  <div class="amount">$ {pledged}</div>
+				  </div>
+				</td>				  
+			 </tr>
+		  </loop>
+		</table>
+	 </if>
+  </with>
+</form>
+  

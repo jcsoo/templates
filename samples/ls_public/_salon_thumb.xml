@@ -1,0 +1,1 @@
+<if key="_data.photo.v128w"><img src="{_data.photo.v128w}"/><else/><img class="thumb50" src="/img/static/salon_50.png"/></if>

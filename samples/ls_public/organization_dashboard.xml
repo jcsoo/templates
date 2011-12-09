@@ -1,0 +1,103 @@
+<page parent="_site.xml">
+<chunk id="main">
+<with key="_record">
+<div id="main">
+<div id="dashboard">
+<table class="two-col">
+<tr>
+ <td class="c1">
+	<if key="photo"><img class="photo" src="{photo.t210}"/><else/><img src="/static/img/GAction_210.png"/></if>
+	<h2>{organization}</h2>
+	<a class="edit-link" href="/organization/{id}/?v=edit">edit organization profile</a>
+	<div class="orgstats">
+	  <b>{_total_funds}</b> funds<br/>
+	  <b>{_total_pledged|money:$%.0f}</b> pledged<br/>
+	  <i>{_total_pledges}</i> supporters<br/>
+	</div>
+	
+ </td>
+ <td class="c2" style="xwidth: 600px">
+	<if key="_is_leader">
+	<div class="stream">
+	  <form method="POST">
+		 <h4>My Stream:</h4>	  
+		 <input type="text" name="body" size="50" placeholder="enter new stream"/>
+		 <input type="submit" name="_stream" value="Post"/>
+	  </form>
+	  <form method="POST">
+	  <ul>
+		 <ifnot key="updates">
+			<li>No streams posted</li>
+		 </ifnot>
+		 <loop key="updates" sort="posted desc">
+			<li><input type="checkbox" name="stream" value="{id}"/> {posted|d:%b %e, %-I:%M %P}: {body|br} </li>
+		 </loop>
+	  </ul>
+	  <if key="updates">
+		 <div class="action" style="padding: 4px;">
+			<input type="submit" name="_delete_streams" value="Delete Checked Streams"/>
+		 </div>
+	  </if>
+	  </form>
+	</div>
+	</if>
+
+<div id="tabbox" class="tabbox" >
+
+  <ul class="tabs">
+	 <li class="a selected" ><a href="?v=action">Funds</a></li>
+  </ul>
+  <div class="separator"/>
+<div>
+  <table class="zebra">
+	 <thead> 
+		<tr>
+		  <th>Fund</th>
+		  <th>Status</th>
+		  <th>Amount Raised</th>
+		  <th>Goal</th>		  
+		  <th>Closes</th>
+		  <th>Followers / Supporters</th>
+		  <th>Approved By</th>
+
+		</tr>
+	 </thead>
+	 <tbody>
+		<loop key="_actions">
+		  <tr class="odd">
+			 <td><a class="title" href="action/{id}/">{title}</a></td>
+			 <td width="50">
+				<switch key="status">
+				  <case value="Approved">
+					 <if key="_is_organization">
+						Needs Payment Authorization
+					 </if>
+				  </case>
+				  <case value="Authorized">
+					 Needs a Sponsor
+				  </case>
+				  <case>{status}</case>
+				</switch>
+			 </td>
+			 <td align="right">{_project.pledged|money}</td>
+			 <td align="right">{_project.goal|money}</td>
+			 <td>{_project.deadline|dt:%-m/%-d/%Y}</td>
+			 <td align="middle">{_followers} / {_project.pledges}</td>
+			 <td><with source="_people" key="sponsor">{first_name} {last_name}</with></td>
+		  </tr>
+		</loop>
+	 </tbody>
+  </table>
+</div>
+  
+</div>
+
+</td>
+</tr>
+</table>
+
+</div>
+</div>
+</with>
+</chunk>
+</page>

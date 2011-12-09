@@ -1,0 +1,32 @@
+<with key="_record">
+  <form method="POST">
+  <table class="browse">
+	 <tr><th>Followers</th></tr>
+	 <ifnot key="_followers">
+		<tr><td>No Followers</td></tr>
+	 </ifnot>
+	 <loop key="_followers">
+		<tr href="/people/person;id={id}/">
+		  <td><input type="checkbox" name="follower" value="{id}"/> {first_name} {last_name}</td>
+		</tr>
+	 </loop>	 
+  </table>
+  <if key="_followers">
+	 <div class="actions">
+		<input type="submit" name="_remove_followers" value="Remove Selected Followers"/>
+	 </div>
+  </if>
+  </form>
+  <br/>
+  <form method="POST">
+	 <table class="detail">
+		<tr>
+		  <th>Follower</th>
+		  <td><select name="follower"><option/><loop key="_people"><option value="{id}">{last_name}, {first_name}</option></loop></select></td>
+		</tr>
+	 </table>
+	 <div class="actions">
+		<input type="submit" name="_add_follower" value="Add Follower"/>
+	 </div>
+  </form>
+</with>

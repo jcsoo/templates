@@ -1,0 +1,20 @@
+<page parent="_site.xml">
+<chunk id="main">
+<form method="POST" enctype="multipart/form-data">
+  <with key="_record">
+	 <table class="detail">
+		<tr><th>ID</th><td>{id}</td></tr>
+		<tr><th>Date</th><td>{created}</td></tr>
+		<tr><th>Sender</th><td><with source="_people" key="sender"><a href="/people/person;id={id}/">{first_name|h} {last_name|h}</a></with></td></tr>
+		<tr><th>Recipient</th><td><with source="_people" key="recipient"><a href="/people/person;id={id}/">{first_name|h} {last_name|h}</a></with></td></tr>
+		<tr><th>Status</th><td>{status}</td></tr>
+		<!--<tr><th>Subject</th><td>{subject|h}</td></tr>-->
+		<tr><th>Message</th><td>{body|h|br}</td></tr>
+	 </table>
+  </with>
+  <div class="actions">
+	 <input type="submit" name="_delete" value="Delete Message"/>
+	 <div style="clear: both"/>
+  </div>
+</form></chunk>
+</page>

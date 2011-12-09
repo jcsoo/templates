@@ -1,0 +1,31 @@
+<with key="_record">  
+  <table class="browse">
+	 <tr>
+		<th width="30">ID</th>
+		<th width="70">Date</th>
+		<th width="50">Status</th>
+		<th>To</th>
+		<th>Subject</th>
+	 </tr>
+	 <loop key="_messages">
+		<tr href="message;id={id}/">
+		  <td>{id}</td>
+		  <td>{created|dt:%Y-%m-%d}</td>
+		  <td>{status}</td>
+		  <td>{msg_to|h}</td>
+		  <td>{subject}</td>
+		</tr>
+	 </loop>
+  </table>
+  <form method="POST">
+  <div class="actions">
+	 <select name="message_template">
+		<option/>
+		<loop key="_message_templates">
+		  <option value="{id}">{name} - {subject}</option>
+		</loop>
+	 </select>
+	 <input type="submit" name="_send_message" value="Send Message"/>
+  </div>	 
+  </form>
+</with>

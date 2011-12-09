@@ -1,0 +1,1 @@
+<a href="/members/{id}/"><if key="_data.photo.t50"><img class="thumb50" src="{_data.photo.t50}"/><else/><img class="thumb50" src="/static/img/member_50.png"/></if></a>

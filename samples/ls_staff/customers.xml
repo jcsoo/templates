@@ -1,0 +1,21 @@
+<page parent="_site.xml">
+<chunk id="main">
+<table class="browse">
+  <tr>
+	 <th>Company</th>
+	 <th class="r" width="150">Location</th>
+  </tr>
+  <loop key="_records">
+	 <tr href="customer;id={id}/">
+		<td>{company}</td>
+		<td class="r"><if key="city">{city}, </if>{state}</td>
+	 </tr>
+  </loop>
+</table>
+<form method="POST">
+  <div class="actions">
+	 <input type="submit" name="_sync" value="Create from Approved Organizations"/>
+  </div>
+</form>
+</chunk>
+</page>

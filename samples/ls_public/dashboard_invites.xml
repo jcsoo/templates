@@ -1,0 +1,51 @@
+<div>
+  <div id="invite"><a href="invite/">Send an Invitation</a></div>
+  <!--
+  <ul class="filter">
+	 <li class="{_filter_sent} {_filter_default}"><a href="?v=invites&amp;f=sent">SENT</a></li>
+	 <li class="{_filter_accepted}"><a href="?v=invites&amp;f=accepted">ACCEPTED</a></li>
+	 <div style="clear: both"/>
+  </ul>
+  -->
+  <div style="clear: both"/>
+  <form method="POST">
+  <table class="zebra">
+	 <thead>
+		<tr>
+		  <th width="50">Date</th>
+		  <th width="100">To</th>
+		  <th width="100">Email Address</th>
+		  <th>Message</th>
+		  <th>Status</th>
+		</tr>
+	 </thead>
+	 <tbody>
+		<ifnot key="_invites">
+		  <tr class="odd">
+			 <td colspan="5" style="font-size: 12px">
+				<switch key="_filter">
+				  <case value="sent">You have not sent any invitations.</case>
+				  <case value="accepted">You are not not had any invitations accepted.</case>
+				</switch>
+			 </td>
+		  </tr>
+		</ifnot>
+		<loop key="_invites">
+		  <tr>			 
+			 <!--<td><input type="checkbox" name="invite" value="{id}"/></td>-->
+			 <td>{created|d}</td>
+			 <td>{first_name} {last_name}</td>
+			 <td>{email}</td>
+			 <td>{message|h|br}</td>
+			 <td>{status}</td>
+		  </tr>
+		</loop>
+	 </tbody>
+  </table>	   
+  <!--
+  <div class="actions">
+	 <input type="submit" name="_resend_invites" value="Resend Selected Invites"/>
+  </div>
+  -->
+  </form>
+</div>

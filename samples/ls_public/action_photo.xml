@@ -1,0 +1,35 @@
+<page parent="_site.xml">
+<chunk id="head-page"><get path="_crop_head.html"/></chunk>
+<chunk id="main">
+<div id="main">
+<div id="photo-edit">
+<with key="_record">
+  <dl>
+	 <dt>Photo</dt>
+	 <dd>
+		<form id="crop" method="POST" enctype="multipart/form-data">
+		  <if key="photo">
+		  <with key="photo.crop">
+			 <input type="hidden" name="top"/>
+			 <input type="hidden" name="left"/>
+			 <input type="hidden" name="width"/>
+			 <input type="hidden" name="height"/>
+		  </with>
+		  <if key="_error"><div class="error">{_error}</div></if>
+		  <br/>
+		  <div><img id="photo" width="{photo.preview_width}" height="{photo.preview_height}" src="{photo.preview}"/></div>
+		  </if>
+		  <div class="action" style="padding: 8px;">Upload New Photo (optional) <input type="file" name="photo" /></div>		 
+		  <div class="action" style="padding: 8px;"><input type="submit" name="_update_photo" value="Update Photo"/></div>
+		  <!--<div><img src="{photo.cropped}"/></div>-->
+		</form>
+	 </dd>
+  </dl>
+  <div style="clear:both"/>
+  <!--<pre>{photo|pp}</pre>-->
+</with>
+</div>
+</div>
+</chunk>
+<chunk id="foot-page"><get path="_crop_foot.html"/></chunk>
+</page>

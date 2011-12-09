@@ -1,0 +1,16 @@
+<page parent="_twocol.xml">
+<chunk id="c2">
+	 <div>
+		<h1><text id="header">[Contact Thank You]</text></h1>
+		<h2>{_record.title}</h2>
+		<form method="POST">
+		<p><text id="message">[Thanks for contacting us.]</text></p>
+		<br/><br/>
+		<div class="actions" style="text-align: left;">
+		  <input class="FundBG" type="submit" name="_return" value="Return to Home"/>
+		</div>
+		</form>
+
+	 </div>
+</chunk>
+</page>

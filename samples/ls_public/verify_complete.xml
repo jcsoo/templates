@@ -1,0 +1,12 @@
+<page parent="_site.xml">
+<chunk id="message"></chunk>
+<chunk id="main">
+<form method="POST">
+<div id="login">
+  <div class="message">
+	 Your account been verified. <a href="/">Continue</a>
+  </div>
+</div>
+</form>
+</chunk>
+</page>

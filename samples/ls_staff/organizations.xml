@@ -1,0 +1,30 @@
+<page parent="_site.xml">
+<chunk id="main">
+  <paginate key="_records" page="{_parameters.p}" page_size="25" sort="last_name,first_name">
+	 <table class="browse">
+		<tr>
+		  <th>Status</th>
+		  <th>Organization</th>
+		  <th>City</th>
+		  <th>State</th>
+		  <th>Admin</th>
+		</tr>
+		<loop key="_records">
+		  <tr href="organization;id={id}/">
+			 <td>{status}</td>
+			 <td>{organization}</td>
+			 <td>{city}</td>
+			 <td>{state}</td>
+			 <td><with source="_all_people" key="admin">{first_name} {last_name}</with></td>
+		  </tr>
+		</loop>
+	 </table>
+	 <include path="_page_nav.xml"/>
+  </paginate>
+  <form method="POST">
+	 <div class="actions">
+		<input type="submit" name="_create" value="Create"/>
+	 </div>
+  </form>
+</chunk>
+</page>

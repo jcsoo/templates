@@ -1,0 +1,35 @@
+<do>
+<chunk id="head-page">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+</chunk>
+<form method="POST" enctype="multipart/form-data">
+  <with key="_record">
+	 <table class="detail">
+		<tr><th>Photo</th><td><input type="file" name="_upload.photo"/><if key="_data.photo"> <a target="_blank" href="{_data.photo.original}">View Original</a> [{_data.photo.original_width} x {_data.photo.original_height}]</if></td></tr>
+		<if key="_data.photo.t200">
+		<tr><th></th><td><img src="{_data.photo.t200}"/></td></tr></if>
+
+
+		<tr><th>Video</th><td><input type="file" name="_upload.video"/><if key="_data.video"> <a href="{_data.video.original}">Download Original</a> <a href="{_data.video.mp4}">Download MP4</a></if></td></tr>
+		<if key="_data.video">
+		  <tr><th>Job Status</th><td>{_data.video.job_status}</td></tr>
+		  <if key="_data.video.job_status" equals="Finished">
+			 <tr><th></th><td><div id="video-container"/></td></tr>
+			 <script>var video_file = {_data.video.key|js}+'.flv';</script>
+			 <script>var video_img = {_data.video.jpg|js};</script>
+			 <get path="project_swf.html"/>
+		  </if>
+		</if>
+	 </table>
+	 <div class="actions">
+		<if key="id">
+		  <input type="submit" name="_update" value="Update"/>
+		  <input type="submit" name="_delete" value="Delete"/>
+		  <else/>
+		  <input type="submit" name="_create" value="Create"/>
+		</if>
+	 </div>
+  </with>
+
+  </form>
+</do>

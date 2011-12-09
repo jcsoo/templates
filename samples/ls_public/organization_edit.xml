@@ -1,0 +1,62 @@
+<page parent="_site.xml">
+<chunk id="head-page"><get path="_calendar.html"/></chunk>
+<chunk id="main">
+<with key="_record">
+<div id="main">
+<div id="talk-edit">
+<table class="two-col">
+<tr>
+  <td class="c1">
+	 <div class="instructions">
+		<h2><text id="header">[Header]</text></h2>
+		<p><text id="instructions">[instructions here]</text></p>
+	 </div>
+  </td>
+  <td class="c2">
+	 <form method="POST" enctype="multipart/form-data">
+		<if key="id">
+		  <h2>Update Your Non Profit Details</h2>
+		</if>
+		<table class="edit">
+		  <tr>
+			 <!--<th>Name of Organization</th>-->
+			 <td><input type="text" name="organization" size="25" placeholder="Organization Name"/></td>
+		  </tr>
+		  <tr>
+			 <!--<th>Organization Web Site</th>-->
+			 <td><input type="text" name="web_site" size="25" placeholder="Non Profit Web Site"/></td>
+		  </tr>
+		  <tr>
+			 <!--<th>Organization Description</th>-->
+			 <td><textarea name="description" rows="16" cols="25" placeholder="Non Profit Description"/></td>
+		  </tr>
+		  <tr>
+			 <!--<th>Upload an Photo or Logo</th>-->
+			 <td>
+				Upload an Photo or Logo: <input type="file" name="photo" />
+				<if key="photo"><div class="uploaded"><a target="_blank" href="{photo.original}">View Uploaded Photo</a></div></if>
+			 </td>
+		  </tr>
+		  <tr>
+			 <!--<th>Upload IRS Documentation for Non-Profit status</th>-->
+			 <td>Upload IRS Documentation for Non-Profit status: <input type="file" name="documentation" />
+				<if key="documentation"><div class="uploaded"><a target="_blank" href="{documentation.original}">View Uploaded Forms</a></div></if>
+			 </td>
+		  </tr>
+
+		</table>
+		<div class="actions" style="text-align: left">
+		  <input class="FundBG" type="submit" name="_update" value="Save Non Profit Details"/>
+		</div>
+		
+	 </form>
+  </td>
+</tr>
+</table>
+<br/>
+</div>
+</div>
+</with>
+</chunk>
+<chunk id="foot-page"><get path="_action_edit_script.html"/></chunk>
+</page>

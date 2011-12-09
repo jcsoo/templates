@@ -1,0 +1,40 @@
+<page parent="_site.xml">
+<chunk id="main">
+<div id="main">
+<div id="login">
+<with key="_record">
+  <dl>
+	 <dt>Message</dt>
+	 <dd>
+		<with key="_message">
+		<table class="message">
+		  <tr>
+			 <th>Date</th>
+			 <td>{created|d:%b %e, %-I:%M %P}</td>
+		  </tr>
+		  <tr>
+			 <th>From</th>
+			 <td><with source="_people" key="sender">{first_name} {last_name}</with></td>
+		  </tr>
+		  <tr>
+			 <th>Message</th>
+			 <td>{body|br|h}</td>
+		  </tr>
+		</table>
+		</with>
+		</dd>
+	 <dt>Reply to Message</dt>
+	 <dd>
+		<form method="POST" enctype="multipart/form-data">
+		  <if key="_error"><div class="error">{_error}</div></if>
+		  <div><textarea name="body" rows="6" cols="25" /></div>
+		  <div><input type="submit" name="_reply" value="Send Reply"/></div>
+		</form>
+	 </dd>
+  </dl>
+  <div style="clear:both"/>
+</with>
+</div>
+</div>
+</chunk>
+</page>

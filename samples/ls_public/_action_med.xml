@@ -1,0 +1,30 @@
+		  <li class="action">
+			  <a href="/action/{id}/"><if key="photo"><img src="{photo.t210}"/><else/><img src="/static/img/GAction_210.png"/></if></a>
+			 <div class="info">
+				<div class="title"><a href="/action/{id}/">{title}</a></div>
+				<div><a href="/organization/{organization}/"><with source="_organizations" key="organization">{organization}</with></a></div>
+				<!--<div class="people"><with source="_people" key="sponsor"><a class="person host" href="/people/{id}/">{first_name} {last_name}</a></with></div>-->
+				<!--<div class="date">{created|d:%b %e, %-I:%M %P}</div>-->
+				<if key="description">
+				  <div class="description">{description|trim:90:...}</div>
+				</if>
+				<div class="pledgestatus">
+				<table class="stats">
+				  <tr>
+					 <td>{_project._remaining_days}</td>
+					 <td>{_project.pledged|money:$%.0f}</td>
+					 <td>{_project.goal|money:$%.0f}</td>
+					 <!--<td><if key="_project.percent_funded">{_project.percent_funded}<else/>0</if>%</td>-->
+
+				  </tr>
+				  <tr>
+					 <th>days left</th>
+					 <th>pledged</th>
+					 <th>goal</th>
+				  </tr>
+				</table>
+				<div class="pbar"><div class="p2"/><div class="p1" style="width: {p1_width}px"/></div>
+				</div>
+			 </div>
+			 <div style="clear: both"/>
+		  </li>

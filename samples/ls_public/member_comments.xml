@@ -1,0 +1,4 @@
+<with key="_record">
+  <h2>Comments for {first_name} {last_name}</h2>
+  <include path="_comments.xml"/>
+</with>

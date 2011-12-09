@@ -1,0 +1,9 @@
+<page parent="_site.xml">
+<chunk id="main">
+<ul>
+  <li><a href="customers/">Customers</a></li>
+  <li><a href="invoices/">Invoices</a></li>
+  <li><a href="payments/">Payments</a></li>
+</ul>
+</chunk>
+</page>

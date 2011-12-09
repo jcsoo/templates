@@ -1,0 +1,24 @@
+<page parent="_site.xml">
+<chunk id="main">
+<div id="main">
+<div id="login">
+  <dl>
+	 <dt>Reset Password</dt>
+	 <dd>
+		<form method="POST">		  
+		  <if key="error"><div class="error">{error}</div></if>
+		  <div>To reset your passsword, you must have a reset code. Click 'Send Reset Code' to have it emailed to you.</div>
+		  <div><input type="text" name="email" size="25" placeholder="email"/></div>
+		  <div><input style="width: 100px" type="text" name="code" size="6" placeholder="reset code" /> <input type="submit" name="_reset_code" value="Send Reset Code"/></div>		  
+		  <div><input type="password" name="password_1" size="25" placeholder="new password"/></div>
+		  <div><input type="password" name="password_2" size="25" placeholder="re-enter new password"/></div>
+		  <div><input type="submit" name="_reset_password" value="Reset Password"/></div>		  
+		</form>
+	 </dd>
+  </dl>
+  <div style="clear: both"/>
+</div>
+
+</div>
+</chunk>
+</page>

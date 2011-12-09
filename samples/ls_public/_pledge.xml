@@ -1,0 +1,19 @@
+<if key="recipient_token_id">
+<div class="pledge-form">
+  <form class="make-pledge" method="POST">
+	 <if key="_amounts">
+		Make a Pledge: <select name="amount"><loop key="_amounts"><option value="{_}">$ {_}</option></loop></select> <input type="submit" name="_pledge" value="Pledge"/>
+		<else/>
+		This project has reached it's pledge limit.
+	 </if>
+	 <span class="info">
+		<span class="backers">Backers: 12</span>
+		<if key="pledged"><span class="pledged">Pledged: ${pledged} of ${goal}</span></if>
+		<if key="deadline"><span class="deadline">Deadline: {deadline|dt:%B %d, %Y}</span></if>
+	 </span>
+
+  </form>
+</div>
+<else/>
+<div class="pledge-form">This project is not ready to accept pledges.</div>
+</if>

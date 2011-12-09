@@ -1,0 +1,25 @@
+<page><doctype>HTML</doctype>
+<html>
+<head>
+ <chunk id="title"><title>Learning Streams Staff ({_config.site}) | {_title}</title></chunk>
+ <chunk id="head">
+ <get path="_head.html"/>
+ </chunk>
+ <chunk id="head-page"/>
+</head>
+<body class="yui-skin-sam">
+ <include path="_banner.xml"/>
+ <include path="_left.xml"/>
+ <div id="pane">
+  <include path="_crumbs.xml"/>
+  <include path="_views.xml"/>
+  <div id="bd">
+    <chunk id="main"/>
+  </div>
+ </div>
+ <include path="_footer.xml"/>
+ <chunk id="foot"><get path="_foot.html"/></chunk>
+ <chunk id="foot-page"/>
+</body>
+</html>
+</page>

@@ -1,0 +1,35 @@
+<div>
+  <table class="zebra">
+	 <thead> 
+		<tr>
+		  <th>Status</th>
+		  <th>Date</th>
+		  <th>Fund</th>
+		  <th>Closes On</th>
+		  <th>Non Profit</th>
+		  <th>Amount</th>
+		</tr>
+	 </thead>
+	 <tbody>
+		<ifnot key="_pledges">
+		  <tr class="odd">
+			 <td colspan="5" style="font-size: 12px">
+				You have not made any pledges.
+			 </td>
+		  </tr>
+		</ifnot>
+		<loop key="_pledges">
+		  <tr class="odd">
+			 <td width="50">
+				<a href="pledge/{id}/" style="text-decoration: underline">{status}</a>
+			 </td>
+			 <td>{created|dt:%-m/%-d/%Y}</td>
+			 <td><a class="title" href="/action/{_action.id}/">{_action.title}</a></td>
+			 <td>{_action._project.deadline|dt:%-m/%-d/%Y}</td>
+			 <td><a class="organization" href="/organization/{_organization.id}/">{_organization.organization}</a></td>
+			 <td align="right">{pledged|money}</td>
+		  </tr>
+		</loop>
+	 </tbody>
+  </table>
+</div>

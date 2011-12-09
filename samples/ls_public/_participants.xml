@@ -1,0 +1,8 @@
+<if key="_participants">
+  <loop key="_participants">
+	 <div style="clear: left;">
+	 <with key="_member"><include path="_member.xml"/></with>
+	 </div>
+  </loop>
+  <div style="clear: left"/>
+</if>

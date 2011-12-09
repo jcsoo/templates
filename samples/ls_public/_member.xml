@@ -1,0 +1,5 @@
+<li class="member">
+  <a href="/members/{id}/"><if key="_data.photo.t50"><img class="thumb50" src="{_data.photo.t64}"/><else/><img class="thumb50" src="/static/img/member_64.png"/></if></a>
+  <h1><a href="/members/{id}/">{first_name} {last_name}</a></h1>
+  <div class="type">Learning Streams {type}</div>
+</li>

@@ -1,0 +1,41 @@
+<page parent="_site.xml">
+<chunk id="main">
+  <paginate key="_records" page="{_parameters.p}" page_size="25" sort="title">
+	 <table class="browse">
+		<tr>
+		  <th>Created</th>
+		  <th>Status</th>
+		  <th>Title</th>
+		  <!--<th>Talk</th>-->
+		  <th>Organization</th>
+		  <th style="text-align: right">Deadline</th>
+		  <th style="text-align: right">Pledged</th>
+		  <th style="text-align: right">#</th>
+		  <th style="text-align: right">Goal</th>
+		</tr>
+		<loop key="_records">
+		  <tr href="action;id={id}/">
+			 <td>{created}</td>
+			 <td>{status}</td>
+			 <td>{title|n:untitled}</td>
+			 <!--<td><with source="_talks" key="talk">{title|trim:60:...}</with></td>-->
+			 <td><with source="_organizations" key="organization">{organization|trim:60:...} / <with source="_people" key="admin">{first_name} {last_name}</with></with></td>
+			 <td style="text-align: right">{_project.deadline|d}</td>
+			 <td style="text-align: right">{_project.pledged|money}</td>
+			 <td style="text-align: right">{_project.pledges}</td>
+			 <td style="text-align: right">{_project.goal|money}</td>
+		  </tr>
+		</loop>
+	 </table>
+	 <include path="_page_nav.xml"/>
+  </paginate>  
+  <form method="POST">
+	 <div class="actions">
+		<input type="submit" name="_create" value="Create"/>
+		<input type="submit" name="_recalculate" value="Recalculate All"/>
+		<input style="float: right" type="submit" name="_sync_projects" value="Sync Projects"/>
+		<!--<input type="submit" name="_rebuild_thumbnails" value="Rebuild Thumbnails"/>-->
+	 </div>
+  </form>
+</chunk>
+</page>

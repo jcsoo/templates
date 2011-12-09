@@ -1,0 +1,9 @@
+<with key="_record">
+  <include path="_pledge.xml"/>
+  <if key="_data.full_description">
+	 <div class="full-description">{_data.full_description|m}</div>
+  </if>
+  <include path="_tags.xml"/>
+  <include path="_followers.xml"/>
+  <include path="_comments.xml"/>
+</with>

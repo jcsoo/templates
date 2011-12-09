@@ -1,0 +1,31 @@
+<page parent="_site.xml">
+<chunk id="main">
+  <form method="POST">
+  <with key="_record">
+	 <table class="detail">
+		<tr><th>ID</th><td><input type="text" name="id" size="15"/></td></tr>
+		<tr><th>Type</th><td><input type="text" name="type" size="15"/></td></tr>
+		<tr><th>Status</th><td><input type="text" name="status" size="15"/></td></tr>
+		<tr><th>Amount</th><td><input type="text" name="amount" size="8"/></td></tr>
+		<tr><th>Payment</th><td><input type="text" name="payment" size="8"/></td></tr>
+		<tr><th>Refund</th><td><input type="text" name="refund" size="8"/></td></tr>
+		<tr><th>Net</th><td><input type="text" name="net" size="8"/></td></tr>
+		<tr><th>Transaction ID</th><td>{transaction_id}</td></tr>
+		<tr><th>Transaction Status</th><td>{transaction_status}</td></tr>
+		<if key="transaction_message">
+		  <tr><th>Transaction Message</th><td>{transaction_message}</td></tr>
+		</if>
+	 </table>
+	 
+	 <div class="actions">
+		<if key="id">
+		  <input type="submit" name="_update" value="Update"/>
+		  <input type="submit" name="_delete" value="Delete"/>
+		  <else/>
+		  <input type="submit" name="_create" value="Create"/>
+		</if>
+	 </div>
+  </with>
+  </form>
+</chunk>
+</page>

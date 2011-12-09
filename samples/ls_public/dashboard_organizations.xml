@@ -1,0 +1,22 @@
+<div>
+  <ifnot key="_organizations">
+	 <div id="launch"><a href="/organization/create/?v=edit">New Organization</a></div>
+  </ifnot>
+
+  <table class="zebra">
+	 <thead style="display: none">
+		<tr>
+		  <th colspan="2">Organization</th>
+		</tr>
+	 </thead>
+	 <tbody>
+		<loop key="_organizations">
+		  <tr class="odd">
+			 <td width="60"><a class="photo" href="/organization/{id}/"><if key="photo.t60"><img src="{photo.t60}"/><else/><img src="/static/img/GAction_122.png"/></if></a></td>
+			 <td><a class="title" href="/organization/{id}/">{organization}</a></td>
+			 <td><if key="_org_actions"><if key="_org_actions_approved"><a href="?v=action">{_org_actions_approved_count} Approved Fund(s)</a></if> <br/> <if key="_org_actions_suggested"><a href="?v=action">{_org_actions_suggested_count} Fund(s) Awaiting Reply</a></if></if></td>
+		  </tr>
+		</loop>
+	 </tbody>
+  </table>
+</div>

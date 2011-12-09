@@ -1,0 +1,26 @@
+<page parent="_twocol.xml">
+<chunk id="c1">
+  <with source="_organizations" key="_action.organization">
+	 <if key="photo"><img class="photo" src="{photo.t210}"/><else/><img src="/static/img/GAction_210.png"/></if>
+  </with>
+  <p><text id="instructions">[instructions]</text></p>
+</chunk>
+<chunk id="c2">
+	 <div>
+		<h1><with source="_organizations" key="_action.organization">{organization}</with> THANKS YOU FOR YOUR PLEDGE TO</h1>
+		<h2>{_action.title}</h2>
+		<h2>Fund Closes on {_project.deadline|d:%-m/%-d/%Y}</h2>
+		<br/>
+		<div class="thankyou">
+		{_action.thank_you|p}
+		</div>
+		<br/>
+		<form method="POST">
+		<div class="actions" style="text-align: left;">
+		  <input class="FundBG" type="submit" name="_continue" value="Return to Fund"/>
+		</div>
+		</form>
+
+	 </div>
+</chunk>
+</page>

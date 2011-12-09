@@ -1,0 +1,27 @@
+<page parent="_site.xml">
+<chunk id="main">
+<form method="POST" enctype="multipart/form-data">
+  <with key="_record">
+	 <table class="detail">
+		<tr><th>ID</th><td>{id}</td></tr>
+		<tr><th>Recipients</th><td>{recipients}</td></tr>
+		<tr><th>Status</th><td>{status}</td></tr>
+		<tr><th>Date</th><td>{created}</td></tr>
+		<tr><th>From</th><td>{msg_from|h}</td></tr>
+		<tr><th>To</th><td>{msg_to|h}</td></tr>
+		<tr><th>Subject</th><td>{subject}</td></tr>
+		<tr style="border-top: 1px solid #e0e0e0">
+		  <td colspan="2"><iframe class="msgbody" src="/messages/message;id={id};_v=preview/"/>
+		  </td>
+		</tr>
+	 </table>
+	 <div class="actions" style="padding-bottom: 8px">
+		<if key="status" equals="Created">
+		  <input type="submit" name="_send_message" value="Send Message"/>
+		  <input type="submit" name="_delete" value="Delete"/>
+		</if>
+
+	 </div>	 	 
+  </with>
+</form></chunk>
+</page>

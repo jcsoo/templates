@@ -1,0 +1,27 @@
+<page parent="_site.xml">
+<chunk id="main">
+<div id="main">
+<div id="login">
+<with key="_record">
+  <dl>
+	 <dt>Welcome {_record.first_name}</dt>
+	 <dd>
+		Now we need a few more bits of information to create your profile page.
+		<form method="POST" enctype="multipart/form-data">
+		  <if key="_error"><div class="error">{_error}</div></if>
+		  <div><input type="text" name="title" size="25" placeholder="title (optional)"/></div>
+		  <div><input type="text" name="organization" size="25" placeholder="organization (optional)"/></div>
+		  <div><input type="text" name="website" size="25" placeholder="website (optional)"/></div>
+		  <div>Upload Photo (optional) <input type="file" name="photo" /></div>
+		  
+		  <div><textarea name="biography" rows="6" cols="25" placeholder="brief bio (optional)"/></div>
+		  <div><input type="submit" name="_update_profile" value="UPDATE YOUR PROFILE"/></div>
+		</form>
+	 </dd>
+  </dl>
+  <div style="clear:both"/>
+</with>
+</div>
+</div>
+</chunk>
+</page>

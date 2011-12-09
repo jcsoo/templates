@@ -1,0 +1,33 @@
+<page parent="_site.xml">
+<chunk id="main">
+<with key="_record">
+<div id="main">
+<div id="organization" class="primary">
+  <table class="specific">
+  <tr>
+	 <td class="detail">
+  <h1>{organization} <ifnot key="status" equals="Approved">(Pending Approval)</ifnot></h1>
+
+  <if key="photo"><img class="photo" width="320" height="240" src="{photo.cropped}"/><else/><img src="/static/img/GAction_360.png"/></if>
+  <div class="about">About This Non Profit:</div>
+  <div class="description">{description|p}</div>			 
+  <div class="info">
+	 <p>Website: <a target="_blank" href="{web_site}">{web_site}</a></p>
+	 <p><a target="_blank"  href="{documentation.original}">View Non-profit status</a></p>
+  </div>
+  </td>
+  <td class="actions">
+	 <div class="actions">
+		<ul class="vlist">
+		  <loop key="_actions"><include path="_action_small.xml"/></loop>
+		</ul>
+	 </div>
+  </td>
+  </tr>
+  </table>
+
+</div>
+</div>
+</with>
+</chunk>
+</page>

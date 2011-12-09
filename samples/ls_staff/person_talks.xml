@@ -1,0 +1,35 @@
+<with key="_record">
+  <table class="browse">
+	 <tr><th>Talks Hosted</th></tr>
+	 <ifnot key="_talks_hosted">
+		<tr><td style="padding-left: 8px">No Talks Hosted</td></tr>
+	 </ifnot>
+	 <loop key="_talks_hosted">
+		<tr href="/talks/talk;id={id}/">
+		  <td style="padding-left: 8px">{title}</td>
+		</tr>
+	 </loop>
+  </table>
+  <table class="browse" style="border-top: 0">
+	 <tr><th>Talks Followed</th></tr>
+	 <ifnot key="_talks_followed">
+		<tr><td style="padding-left: 8px">No Talks Followed</td></tr>
+	 </ifnot>
+	 <loop key="_talks_followed">
+		<tr href="/talks/talk;id={id}/">
+		  <td style="padding-left: 8px">{title}</td>
+		</tr>
+	 </loop>
+  </table>
+  <table class="browse" style="border-top: 0">
+	 <tr><th>Talks Commented</th></tr>
+	 <ifnot key="_talks_commented">
+		<tr><td style="padding-left: 8px">No Talks Commented</td></tr>
+	 </ifnot>
+	 <loop key="_talks_commented">
+		<tr href="/talks/talk;id={id}/">
+		  <td style="padding-left: 8px">{title}</td>
+		</tr>
+	 </loop>	 
+  </table>
+</with>

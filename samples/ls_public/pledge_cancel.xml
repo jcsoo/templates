@@ -1,0 +1,23 @@
+<page parent="_twocol.xml">
+<chunk id="c2">
+	 <div>
+		<h1><text id="headline">Withdraw Pledge</text></h1>
+		<p><text id="instructions">[instructions]</text></p>
+		<form method="POST">
+		<dl class="details">
+		  <dt>Fund</dt>
+		  <dd>{_action.title}</dd>
+		  <dt>Non Profit</dt>
+		  <dd>{_organization.organization}</dd>
+		  <dt>Current Pledge Amount</dt>
+		  <dd>{_pledge.pledged|money}</dd>
+		</dl>
+		<p>[Please select "Withdraw Pledge" below to cancel your pledge.]</p>
+		<div class="actions" style="text-align: left;">
+		  <input type="submit" name="_do_cancel" value="Withdraw Pledge"/>
+		</div>
+		</form>
+
+	 </div>
+</chunk>
+</page>

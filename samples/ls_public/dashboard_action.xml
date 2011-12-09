@@ -1,0 +1,74 @@
+<div class="fund">
+  <!--<div id="launch"><a href="/action/create/?v=edit">Launch New Action</a></div>-->
+  <ul class="filter">
+	 <if key="_is_leader">
+		<li class="{_filter_participate}"><a href="?v=action&amp;f=participate">SPONSOR</a></li>
+	 </if>
+	 <!--
+	 <if key="_organization">
+		<li class="{_filter_suggest}"><a href="?v=action&amp;f=suggest">SUGGEST</a></li>
+	 </if>
+	 -->
+	 <li class="{_filter_follow}"><a href="?v=action&amp;f=follow">FOLLOW</a></li>
+	 <li class="{_filter_support}"><a href="?v=action&amp;f=support">SUPPORT</a></li>
+	 <div style="clear: both"/>
+  </ul>
+  <!--
+  <ul class="sort">
+	 <li>sort by:</li>
+	 <li class="{_sort_date} {_sort_default}"><a href="">date</a></li>
+	 <li class="{_sort_title}"><a href="#">title</a></li>
+	 <div style="clear: both"/>
+  </ul>
+  -->
+  <table class="zebra">
+	 <thead> 
+		<tr>
+		  <th>Status</th>
+		  <th>Title</th>
+		  <th>Non Profit</th>
+		  <th>Description</th>
+		  <th>Funds Needed</th>
+		</tr>
+	 </thead>
+	 <tbody>
+		<ifnot key="_actions">
+		  <tr class="odd">
+			 <td colspan="5" style="font-size: 12px">
+				<switch key="_filter">
+				  <case value="follow">You are not following any funds.</case>
+				  <case value="support">You are not supporting any funds.</case>
+				</switch>
+			 </td>
+		  </tr>
+		</ifnot>
+		<loop key="_actions">
+		  <tr class="odd">
+			 <td width="50">
+				<switch key="status">
+				  <case value="Approved">
+					 <if key="_is_organization">
+						Needs Payment Authorization
+						<else/>
+						Needs Payment Authorization
+					 </if>
+				  </case>
+				  <case value="Authorized">
+					 <if key="_is_participant">
+						<a href="/action/{id}/?v=sponsor"><u>Needs a Sponsor</u></a>
+						<else/>
+						Needs a Sponsor
+					 </if>
+				  </case>
+				  <case>{status}</case>
+				</switch>
+				</td>
+			 <td><a class="title" href="/action/{id}/">{title}</a></td>
+			 <td><a class="organization" href="/organization/{_organization.id}/">{_organization.organization}</a></td>
+			 <td>{description}</td>
+			 <td align="right">{goal|money}</td>
+		  </tr>
+		</loop>
+	 </tbody>
+  </table>
+</div>

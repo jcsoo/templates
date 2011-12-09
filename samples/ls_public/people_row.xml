@@ -1,0 +1,5 @@
+		<tr>
+		  <loop key="_records"><separator><td class="space"/></separator>
+		  <td class="col"><include path="_person_med.xml"/></td>
+		  </loop>
+		</tr>

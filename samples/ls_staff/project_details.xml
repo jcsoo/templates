@@ -1,0 +1,39 @@
+<form method="POST" enctype="multipart/form-data">
+  <with key="_record">
+	 <table class="detail">
+		<if key="id">
+		  <tr><th>ID</th><td>{id}</td></tr>
+		</if>
+		<tr><th>Type</th><td><select name="type"><option/><option>Immediate</option><option>Deadline</option></select></td></tr>
+		<tr><th>Status</th><td><input type="text" name="status" size="50"/></td></tr>
+		<tr><th>Creator</th><td><select name="creator"><option/><loop key="_members"><option value="{id}">{first_name} {last_name}</option></loop></select></td></tr>
+		<tr><th>Owner</th><td><select name="owner"><option/><loop key="_members"><option value="{id}">{first_name} {last_name}</option></loop></select></td></tr>
+
+		<tr><th>Title</th><td><input type="text" name="title" size="50"/></td></tr>
+		<tr><th>Pledged</th><td>{pledged}</td></tr>
+		<tr><th>Paid</th><td>{paid}</td></tr>
+		<tr><th>Refunded</th><td>{refunded}</td></tr>
+		<tr><th>Net</th><td>{net}</td></tr>
+      <tr><th>Goal</th><td><input type="text" name="goal" size="10"/></td></tr>
+      <tr><th>Limit</th><td><input type="text" name="plimit" size="10"/></td></tr>
+      <tr><th>Deadline</th><td><input type="text" name="deadline" size="25"/></td></tr>
+      <tr><th>Amounts</th><td><input type="text" name="amounts" size="80"/></td></tr>
+		<tr><th>Description</th><td><textarea name="description" rows="r" cols="80"/></td></tr>
+		<tr><th>Tags</th><td><input type="text" size="80" name="_data.tags" value="{_data.tags|join:, }"/></td></tr>
+		<tr><th>Members</th><td><loop key="_data._members"><div><a href="/members/member;id={id}/">{first_name} {last_name}</a></div></loop></td></tr>
+		<tr><th>Additional Details</th><td><textarea name="_data.additional_details" rows="4" cols="80"/></td></tr>
+		<tr><th>Recipient Token</th><td><input type="text" name="recipient_token_id" size="120"/></td></tr>
+	 </table>
+
+	 <div class="actions">
+		<if key="id">
+		  <input type="submit" name="_update" value="Update"/>
+		  <input type="submit" name="_authorize" value="Authorize"/>
+		  <input type="submit" name="_delete" value="Delete"/>
+		  <include path="_project_actions.xml"/>
+		  <else/>
+		  <input type="submit" name="_create" value="Create"/>
+		</if>
+	 </div>
+  </with>
+</form>

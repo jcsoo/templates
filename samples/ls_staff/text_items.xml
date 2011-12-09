@@ -1,0 +1,23 @@
+<page parent="_site.xml">
+<chunk id="main">
+<table class="browse">
+  <tr>
+	 <th>ID</th>
+  </tr>
+  <loop key="_records">
+	 <tr href="text_item;id={id}/">
+		<td>{id}</td>
+	 </tr>
+  </loop>
+</table>
+<form method="POST">
+  <div class="actions">
+	 <!--
+	 <input type="text" name="id" size="25" placeholder="New Text Item ID"/>
+	 <input type="submit" name="_create" value="Create"/>
+	 -->
+	 <input type="submit" name="_publish" value="Publish Text Items" onclick="confirm('Publish Text Items?')"/>
+  </div>
+</form>
+</chunk>
+</page>

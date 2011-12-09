@@ -1,0 +1,11 @@
+<page parent="_site.xml">
+  <chunk id="main">
+	 <div id="main">
+		<div class="content">
+		<h1><text id="header">No Invites Available</text></h1>
+		<p><text id="message">[You currently do not have any Leader Invites remaining for this month. Please check in next month to invite another Leader.]</text></p>
+		<a class="button" href="/dashboard/?v=invites">Continue</a>
+		</div>
+	 </div>
+  </chunk>
+</page>

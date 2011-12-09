@@ -1,0 +1,15 @@
+<page parent="_twocol.xml">
+<chunk id="c2">
+	 <div>
+		<h2>Authorize Amazon Payments</h2>
+		<form method="POST">
+		<p>[To receive pledges via Amazon Payments, you must sign in with your Amazon Payments account and authorize payments.]</p>
+		<br/><br/>
+		<div class="actions" style="text-align: left;">
+		  <input type="submit" name="_authorize" value="Authorize Amazon Payments"/>
+		</div>
+		</form>
+
+	 </div>
+</chunk>
+</page>

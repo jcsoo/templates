@@ -1,0 +1,11 @@
+<div>
+	 <include path="_comment_form.xml"/>
+	 <if key="comments">
+		<ul class="comments">
+		  <loop key="comments">
+			 <li><with source="_people" key="poster.id"><if key="photo"><a href="/people/{id}/" class="cthumb" style="background-image: url('{photo.t64}')"/></if><a href="/people/{id}/">{first_name} {last_name}</a>: </with> {body|br}</li>
+		  </loop>
+		  <div style="clear: both"/>
+		</ul>
+	 </if>
+</div>

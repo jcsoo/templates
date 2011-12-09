@@ -1,0 +1,13 @@
+<page parent="_site.xml">
+<chunk id="area"><include path="_area_people.xml"/></chunk>
+<chunk id="main">
+<div id="members">
+  <ul>
+	 <loop key="_records">
+		<include path="_member.xml"/>
+	 </loop>
+	 <div style="clear: both"/>
+  </ul>
+</div>
+</chunk>
+</page>

@@ -1,0 +1,19 @@
+<form method="POST" enctype="multipart/form-data">
+  <with key="_record">
+	 <table class="detail">
+		<tr><th>Photo</th><td><input type="file" name="_upload.photo"/><if key="_data.photo"> <a target="_blank" href="{_data.photo.original}">View Original</a> [{_data.photo.original_width} x {_data.photo.original_height}]</if></td></tr>
+		<if key="_data.photo.small">
+		<tr><th></th><td><img src="{_data.photo.small}"/></td></tr></if>
+	 </table>
+
+	 <div class="actions">
+		<if key="id">
+		  <input type="submit" name="_update" value="Update"/>
+		  <input type="submit" name="_delete" value="Delete"/>
+		  <else/>
+		  <input type="submit" name="_create" value="Create"/>
+		</if>
+	 </div>	 
+
+  </with>
+</form>

@@ -1,0 +1,18 @@
+<page parent="_site.xml">
+<chunk id="main">
+  <switch key="_view">
+	 <case value="profile"><include path="pledge_profile.xml"/></case>
+	 <case value="transaction"><include path="pledge_transaction.xml"/></case>
+	 <case value="data"><include path="_data.xml"/></case>
+	 <case><include path="pledge_details.xml"/></case>
+  </switch>
+
+  <!--
+  <if key="_record.net">	 
+  <form method="POST" style="padding: 8px">
+	 Refund: <input type="text" name="amount" size="10" value="{_record.net}"/> <input type="submit" name="_refund" value="Refund"/>
+  </form>
+  </if>
+  -->
+</chunk>
+</page>

@@ -1,0 +1,67 @@
+<page parent="_site.xml">
+<chunk id="main">
+<with key="_record">
+<div id="main">
+<div id="talk" class="primary">
+  <table class="specific">
+	 <tr>
+  <td class="people">
+  <ul class="vlist"><loop key="collaborators"><with source="_people" key="_"><include path="_person_small.xml"/></with></loop><div style="clear: both"/></ul>
+  </td>
+
+
+		<td class="detail">
+		  
+  <div class="detail">
+	 <h1>{title}</h1>
+	 <if key="video">
+		{video}
+		<else/>
+		<if key="photo.t640"><img width="640" height="480" src="{photo.t640}"/><else/><img src="/static/img/GTalk_360.png"/></if>
+	 </if>
+
+	 <form method="POST">
+		<div class="actions" style="margin-top: 8px">
+		  <div style="padding: 2px; position: absolute; width: 148px; height: 100px; top: -6px; right: 0px; ">
+			 <get path="_share.html"/>
+		  </div>
+
+		  <if key="_is_follower">
+			 <input class="ConversationBG" type="submit" name="_unfollow" value="stop following this conversation"/>
+			 <else/>
+			 <if key="_session">
+				<input class="ConversationBG" type="submit" name="_follow" value="follow this conversation"/>
+			 </if>
+		  </if>
+		  <input class="ConversationBG" type="submit" name="_suggest" value="suggest a fund"/>
+
+		</div>
+	 </form>
+
+	 <div class="description" ><span class="Talk">About this conversation:</span> {description|p}</div>			 
+
+	 <ol class="mtabs">
+		<li class="{_view_comments} {_view_default}"><a href="?v=comments">Comments</a></li>
+		<li class="{_view_followers}"><a href="?v=followers">Followers</a></li>
+		<div style="clear: both"/>
+	 </ol>
+	 <switch key="_view">
+		<case value="followers"><include path="_followers.xml"/></case>
+		<case><include path="_comments.xml"/></case>
+	 </switch>
+
+	 <div style="clear: both"/>
+  </div>
+  </td>
+  <td class="actions">
+	 <ul class="vlist">
+		<loop key="actions"><include path="_action_small.xml"/></loop>
+	 </ul>
+  </td>
+ </tr>
+</table>
+</div>
+</div>
+</with>
+</chunk>
+</page>

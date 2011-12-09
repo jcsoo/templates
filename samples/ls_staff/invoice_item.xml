@@ -1,0 +1,27 @@
+<page parent="_site.xml">
+<chunk id="main">
+<with key="_record">
+  <form method="POST">
+	 <table class="detail">
+		<if key="id">
+		  <tr><th>ID</th><td>{id}</td></tr>
+		  <tr><th>Date</th><td>{created}</td></tr>
+		  <tr><th>Type</th><td>{type}</td></tr>
+		  <tr><th>Status</th><td>{status}</td></tr>
+		</if>
+		<tr><th>Label</th><td><input type="text" name="label" size="50"/></td></tr>
+		<tr><th>Amount</th><td><input type="text" name="amount" size="15"/></td></tr>
+	 </table>
+
+	 <div class="actions">
+		<if key="id">
+		  <input type="submit" name="_update" value="Update"/>
+		  <input type="submit" name="_delete" value="Delete"/>
+		  <else/>
+		  <input type="submit" name="_create" value="Create"/>
+		</if>
+	 </div>	 	 
+  </form>
+</with>
+</chunk>
+</page>

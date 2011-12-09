@@ -1,0 +1,22 @@
+<div id="lpanel">
+  <ul class="main">
+	 <li><a href="/projects/">Action</a></li>
+	 |
+	 <li><a href="/salons/">Talk</a></li>
+	 |
+	 <li><a href="/members/">People</a></li>
+  </ul>
+  <form id="search"><input type="text" name="search" placeholder="search"/></form>
+  <ul class="utility">
+	 <if key="_session">
+		<li><a href="/members/{_session.id}/">My Profile</a></li>
+		|
+		<li><a href="/logout/">Log Out</a></li>
+		<else/>
+		<li><a href="/login/">Sign In</a></li>
+		|
+		<li><a href="/signup/">Sign Up</a></li>
+	 </if>
+  </ul>
+  
+</div>

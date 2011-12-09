@@ -1,0 +1,20 @@
+<page><doctype>HTML</doctype>
+<html>
+<head>
+ <chunk id="title"><title>Learning Streams Staff | {_title}</title></chunk>
+ <chunk id="head">
+ <get path="_head.html"/>
+ </chunk>
+ <chunk id="head-page"/>
+</head>
+<body id="loginpage">  
+  <form id="login" method="POST">
+	 <h1>Learning Streams Staff Interface</h1>
+	 <if key="_error"><div class="error">{_error}</div></if>
+	 <input type="text" name="email" placeholder="email" size="25"/>
+	 <input type="password" name="password" placeholder="password" size="25"/>
+	 <input type="submit" name="_login" value="Log In"/>		
+  </form>
+</body>
+</html>
+</page>

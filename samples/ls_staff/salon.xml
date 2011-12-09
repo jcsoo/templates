@@ -1,0 +1,10 @@
+<page parent="_site.xml">
+<chunk id="main">
+  <switch key="_view">
+	 <case value="comments"><include path="salon_comments.xml"/></case>
+	 <case value="participants"><include path="salon_participants.xml"/></case>
+	 <case value="media"><include path="salon_media.xml"/></case>
+	 <case><include path="salon_details.xml"/></case>
+  </switch>
+</chunk>
+</page>

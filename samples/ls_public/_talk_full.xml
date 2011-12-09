@@ -1,0 +1,7 @@
+<li class="talk">
+  <a href="/talk/{id}/"><img src="{photo.t210}"/></a>
+  <b><a href="/talk/{id}/">{title}</a></b><br/>
+  <loop key="collaborators"><separator>, </separator><with source="_people" key="_"><a href="/people/{id}/">{first_name} {last_name}</a></with></loop>
+  <div class="description">{description|p}</div>
+  <div style="clear: both"/>
+</li>

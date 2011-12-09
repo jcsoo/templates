@@ -1,0 +1,57 @@
+<page parent="_site.xml">
+<chunk id="main">
+<with key="_record">
+<div id="main">
+<div id="person">
+<table class="two-col">
+<tr>
+ <td class="c1">
+	<if key="photo"><img src="{photo.t210}"/></if>
+	<h2>{first_name} {last_name}</h2>
+	<div class="info">
+	  <if key="title"><div>Title: {title}</div></if>
+	  <if key="organization"><div>Organization: {organization}</div></if>
+	  <if key="web_site"><div>Website: {web_site}</div></if>
+	  <div class="about">
+		 <h4>ABOUT {first_name} {last_name}:</h4>
+		 <div class="description">{biography|trim:350:...|p}
+			<div><a class="more" href="#">Show More</a></div>
+		 </div>		 
+		 <div class="description-full hidden">{biography|p}
+			<div><a class="less" href="#">Show Less</a></div>
+		 </div>
+	  </div>
+	</div>
+	<include path="_follow.xml"/>
+ </td>
+ <td class="c2">
+	<if key="updates">
+	<div class="stream">
+	  <h4>The Stream:</h4>	  
+	  <ul>
+		 <loop key="updates" sort="posted desc">
+			<li>{posted|d:%b %d}: {body|br}</li>
+		 </loop>
+	  </ul>
+	</div>
+	</if>
+	<div class="tabbox">
+	  <ul class="tabs">
+		 <li class="t {_view_talk} {_view_default}"><a href="?v=talk">TALK</a></li>
+		 <li class="a {_view_action}"><a href="?v=action">ACTION</a></li>
+
+	  </ul>
+	  <div class="separator"/>
+	  <switch key="_view">
+		 <case value="action"><include path="person_action.xml"/></case>
+		 <case><include path="person_talk.xml"/></case>
+	  </switch>
+	</div>
+ </td>
+</tr>
+</table>
+</div>
+</div>
+</with>
+</chunk>
+</page>

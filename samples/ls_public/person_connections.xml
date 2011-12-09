@@ -1,0 +1,54 @@
+<page parent="_site.xml">
+<chunk id="main">
+<div id="main">
+<div id="search-page" class="connections">
+  <table class="results">
+  <tr>
+  <td  class="col">
+  <dl>
+	 <dt class="People">Leaders</dt>
+	 <dd>
+		<ul>
+		  <with key="_record"><include path="_person_med.xml"/></with>
+		  <div style="clear: both"/>
+		</ul>
+	 </dd>
+  </dl>
+ </td>
+<td class="space"/>
+<td  class="col">
+  <dl>
+	 <dt class="Talk">Conversations</dt>
+	 <dd>
+		<ul>
+		  <ifnot key="_record._talks">
+			 <li><i>No Matching Conversations</i></li>
+		  </ifnot>
+		  <loop key="_record._talks"><if key="id"><include path="_talk_med.xml"/><else/><li class="arrow"/></if></loop>
+		  <div style="clear: both"/>
+		</ul>
+	 </dd>
+  </dl>
+</td>
+<td class="space"/>
+<td class="col">
+  <dl>
+	 <dt class="Action">Funds</dt>
+	 <dd>
+		<ul>
+		  <ifnot key="_record._actions">
+			 <li><i>No Matching Funds</i></li>
+		  </ifnot>
+		<loop key="_record._actions"><if key="id"><include path="_action_med.xml"/><else/><li/></if></loop>
+		<div style="clear: both"/>
+		</ul>
+	 </dd>
+  </dl>
+</td>
+</tr>
+</table>
+  <div style="clear: both"/>
+</div>
+</div>
+</chunk>
+</page>

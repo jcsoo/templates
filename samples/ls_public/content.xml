@@ -1,0 +1,10 @@
+<page parent="_site.xml">
+<chunk id="main">
+<div id="content">
+  <h1><text id="title">{title}</text></h1>
+  <div class="body">
+	 <text id="body">[page body]</text>
+  </div>
+</div>
+</chunk>
+</page>

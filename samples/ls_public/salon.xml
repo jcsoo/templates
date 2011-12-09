@@ -1,0 +1,25 @@
+<page parent="_site.xml">
+<chunk id="area"><include path="_area_talk.xml"/></chunk>
+<chunk id="main">
+<div id="salon" class="panel">
+  <with key="_record">
+	 <div class="profile">
+		<div class="details">
+		  <div class="inset">
+			 <img src="{_data.photo.v480w}"/>
+			 <p>{title}</p>
+		  </div>
+		  <div class="participants">
+			 <b>Participants:</b>
+			 <ul>
+				<loop key="_participants"><li><a href="/members/{_member.id}/">{_member.first_name} {_member.last_name}</a></li></loop>
+			 </ul>				 
+		  </div>
+		  <div class="description"><b>About this talk:</b>{_data.full_description|m}</div>
+		</div>
+	 </div>
+	 <include path="_comments.xml"/>
+  </with>
+</div>
+</chunk>
+</page>

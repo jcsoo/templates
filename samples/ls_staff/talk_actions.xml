@@ -1,0 +1,13 @@
+<with key="_record">
+  <table class="browse">
+	 <tr><th>Actions</th></tr>
+	 <ifnot key="actions">
+		<tr><td>No Actions</td></tr>
+	 </ifnot>
+	 <loop key="actions">
+		<tr href="/actions/action;id={id}/">
+		  <td>{title}</td>
+		</tr>
+	 </loop>	 
+  </table>
+</with>

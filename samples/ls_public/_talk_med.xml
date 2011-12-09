@@ -1,0 +1,15 @@
+		  <li class="talk">
+			 <a href="/talk/{id}/"><if key="photo"><img src="{photo.t210}"/><else/><img src="/static/img/GTalk_210.png"/></if></a>
+			 <div class="info">
+				<div class="title"><a href="/talk/{id}/">{title}</a></div>
+				<div class="people"><loop key="collaborators"><separator>, </separator><with source="_people" key="_"><a class="person" href="/people/{id}/">{first_name} {last_name}</a></with></loop></div>
+				<if key="slot">				 
+				  <div class="date"><with source="_slots" key="slot">{start|d:%b %e, %Y}</with></div>
+				</if>
+
+				<if key="description">
+				  <div class="description">{description|trim:140:...}</div>
+				</if>
+			 </div>
+			 <a class="connections" href="/talk/{id}/?v=connections"><img src="/static/img/Connections-Blue.png"/></a>
+		  </li>

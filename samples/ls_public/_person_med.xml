@@ -1,0 +1,10 @@
+		  <li class="person">
+			 <a href="/people/{id}/"><if key="photo.t210"><img src="{photo.t210}"/><else/><img src="/static/img/GPeople_210.png"/></if></a>
+			 <div class="info">
+				<a href="/people/{id}/"><div class="name">{first_name} {last_name}</div><if key="title"><div class="title">{title}</div></if><if key="organization"><div class="organization">{organization}</div></if></a>
+			 </div>
+			 <if key="biography">
+				<div class="bio">{biography|trim:140:...}</div>
+			 </if>				  
+			 <a class="connections" href="/people/{id}/?v=connections"><img src="/static/img/Connections-Green.png"/></a>
+		  </li>

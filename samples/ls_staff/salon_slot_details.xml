@@ -1,0 +1,26 @@
+<form method="POST" enctype="multipart/form-data">
+  <with key="_record">
+	 <table class="detail">
+		<if key="id">
+		  <tr>
+			 <th>ID</th><td>{id}</td>
+		  </tr>
+		</if>
+		<tr><th>Type</th><td><input type="text" name="type" size="20"/></td></tr>
+		<tr><th>Status</th><td><input type="text" name="status" size="20"/></td></tr>
+		<tr><th>Start</th><td><input type="text" name="slot_start" size="20"/> (yyyy-mm-dd hh:mm)</td></tr>
+		<tr><th>End</th><td><input type="text" name="slot_end" size="20"/> (yyyy-mm-dd hh:mm)</td></tr>
+		<tr><th>Notes</th><td><textarea name="notes" rows="4" cols="80"/></td></tr>
+		<tr><th>Salon</th><td><select name="salon"><option/><loop key="_salons"><option value="{id}">{id}: {title}</option></loop></select> <if key="salon"><a href="/salons/salon;id={salon}/">View Salon</a></if></td></tr>
+	 </table>
+
+	 <div class="actions">
+		<if key="id">
+		  <input type="submit" name="_update" value="Update"/>
+		  <input type="submit" name="_delete" value="Delete"/>
+		  <else/>
+		  <input type="submit" name="_create" value="Create"/>
+		</if>
+	 </div>
+  </with>
+</form>

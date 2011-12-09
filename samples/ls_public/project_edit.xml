@@ -1,0 +1,21 @@
+<with key="_record">
+  <form method="POST" enctype="multipart/form-data">
+	 <table class="detail">	
+		<tr><th>Type</th><td>{type}</td></tr>
+		<tr><th>Status</th><td>{status}</td></tr>
+		<tr><th>Deadline</th><td>{deadline}</td></tr>
+		<tr><th>Photo</th><td><input type="file" name="_upload.photo"/></td></tr>
+		<tr><th>Tags</th><td><input type="text" size="80" name="_data.tags" value="{_data.tags|join:, }"/></td></tr>
+		<tr><th>Short Description</th><td><input type="text" name="description" size="80"/></td></tr>
+		<tr><th>Full Description</th><td><textarea name="_data.full_description" rows="8" cols="100"/></td></tr>
+	 </table>
+	 <div class="actions">
+		<input type="submit" name="_update" value="Update"/>
+		<switch key="status">
+		  <case value="Created">
+			 <input type="submit" name="_authorize" value="Authorize"/>
+		  </case>
+		</switch>
+	 </div>
+  </form>
+</with>

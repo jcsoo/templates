@@ -1,0 +1,5 @@
+<div test="abc">
+   TEXT
+   <p><i>Italics</i> Here &#187;</p>
+   TAIL
+</div>

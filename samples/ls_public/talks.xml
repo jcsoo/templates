@@ -1,0 +1,23 @@
+<page parent="_site.xml">
+<chunk id="sortby">
+ <div id="sortby" style="left: 340px;">
+	<a class="{_sortby_sort_date}" href="?s=sort_date">Recent</a>
+	<a class="{_sortby_followed}" href="?s=followed">Most Followed</a>
+ </div>
+</chunk>
+<chunk id="main">
+<div id="main">
+<div id="talks">
+
+<div class="section">
+  <table class="results">
+	 <loop key="_rows"><include path="talk_row.xml"/></loop>
+  </table>
+  <if key="_next"><div class="page-nav"><a href="{_next}" class="next Talk">See More Conversations &#187;</a></div></if>
+</div>
+
+
+</div>
+</div>
+</chunk>
+</page>

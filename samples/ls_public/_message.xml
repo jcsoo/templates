@@ -1,0 +1,7 @@
+<if key="_session">
+  <ifnot key="_session.st" equals="Verified">
+	 <div id="message">
+		Your account has not yet been verified. Please <a href="/verify/">verify</a> your email address.
+	 </div>
+  </ifnot>
+</if>

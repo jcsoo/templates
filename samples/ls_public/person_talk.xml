@@ -1,0 +1,32 @@
+<div>
+  <ul class="filter">
+	 <li class="{_filter_host} {_filter_default}"><a href="?v=talk&amp;f=host">HOST</a></li>
+	 <li class="{_filter_collaborate}"><a href="?v=talk&amp;f=collaborate">COLLABORATE</a></li>
+	 <div style="clear: both"/>
+  </ul>
+  <ul class="sort">
+	 <li>sort by:</li>
+	 <li class="{_sort_date} {_sort_default}"><a href="">date</a></li>
+	 <li class="{_sort_title}"><a href="#">title</a></li>
+	 <div style="clear: both"/>
+  </ul>
+
+  <table class="zebra">
+	 <thead>
+		<tr>
+		  <th >Title</th>
+		  <th width="120">People</th>
+		  <th width="180">Related Action</th>
+		</tr>
+	 </thead>
+	 <tbody>
+		<loop key="_talks">
+		  <tr class="odd">
+			 <td><a class="title" href="/talk/{id}/">{title}</a>{description_short}</td>
+			 <td><loop key="collaborators"><with source="_people" key="_"><a class="person collaborator" href="/people/{id}/">{first_name} {last_name}</a></with></loop></td>
+			 <td>None</td>
+		  </tr>
+		</loop>
+	 </tbody>
+  </table>
+</div>

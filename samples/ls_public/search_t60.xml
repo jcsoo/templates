@@ -1,0 +1,97 @@
+<page parent="_site.xml">
+<chunk id="main">
+<div id="main">
+<div id="search-page">
+  <if key="q">
+	 <h1>Search Results for <i>{q|h}</i></h1>
+  </if>
+  <!--
+  <form>
+	 <input type="text" name="q" size="40"/>
+
+	 <select name="filter">
+		<option value="all">All of Learning Streams</option>
+		<option value="members">Members</option>
+		<option value="projects">Projects</option>
+		<option value="salons">Salons</option>
+	 </select>
+	 <input type="submit" name="_search" value="Search"/>
+  </form>
+	 -->
+  <table class="results">
+  <tr>
+  <td  class="col">
+  <dl>
+	 <dt class="People">People</dt>
+	 <dd>
+		<ul>
+		  <ifnot key="_results.people">
+			 <li><i>No Matching People</i></li>
+		  </ifnot>
+		<loop key="_results.people" sort="last_name, first_name">
+		  <li class="person">
+			 <if key="photo"><a href="/people/{id}/"><img src="{photo.t210}"/></a></if>
+			 <div class="info">
+				<a href="/people/{id}/"><div class="name">{first_name} {last_name}</div><if key="title"><div class="title">{title}</div></if><if key="organization"><div class="organization">{organization}</div></if></a>
+			 </div>
+			 <div style="clear: both"/>
+		  </li>
+		</loop>
+		<div style="clear: both"/>
+		</ul>
+	 </dd>
+  </dl>
+ </td>
+<td class="space"/>
+<td  class="col">
+  <dl>
+	 <dt class="Talk">Talk</dt>
+	 <dd>
+		<ul>
+		  <ifnot key="_results.talks">
+			 <li><i>No Matching Talk</i></li>
+		  </ifnot>
+		<loop key="_results.talks" sort="title">
+		  <li class="talk">
+			 <if key="photo"><a href="/talk/{id}/"><img src="{photo.t60}"/></a></if>
+			 <div class="info">
+				<div class="title"><a href="/talk/{id}/">{title}</a></div><div class="host">Host: <with source="_people" key="host"><a href="/people/{id}/">{first_name} {last_name}</a></with></div>
+			 </div>
+			 <div style="clear: both"/>
+		  </li>
+		</loop>
+
+		</ul>
+	 </dd>
+  </dl>
+</td>
+<td class="space"/>
+<td class="col">
+  <dl>
+	 <dt class="Action">Action</dt>
+	 <dd>
+		<ul>
+		  <ifnot key="_results.actions">
+			 <li><i>No Matching Actions</i></li>
+		  </ifnot>
+		<loop key="_results.actions" sort="title">
+		  <li class="action">
+			 <if key="photo"><a href="/action/{id}/"><img src="{photo.t60}"/></a></if>
+			 <div class="info">
+				<div class="title"><a href="/action/{id}/">{title}</a></div><div class="host">Host: <with source="_people" key="host"><a href="/people/{id}/">{first_name} {last_name}</a></with></div>
+			 </div>
+			 <div style="clear: both"/>
+		  </li>
+		</loop>
+		<div style="clear: both"/>
+		</ul>
+	 </dd>
+  </dl>
+</td>
+</tr>
+</table>
+  <div style="clear: both"/>
+</div>
+</div>
+</chunk>
+</page>

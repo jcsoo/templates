@@ -1,0 +1,39 @@
+<page parent="_site.xml">
+<chunk id="area"><include path="_area_action.xml"/></chunk>
+<chunk id="main">
+<div id="project" class="panel">
+  <with key="_record">
+	 <div class="profile">
+		<div class="details">
+		  <div class="inset">
+			 <img src="{_data.photo.t256}"/>
+			 <p>{title}</p>
+		  </div>
+		  <div class="sponsor"><b>Sponsor:</b><ul><li><a href="/members/{_owner.id}/">{_owner.first_name} {_owner.last_name}</a></li></ul></div>			
+		  <div class="description"><b>About this project:</b>{_data.full_description|m}</div>			
+		</div>
+		<if key="_videos">
+		  <div class="videos">
+			 <h2>Videos</h2>
+			 <dl>
+				<loop key="_videos">
+				  <dd><a href="/salons/{id}/"><img src="{_data.photo.v128w}"/></a></dd>
+				  <dt><a href="/salons/{id}/">{title}</a></dt>
+				</loop>
+			 </dl>
+		  </div>
+		</if>
+	 </div>
+	 <include path="_pledge.xml"/>
+	 <include path="_comments.xml"/>
+  </with>
+  <!--
+  <switch key="_view">
+	 <case value="edit"><include path="project_edit.xml"/></case>
+	 <case value="pledges"><include path="project_pledges.xml"/></case>
+	 <case><include path="project_profile.xml"/></case>
+  </switch>
+  -->
+</div>
+</chunk>
+</page>

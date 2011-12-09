@@ -1,0 +1,17 @@
+<page parent="_twocol.xml">
+<chunk id="c2">
+	 <div>
+		<h1><text id="header">Sponsor This Fund</text></h1>
+		<h2>{_record.title}</h2>
+		<form method="POST">
+		<p><text id="message">[You are offering to sponsor this fund.]</text></p>
+		<br/><br/>
+		<div class="actions" style="text-align: left;">
+		  <input class="FundBG" type="submit" name="_sponsor_confirm" value="Sponsor Fund"/>
+		  <input class="FundBG" type="submit" name="_return" value="Return to Fund"/>
+		</div>
+		</form>
+
+	 </div>
+</chunk>
+</page>

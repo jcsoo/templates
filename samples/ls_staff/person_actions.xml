@@ -1,0 +1,35 @@
+<with key="_record">
+  <table class="browse">
+	 <tr><th>Actions Hosted</th></tr>
+	 <ifnot key="_actions_hosted">
+		<tr><td style="padding-left: 8px">No Actions Hosted</td></tr>
+	 </ifnot>
+	 <loop key="_actions_hosted">
+		<tr href="/actions/action;id={id}/">
+		  <td style="padding-left: 8px">{title}</td>
+		</tr>
+	 </loop>
+  </table>
+  <table class="browse" style="border-top: 0">
+	 <tr><th>Actions Followed</th></tr>
+	 <ifnot key="_actions_followed">
+		<tr><td style="padding-left: 8px">No Actions Followed</td></tr>
+	 </ifnot>
+	 <loop key="_actions_followed">
+		<tr href="/actions/action;id={id}/">
+		  <td style="padding-left: 8px">{title}</td>
+		</tr>
+	 </loop>
+  </table>
+  <table class="browse" style="border-top: 0">
+	 <tr><th>Actions Commented</th></tr>
+	 <ifnot key="_actions_commented">
+		<tr><td style="padding-left: 8px">No Actions Commented</td></tr>
+	 </ifnot>
+	 <loop key="_actions_commented">
+		<tr href="/actions/action;id={id}/">
+		  <td style="padding-left: 8px">{title}</td>
+		</tr>
+	 </loop>	 
+  </table>
+</with>

@@ -1,0 +1,47 @@
+<page parent="_twocol.xml">
+<chunk id="c1">
+  <div id="pledge-details">
+	 <b>PAYMENT DETAILS</b>
+	 <p>Your credit card will be billed for the amount of ${amount} only if this Fund meets its goal of {_action._project.goal|money:$%.0f} by {_action._project.deadline|d:%A, %B %-d, %Y}.</p>
+	 <b>If this fund does not meet its goal, your credit card will not be billed.</b>
+  </div>
+</chunk>
+<chunk id="c2">
+	 <div id="pledge-confirm">
+		<h3>You are making a ${amount} pledge to the fund</h3>
+		<h2 class="action"><a href="/actions/{_action.id}/">{_action.title}</a></h2>
+		<form method="POST">
+		  <input type="hidden" name="amount"/>
+		  <!--<p><text id="message">[You are pledging ${amount} for the fund "{_action.title}". This is a sample payment form - please do not enter real credit card information here.]</text></p>-->
+		  <br/>
+		  <dl id="payment-info">
+			 <dt>Cardholder Information</dt>
+			 <dd><input type="text" name="name" placeholder="name" size="50"/></dd>
+			 <dd><input type="text" name="email" placeholder="email address" size="50"/></dd>
+			 <dt>Billing Information</dt>
+			 <dd><input type="text" name="address" placeholder="billing address" size="50"/></dd>
+			 <dd><input type="text" name="city" placeholder="city" size="20"/> <include path="_state.xml"/> <input type="text" name="zip" placeholder="zip" size="8"/></dd>
+			 <dd><input type="text" name="phone" placeholder="billing phone number" size="50"/></dd>
+			 <dt>Payment Information</dt>
+			 <dd><i>Gateway: {_action._vendor.gateway}</i></dd>
+			 <dd>
+				<span class="cc"><input type="radio" name="card_type" value="VISA"/> <img src="/static/img/visa.png"/></span>
+				<span class="cc"><input type="radio" name="card_type" value="MAST"/> <img src="/static/img/mastercard.png"/></span>
+				<span class="cc"> <input type="radio" name="card_type" value="AMER"/><img src="/static/img/amex.png"/></span>
+			 </dd>
+
+			 <dd><input type="text" name="card_number" placeholder="credit card number" size="50"/></dd>
+			 <dd>
+				<select name="card_month"><option value="">MM</option><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option></select>
+				<select name="card_year"><option value="">YYYY</option><option>2011</option><option>2012</option><option>2013</option><option>2014</option><option>2015</option><option>2016</option><option>2017</option><option>2018</option><option>2019</option></select> <input type="text" name="card_cvv2" placeholder="cvv2" size="4"/>
+			 </dd>
+		  </dl>
+		<div class="actions" style="text-align: right; width: 365px;">
+		  <get path="_geotrust.html"/><br/><br/>
+		  <input type="submit" class="FundBG" name="_pledge" value="Submit Payment"/>
+		</div>
+		</form>
+
+	 </div>
+</chunk>
+</page>

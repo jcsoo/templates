@@ -1,0 +1,26 @@
+<page parent="_twocol.xml">
+<chunk id="c1">
+	 <div>
+		<h1><text id="header">[header]</text></h1>
+		<h2><text id="instructions">[instructions]</text></h2>
+	 </div>
+</chunk>
+<chunk id="c2">
+<div id="login">
+  <dl>
+	 <dd>
+		<form method="POST">
+		  <if key="_error"><div class="error">{_error}</div></if>
+		  <div><input type="text" name="invite_email" size="25" placeholder="email address"/></div>
+		  <div><input type="text" name="invite_first_name" size="25" placeholder="first name"/></div>
+		  <div><input type="text" name="invite_last_name" size="25" placeholder="last name"/></div>
+		  <div><textarea name="invite_message" rows="6" cols="25" placeholder="message (optional)"/></div>
+		  <div><input type="submit" name="_send_invite" value="SEND INVITE"/></div>
+		</form>
+	 </dd>
+  </dl>
+  <div style="clear:both"/>
+
+</div>
+</chunk>
+</page>

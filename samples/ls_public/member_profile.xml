@@ -1,0 +1,70 @@
+<with key="_record">
+<div class="profile">
+  <div class="details">
+	 <div class="inset">
+		<if key="_data.photo.t128"><img class="thumb128" src="{_data.photo.t128}"/></if>
+		<p>{first_name} {last_name}</p>
+	 </div>
+	 <if key="_data.bio">
+		<div class="full-description">{_data.bio|m}</div>
+	 </if>
+  </div>
+  <if key="_salons_participated">
+  <div class="salons">
+	 <h2>Talks</h2>
+	 <loop key="_salons_participated">
+		<div class="salon">
+		  <a href="/salons/{id}/"><include path="_salon_thumb.xml"/></a>
+		  <a href="/salons/{id}/"><p>{title}</p></a>
+		</div>
+	 </loop>
+  </div>
+  </if>
+  <if key="_projects_owned">
+  <div class="projects">
+	 <h2>Actions</h2>
+	 <loop key="_projects_owned">
+		<div class="project">
+		  <a href="/projects/{id}/"><img src="{_data.photo.t128}"/></a>
+		  <a href="/projects/{id}/"><p>{title}</p></a>
+		</div>
+	 </loop>		  
+  </div>
+  </if>
+  <!--
+	 <if key="_projects_followed">
+		<h2>Projects Followed</h2>
+		<table class="browse nohead">
+		<loop key="_projects_followed">
+		  <tr href="/projects/{id}/">
+			 <td>{title}</td>
+		  </tr>
+		</loop>
+	 </table>
+	 </if>
+	 
+	 <if key="_salons_owned">
+		<h2>Salons Owned</h2>
+		<table class="browse nohead">
+		<loop key="_salons_owned">
+		  <tr href="/salons/{id}/">
+			 <td>{title}</td>
+		  </tr>
+		</loop>
+	 </table>
+	 </if>
+
+	 <if key="_salons_followed">
+		<h2>Salons Followed</h2>
+		<table class="browse nohead">
+		<loop key="_salons_followed">
+		  <tr href="/salons/{id}/">
+			 <td>{title}</td>
+		  </tr>
+		</loop>
+	 </table>
+	 </if>
+	 -->
+  <div style="clear: both"/>
+</div>
+</with>

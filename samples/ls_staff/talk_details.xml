@@ -1,0 +1,58 @@
+<form method="POST" enctype="multipart/form-data">
+  <with key="_record">
+	 <table class="detail">
+		<if key="id">
+		  <tr>
+			 <th>ID</th><td>{id}</td>
+		  </tr>
+		</if>
+		<tr>
+		  <th>Sort Date/Time</th>
+		  <td><input type="text" name="sort_date" size="25"/></td>
+		</tr>
+		<tr>
+		  <th>Slot</th>
+		  <td><select name="slot"><option/><loop key="_slots"><option value="{id}">{start|dt:%A, %B %-d} in {city}, {state} ({start|dt:%-I:%M %p} to {end|dt:%-I:%M %p}) - {status}</option></loop></select></td>
+		</tr>
+		<!--
+		<if key="_slot">
+		<tr>
+		  <th>Slot</th>
+		  <td><a href="/slots/slot;id={slot.id}/"><with key="_slot">{start|dt:%A, %B %-d} in {city}, {state} ({start|dt:%-I:%M %p} to {end|dt:%-I:%M %p})</with></a></td>
+		</tr>
+		</if>
+		-->
+		<tr>
+		  <th>Status</th>
+		  <td><select name="status"><option/><option>Created</option><option>Waiting</option><option>Scheduled</option><option>Filmed</option><option>Aired</option></select></td>
+		</tr>
+		  <tr>
+			 <th>Collaborator 1</th>
+			 <td><select name="collaborator_1"><option/><loop key="_people" sort="last_name, first_name"><option value="{id}">{last_name}, {first_name}</option></loop></select></td>
+		  </tr>
+		  <tr>
+			 <th>Collaborator 2</th>
+			 <td><select name="collaborator_2"><option/><loop key="_people" sort="last_name, first_name"><option value="{id}">{last_name}, {first_name}</option></loop></select></td>
+		  </tr>
+		  <tr>
+			 <th>Collaborator 3</th>
+			 <td><select name="collaborator_3"><option/><loop key="_people" sort="last_name, first_name"><option value="{id}">{last_name}, {first_name}</option></loop></select></td>
+		  </tr>
+		<tr><th>Title</th><td><input type="text" name="title" size="80"/></td></tr>
+		<tr><th>Description</th><td><textarea name="description" rows="12" cols="80"/></td></tr>
+
+		<tr><th>Video HTML</th><td><textarea name="video" rows="6" cols="80"/></td></tr>
+
+		<tr><th>Tags</th><td><input type="text" size="80" name="tags"/></td></tr>
+	 </table>
+
+	 <div class="actions">
+		<if key="id">
+		  <input type="submit" name="_update" value="Update"/>
+		  <input type="submit" name="_delete" value="Delete"/>
+		  <else/>
+		  <input type="submit" name="_create" value="Create"/>
+		</if>
+	 </div>
+  </with>
+</form>

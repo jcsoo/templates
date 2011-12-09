@@ -1,0 +1,7 @@
+<div>
+  FILE TO INCLUDE 1
+  <include path="to_include_2.xml"/>
+
+  <include path="../t1.xml"/>
+
+</div>

@@ -1,0 +1,5 @@
+<page parent="_site.xml">
+<chunk id="main">
+  <include path="salon_slot_details.xml"/>
+</chunk>
+</page>

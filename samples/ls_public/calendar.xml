@@ -1,0 +1,33 @@
+<page parent="_twocol.xml">
+<chunk id="c1">
+	 <div>
+		<h1><text id="header">[header]</text></h1>
+		<h2><text id="instructions">[instructions]</text></h2>
+	 </div>
+</chunk>
+<chunk id="c2">
+	 <div class="instructions">
+		<dl class="calendar">
+		<loop key="dates">
+			 <dt>{date|dt:%A, %B %-d} in {location}</dt>
+			 <dd>
+				<table>
+				  <tr>
+					 <th width="120" class="r">Time</th>
+					 <th width="350">Conversation</th>
+					 <th>Participants</th>
+				  </tr>
+				  <loop key="slots">
+					 <tr>
+						<td class="r">{start|dt:%-I:%M %p} - {end|dt:%-I:%M %p}</td>
+						<td><if key="_talk">{_talk.title}<else/>[ <a href="/talk/create/?v=edit&amp;slot={id}">Suggest a Conversation</a> ]</if></td>
+						<td><if key="_talk"><loop key="_talk.collaborators"><separator>, </separator><with source="_people" key="_"><a href="/people/{id}/">{first_name} {last_name}</a></with></loop> <if key="_talk._can_participate">[ <a href="/talk/{_talk.id}/?v=participate">Participate</a> ] </if></if></td>
+					 </tr>
+				  </loop>
+				</table>
+			 </dd>
+		</loop>
+		</dl>
+	 </div>
+</chunk>
+</page>

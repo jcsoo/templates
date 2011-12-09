@@ -1,0 +1,16 @@
+  <form method="POST">
+  <with key="_record">
+	 <table class="detail">
+		<tr>
+		  <th>Preapproval</th>
+		  <td><pre>{_preapproval|pp}</pre></td>
+		</tr>
+		<if key="_payment">
+		<tr style="border-top: 1px solid #f0f0f0;">
+		  <th>Payment</th>
+		  <td><pre>{_payment|pp}</pre></td>
+		</tr>
+		</if>
+	 </table>
+  </with>
+  </form>

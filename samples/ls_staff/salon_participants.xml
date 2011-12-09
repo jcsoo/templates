@@ -1,0 +1,25 @@
+<div>
+<table class="browse">
+  <tr>
+	 <th>ID</th>
+	 <th>Type</th>
+	 <th>Email</th>
+	 <th>Last Name</th>
+	 <th>First Name</th>
+  </tr>
+  <loop key="_participants">
+	 <tr href="participant;id={id}/">
+		<td>{id}</td>
+		<td>{type}</td>
+		<td>{_member.email}</td>
+		<td>{_member.last_name}</td>
+		<td>{_member.first_name}</td>
+	 </tr>
+  </loop>
+</table>
+<form method="POST">
+  <div class="actions">
+	 <input type="submit" name="_invite" value="Add Participant"/>
+  </div>
+</form>
+</div>

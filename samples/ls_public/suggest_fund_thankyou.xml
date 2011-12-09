@@ -1,0 +1,14 @@
+<page parent="_twocol.xml">
+<chunk id="c2">
+	 <div class="instructions">
+		<h2><text id="header">Thank You</text></h2>
+		<p><text id="message">[Thank you for suggesting a new Fund. Your fund will be reviewed by Learning Streams and the talk participants and you will be notified when it has been approved.]</text></p>
+		<br/><br/>
+		<form method="POST">
+		  <div class="actions" style="text-align: left">
+			 <input class="FundBG" type="submit" name="_return" value="Continue"/>
+		  </div>
+		</form>
+	 </div>
+</chunk>
+</page>

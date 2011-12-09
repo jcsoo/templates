@@ -1,0 +1,66 @@
+<form>
+  <input type="text" name="test"/>
+  <input type="text" name="myname" key="test"/>
+  <input type="text" name="test" value="my {test}"/>
+
+  <textarea name="test"/>
+  <textarea key="test" name="myname"/>
+  <textarea name="test">Hello {test}</textarea>
+
+  <input type="checkbox" name="test" value="ABC"/> checked
+  <input type="checkbox" name="test" value="xABC"/> not checked
+  <input type="checkbox" name="myname" key="test" value="ABC"/> checked
+  <input type="checkbox" name="dict" value="a"/> checked
+  <input type="checkbox" name="dict" value="d"/>  not checked
+  <input type="checkbox" name="strings" value="abc"/>  checked
+  <input type="checkbox" name="strings" value="cba"/>  not checked
+  <input type="checkbox" name="true" value="yep"/>  checked
+  <input type="checkbox" name="false" value="yep"/>  not checked
+  <input type="checkbox" name="one" value="yep"/>  not checked
+  <input type="checkbox" name="zero" value="yep"/>  not checked
+  <input type="checkbox" name="true"/>  checked
+  <input type="checkbox" name="false"/>  not checked
+
+  <select name="test">
+	 <option></option>
+	 <option>TEST</option>
+	 <option>ABC</option>
+	 <option value="ABC">ABC</option>
+	 <option value="ABC">XYZ</option>
+  </select>
+
+  <select name="myname" key="test">
+	 <option></option>
+	 <option>TEST</option>
+	 <option>ABC</option>
+  </select>
+
+
+  <select name="dict">
+	 <option></option>
+	 <option value="a">SELECTED</option>
+	 <option value="d">NOT SELECTED</option>
+  </select>
+
+  <select name="strings">
+	 <option></option>
+	 <option value="abc">SELECTED</option>
+	 <option value="cba">NOT SELECTED</option>
+  </select>
+
+  <select name="items">
+	 <option></option>
+	 <option value="1">SELECTED</option>
+	 <option value="15">NOT SELECTED</option>
+  </select>
+
+  <select name="myname">
+	 <option></option>
+	 <option key="true" value="a">SELECTED</option>
+	 <option key="false" value="b">NOT SELECTED</option>
+  </select>
+
+
+
+
+</form>

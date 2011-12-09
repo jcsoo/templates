@@ -1,0 +1,24 @@
+<page parent="_site.xml">
+<chunk id="sortby">
+ <div id="sortby" style="left: 220px;">
+	<a class="{_sortby_active}" href="?s=active">Most Active</a>
+	<a class="{_sortby_created}" href="?s=created">Most Recent</a>
+	<a class="{_sortby_last_name}" href="?s=last_name">Last Name</a>
+	<a class="{_sortby_first_name}" href="?s=first_name">First Name</a>
+	<a class="{_sortby_followed}" href="?s=followed">Most Followers</a>
+ </div>
+</chunk>
+<chunk id="main">
+<div id="main">
+<div id="people">
+<div class="section">
+  <table class="results">
+	 <loop key="_rows"><include path="people_row.xml"/></loop>
+  </table>
+  <if key="_next"><div class="page-nav"><a href="{_next}" class="next People">See More Leaders &#187;</a></div></if>
+</div>
+
+</div>
+</div>
+</chunk>
+</page>

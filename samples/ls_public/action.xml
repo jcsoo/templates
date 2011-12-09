@@ -1,0 +1,107 @@
+<page parent="_site.xml">
+<chunk id="main">
+<with key="_record">
+<if key="_is_leader"><include path="action_editor.xml"/></if>
+<div id="main">
+<div id="action" class="primary">
+  <table class="specific">
+	 <tr>
+  <td class="people">
+  <ul class="vlist"><if key="sponsor"><with source="_people" key="sponsor"><include path="_person_small.xml"/></with></if><div style="clear: both"/></ul>
+  </td>
+  <td class="talks" style="border-right: 2px solid #888" >
+	 <div class="talks">
+		<ul class="vlist">
+		  <with source="_talks" key="talk"><include path="_talk_small.xml"/></with>
+		</ul>
+	 </div>
+  </td>
+  <td class="detail" rowspan="2">
+	 <div class="detail">
+		<h1>{title}</h1>
+		<if key="organization"><with source="_organizations" key="organization"><div class="organization_name"><a href="/organization/{id}/">{organization}</a></div></with></if>
+		<!--<if key="photo"><img width="640" height="480" src="{photo.t640}"/><else/><img src="/static/img/GAction_360.png"/></if>-->
+		<if key="_project">
+		  <with key="_project">
+			 <!--<if key="recipient_token_id">-->
+				<div style="float: right; margin-left: 16px;">
+				  <include path="_pledge_box.xml"/>
+				</div>
+			 <!--</if>-->
+		  </with>
+		</if>
+
+
+		<if key="photo"><img width="320" height="240" src="{photo.t640}"/><else/><img src="/static/img/GAction_360.png"/></if>
+
+
+ 		<!--<include path="_stream.xml"/>-->
+		<form method="POST" style="margin-top: 12px">
+		  <div class="actions" style="height: 32px">
+			 <div style="padding: 2px; position: absolute; width: 245px; height: 36px; top: -6px; right: 100px; xborder: 1px solid #f0f0f0; ">
+				<get path="_share.html"/>
+			 </div>
+			 <if key="_is_follower">
+				<input class="FundBG" type="submit" name="_unfollow" value="stop following this fund"/>
+				<else/>
+				<if key="_session">
+				  <input class="FundBG" type="submit" name="_follow" value="follow this fund"/>
+				</if>
+			 </if>
+
+			 <if key="_is_sponsor">
+				<!--<input class="edit-button" type="submit" name="_edit" value="edit this fund"/>-->
+				<!--<input class="edit-button" type="submit" name="_photo" value="edit this photo"/>-->
+			 </if>
+		  </div>
+		</form>
+
+		<div class="description"><span class="Action">About this fund:</span> {description|p}</div>			 
+		<div style="clear: both"/>
+
+
+		<ol class="mtabs">
+		  <li class="{_view_comments} {_view_default}"><a href="?v=comments">Comments</a></li>
+		  <li class="{_view_followers}"><a href="?v=followers">Followers</a></li>
+		  <li class="{_view_supporters}"><a href="?v=supporters">Supporters</a></li>
+		  <div style="clear: both"/>
+		</ol>
+		<switch key="_view">
+		  <case value="supporters"><include path="_supporters.xml"/></case>
+		  <case value="followers"><include path="_followers.xml"/></case>
+		  <case><include path="_comments.xml"/></case>
+		</switch>
+		<div style="clear: both"/>
+	 </div>
+  </td>
+	 </tr>
+	 <tr>
+		<td colspan="2" class="pledge-box">
+		  <with key="_project">
+			 <if key="updates">
+				<div class="updates">
+				  <h4 style="text-align: left; color: white; background-color: #a0a0a0; font-size: 16px; padding: 4px;">Updates:</h4>	  
+				  <ifnot key="updates">
+					 <p>No updates for this action.</p>
+				  </ifnot>
+				  <ul>
+					 <loop key="updates" sort="posted desc">
+						<li>{posted|d:%b %d}: {body|br}</li>
+					 </loop>
+				  </ul>
+				  <if key="_is_sponsor">
+					 <div class="new-update">
+						<a class="link-updates" href="?v=updates">post new update</a>
+					 </div>
+				  </if>
+				</div>
+			 </if>
+		  </with>
+		</td>
+	 </tr>
+  </table>  
+</div>
+</div>
+</with>
+</chunk>
+</page>

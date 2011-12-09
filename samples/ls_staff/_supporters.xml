@@ -1,0 +1,13 @@
+<with key="_record">
+  <table class="browse">
+	 <tr><th>Supporters</th></tr>
+	 <ifnot key="supporters">
+		<tr><td>No Supporters</td></tr>
+	 </ifnot>
+	 <loop key="supporters">
+		<tr href="/people/person;id={id}/">
+		  <td>{title}</td>
+		</tr>
+	 </loop>	 
+  </table>
+</with>

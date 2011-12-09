@@ -1,0 +1,9 @@
+<div>
+  <div id="banner">
+	 <div id="logout">{_session.e} [ <a href="/logout/">Log Out</a> ]</div>
+	 <a href="/"></a><div class="tagline">Learning Streams Staff ({_config.site})</div>
+  </div>
+  <div id="utility">
+	 <span id="user"></span>
+  </div>
+</div>

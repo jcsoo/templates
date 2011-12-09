@@ -1,0 +1,24 @@
+<page parent="_twocol.xml">
+<chunk id="c2">
+	 <div>
+		<h1>Change Pledge Amount</h1>
+		<form method="POST">
+		<dl class="details">
+		  <dt>Fund</dt>
+		  <dd>{_action.title}</dd>
+		  <dt>Non Profit</dt>
+		  <dd>{_organization.organization}</dd>
+		  <dt>Current Pledge Amount</dt>
+		  <dd>{_pledge.pledged|money}</dd>
+		  <dt>New Pledge Amount</dt>
+		  <dd>$ <input type="text" name="amount" size="12"/></dd>
+		</dl>
+		<p>[When you select "Change Pledge Amount", you will be redirected to Amazon Payments. Please sign in with the same account that you used for your original pledge and authorize the change.]</p>
+		<div class="actions" style="text-align: left;">
+		  <input type="submit" name="_do_change" value="Change Pledge Amount"/>
+		</div>
+		</form>
+
+	 </div>
+</chunk>
+</page>

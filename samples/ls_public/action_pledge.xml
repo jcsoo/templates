@@ -1,0 +1,34 @@
+<page parent="_twocol.xml">
+<chunk id="c1">
+  <h1><text id="header">Pledge Details</text></h1>
+  <p><text id="instructions">[instructions]</text></p>
+</chunk>
+<chunk id="c2">
+<with key="_record">
+<div id="pledge">
+	 <h1>{title}</h1>
+	 <h2>Non Profit: <with source="_organizations" key="organization"><a href="/organization/{id}/">{organization}</a></with></h2>
+
+	 <h2>Fund Closes: {_project.deadline|d:%-m/%-d/%Y}</h2>
+	 <h2>Goal: {_project.goal|money:$%.0f}</h2>
+	 <h2>Pledged: {_project.pledged|money:$%.0f}</h2>
+	 <div style="width: 350px; margin-top: 8px"><if key="photo"><img width="320" height="240" src="{photo.t640}"/><else/><img src="/static/img/GAction_360.png"/></if></div>
+
+
+	 <if key="_session">
+
+	 <form method="POST" class="pledge-form">
+		<h2>Enter your pledge amount</h2>
+		<div class="cur">$</div><input type="text" name="amount" size="20"/>
+		<div class="anon"><input type="checkbox" name="remaining" value="{_project._remaining|money:%.0f}" onclick="this.form.amount.value = (this.checked ? this.value : '');"/>Make this fund happen!<br/>(Pay the remaining balance) </div>
+		<div class="anon"><input type="checkbox" name="anonymous" value="yes"/>pledge anonymously</div>
+		<br/>
+		<input type="submit" name="_confirm" value="Enter Payment Details"/>
+	 </form>
+	 <else/>
+		<div class="comment-message">You must <a href="{_login_url}">Sign In</a> or <a href="{_register_url}">Sign Up</a> to Pledge.</div>
+	 </if>
+</div>
+</with>
+</chunk>
+</page>

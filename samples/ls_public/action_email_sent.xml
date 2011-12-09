@@ -1,0 +1,25 @@
+<page parent="_site.xml">
+<chunk id="main">
+<with key="_record">
+<div id="main">
+<div id="action-email">
+<table class="two-col">
+<tr>
+  <td class="c1">
+	 <div class="instructions" style="margin-top: 40px;">
+	 </div>
+  </td>
+  <td class="c2">
+	 <div class="updates">
+	 <h2>Message Sent</h2>
+	 <p>Your message has been sent. <a class="continue" href="./">Continue</a></p>
+	 </div>
+  </td>
+</tr>
+</table>
+<br/>
+</div>
+</div>
+</with>
+</chunk>
+</page>

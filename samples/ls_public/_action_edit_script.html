@@ -1,0 +1,51 @@
+<script>
+(function() {
+  
+  var Dom = YAHOO.util.Dom, Event = YAHOO.util.Event;
+  var log = function(v) { console.log(v); }
+
+  var t = Dom.get('calendar-text');
+  var cal = document.getElementById('calendar');
+  var c = null;
+  function select_date(type, args) {
+     var d = args[0][0];
+     t.readOnly = false;
+     t.value = d[1]+'/'+d[2]+'/'+d[0];     
+     c.hide();
+  }
+
+  function show_calendar() {
+    t.readOnly = true;
+    var d = cal.getAttribute('date');
+    var m = cal.getAttribute('month');
+    if (c == null) {
+       c = new YAHOO.widget.Calendar('c1','calendar',{'close': true});
+       c.cfg.setProperty("pagedate", m);
+       c.select(d);
+       c.render();
+       c.selectEvent.subscribe(select_date, c, true);
+    } else {
+       c.show();
+    }
+
+
+  }
+
+  function click_text(e) { 
+    show_calendar();
+  }
+
+  function change_organization(e) {
+     var o = Event.getTarget(e);
+     if (o.value == 'create') {
+        Dom.removeClass('org','hidden');
+     } else {
+        Dom.addClass('org','hidden');
+     }
+  }
+
+  Event.on(t,'focus',click_text);
+  Event.on('orgselect','change',change_organization);
+
+})();
+</script>

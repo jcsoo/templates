@@ -1,0 +1,3 @@
+<if key="_data.full_description">
+  <div class="full-description">{_data.full_description|m}</div>
+</if>

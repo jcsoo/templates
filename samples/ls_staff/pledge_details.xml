@@ -1,0 +1,91 @@
+  <form method="POST">
+  <with key="_record">
+	 <table class="detail">
+		<tr>
+		  <if key="id">
+			 <th>ID</th><td>{id}</td>
+			 <tr><th>Status</th><td>{status}</td></tr>
+		  </if>		  
+		</tr>
+
+		<tr><th>Action</th><td><with source="_actions" key="project"><a href="/actions/action;id={id}/">{title}</a></with></td></tr>
+		<tr><th>Person</th><td><with source="_people" key="member"><a href="/people/person;id={id}/">{first_name} {last_name}</a></with></td></tr>
+
+		<if key="id">
+		  <tr><th>Pledged</th><td>{pledged}</td></tr>
+		  <tr><th>Paid</th><td>{paid}</td></tr>
+		  <tr><th>Gateway</th><td>{gateway}</td></tr>
+		  <tr><th>Gateway Profile </th><td>{gateway_profile}</td></tr>
+		  <if key="gateway_transaction_date">
+			 <tr><th>Gateway Transaction </th><td>{gateway_transaction} / {gateway_authorization} / {gateway_transaction_date|dt}</td></tr>
+		  </if>
+		</if>
+	 </table>
+	 <if key="_transactions">
+	 <h3>Transactions</h3>
+
+	 <table class="browse">
+		<tr>
+		  <th>ID</th>
+		  <th>Type</th>
+		  <th>Status</th>
+		  <th>Payment</th>
+		  <th>Refund</th>
+		  <th>Transaction Status</th>
+		</tr>
+		<loop key="_transactions">
+		  <tr href="transaction;id={id}/">
+			 <td>{id}</td>
+			 <td>{type}</td>
+			 <td>{status}</td>
+			 <td>{payment}</td>
+			 <td>{refund}</td>
+			 <td>{transaction_status}: {transaction_message}</td>
+		  </tr>
+		</loop>
+	 </table>
+	 </if>
+	 <div class="actions">
+		<if key="status" equals="Created">
+		  <!--<input type="submit" name="_cancel" value="Cancel Pledge"/>-->
+		  <input type="submit" name="_execute" value="Execute"/>
+		  <input type="submit" name="_delete" value="Delete"/>
+		</if>
+	 </div>
+
+	 <!--
+	 <div class="actions">
+		<if key="id">		 
+		  <input type="submit" name="_update" value="Update"/>
+		  <input type="submit" name="_delete" value="Delete"/>
+		  <else/>
+		  <input type="submit" name="_create" value="Create"/>
+		</if>
+	 </div>
+
+	 <div class="actions">
+		<if key="status" equals="Created">
+		  <input type="submit" name="_preapprove" value="Preapprove Payment"/>
+		</if>
+		<if key="status" equals="PreApproved">
+		  <input type="submit" name="_pay" value="Make Payment"/>
+		</if>
+	 </div>
+
+	 <div>
+		<if key="status" equals="PaymentPending">
+		  <input type="submit" name="_cancel_payment" value="Cancel Pending Payment"/>
+		</if>
+		<if key="paid">
+		  <else/>
+		  <if key="sender_token_id">
+			 <input type="submit" name="_pay" value="Initiate Payment"/>
+			 <input type="submit" name="_cancel_authorization" value="Cancel Authorization"/>
+			 <input type="submit" name="_edit_authorization" value="Change Payment Method"/>
+		  </if>
+		</if>
+	 </div>
+	 -->
+
+  </with>
+  </form> 

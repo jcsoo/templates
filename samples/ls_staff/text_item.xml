@@ -1,0 +1,32 @@
+<page parent="_site.xml">
+<chunk id="main">
+<form method="POST">
+  <with key="_record">
+	 <table class="detail">
+		<if key="id">
+		  <tr>
+			 <th>ID</th><td>{id}</td>
+		  </tr>
+		</if>
+		<tr><th>Body</th><td><textarea id="editor" name="body" rows="8" cols="80"/></td></tr>
+	 </table>
+
+	 <div class="actions">
+		<input type="submit" name="_update" value="Update"/>
+	 </div>	 	 
+  </with>
+</form></chunk>
+
+<chunk id="head-page">
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.2r1/build/editor/assets/skins/sam/simpleeditor.css" />
+</chunk>
+<chunk id="foot-page">
+  <script type="text/javascript" src="http://yui.yahooapis.com/2.8.2r1/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+  <script type="text/javascript" src="http://yui.yahooapis.com/2.8.2r1/build/element/element-min.js"></script>
+  <script type="text/javascript" src="http://yui.yahooapis.com/2.8.2r1/build/container/container_core-min.js"></script>
+  <script type="text/javascript" src="http://yui.yahooapis.com/2.8.2r1/build/editor/simpleeditor-min.js"></script>
+  <script src="/static/message_editor.js"></script>
+</chunk>
+
+
+</page>

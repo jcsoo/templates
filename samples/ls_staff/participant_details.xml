@@ -1,0 +1,41 @@
+<form method="POST" enctype="multipart/form-data">
+  <with key="_record">
+	 <table class="detail">
+		<if key="id">
+		  <tr><th>ID</th><td>{id}</td></tr>
+		</if>
+		<tr>
+		  <th>Type</th>
+		  <td><select name="type"><option/><option>Host</option><option>Participant</option></select></td>
+		</tr>
+		<tr>
+		  <th>Sort Order</th>
+		  <td><select name="sort_order"><option/><option>1</option><option>2</option><option>3</option><option>4</option></select></td>
+		</tr>
+		<tr>
+		  <th>Member</th>
+		  <td><select name="member"><option/><loop key="_members"><option value="{id}">{first_name} {last_name}</option></loop></select> <if key="member"><a href="/members/member;id={member}/">View Member</a></if></td>
+		</tr>
+		<!--
+		<tr><th>Email</th><td><input type="text" name="email" size="50"/></td></tr>
+		<tr><th>Password</th><td><input type="password" name="password_1" size="15"/> <input type="password" name="password_2" size="15"/> <span style="font-size: 10px">{password}</span></td></tr>
+		<tr><th>First Name</th><td><input type="text" name="first_name" size="50"/></td></tr>
+		<tr><th>Last Name</th><td><input type="text" name="last_name" size="50"/></td></tr>
+		<tr><th>Title</th><td><input type="text" name="title" size="50"/></td></tr>
+		<tr><th>Organization</th><td><input type="text" name="organization" size="50"/></td></tr>
+		<tr><th>Tags</th><td><input type="text" size="80" name="_data.tags" value="{_data.tags|join:, }"/></td></tr>
+		-->
+		<tr><th>Participant Short Description</th><td><textarea name="_data.short_description" rows="4" cols="80"/></td></tr>
+		<tr><th>Participant Full Description</th><td><textarea name="_data.full_description" rows="8" cols="80"/></td></tr>
+	 </table>
+
+	 <div class="actions">
+		<if key="id">
+		  <input type="submit" name="_update" value="Update"/>
+		  <input type="submit" name="_delete" value="Delete"/>
+		  <else/>
+		  <input type="submit" name="_create" value="Create"/>
+		</if>
+	 </div>	 	 
+  </with>
+</form>

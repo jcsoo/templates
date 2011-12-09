@@ -1,0 +1,9 @@
+<div id="menu">
+  <if key="_section"><div id="section" class="{_section}">{_section}</div></if>
+  <if key="_session">
+	 <div id="utility"><span style="margin-right: 8px">Hello, {_session.f}!</span> <a href="{_logout_url}">sign out</a> | <a href="/dashboard/">my profile</a></div>
+	 <else/>
+	 <div id="utility"><a href="/login/">sign in</a> | <a href="/login/">sign up</a></div>
+  </if>
+  <div id="search"><form action="/search/"><input type="text" name="q" placeholder="search"/></form></div>
+</div>

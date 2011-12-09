@@ -1,0 +1,33 @@
+<page parent="_site.xml">
+<chunk id="main">
+<with key="_record">
+  <form method="POST">
+	 <table class="detail">
+		<if key="id">
+		  <tr><th>ID</th><td>{id}</td></tr>
+		  <tr><th>Name</th><td><input type="text" name="AcctHolderName" size="50"/></td></tr>
+		  <tr><th>Card Type</th><td>{CcCardType}</td></tr>
+		  <tr><th>Credit Card #</th><td>{CcCardNumber}</td></tr>
+		  <tr><th>Expiration Date (YYYYMM)</th><td><input type="text" name="CcExpirationDate" size="50"/></td></tr>
+
+		  <else/>
+		  <tr><th>Name</th><td><input type="text" name="AcctHolderName" size="50"/></td></tr>
+		  <tr><th>Card Type</th><td><select name="CcCardType"><option>VISA</option><option>MAST</option><option>AMER</option><option>DISC</option><option>DINE</option><option>JCB</option></select></td></tr>
+		  <tr><th>Credit Card #</th><td><input type="text" name="CcCardNumber" size="50"/></td></tr>
+		  <tr><th>Expiration Date (YYYYMM)</th><td><input type="text" name="CcExpirationDate" size="50"/></td></tr>
+
+		</if>		
+
+	 </table>
+	 <div class="actions">
+		<if key="id">
+		  <input type="submit" name="_update" value="Update"/>
+		  <input type="submit" name="_delete" value="Delete"/>
+		  <else/>
+		  <input type="submit" name="_create" value="Create"/>
+		</if>
+	 </div>	 	 
+  </form>
+</with>
+</chunk>
+</page>

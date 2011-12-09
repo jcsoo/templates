@@ -1,0 +1,45 @@
+  <with key="_record">
+	 <form method="POST">
+	 <table class="browse">
+		<tr>
+		  <th></th>
+		  <th>Posted</th>
+		  <th>Poster</th>
+		  <th>Update</th>
+		</tr>
+		<ifnot key="updates">
+		  <tr><td colspan="4">No Updates</td></tr>
+		</ifnot>
+		<loop key="updates">
+		  <tr>
+			 <td width="15"><input type="checkbox" name="update" value="{id}"/></td>
+			 <td width="60">{posted|d}</td>
+			 <td width="150"><a href="/people/person;id={poster.id}/"><with source="_people" key="poster.id">{first_name} {last_name}</with></a></td>
+			 <td>{body}</td>
+		  </tr>
+		</loop>
+	 </table>
+	 <if key="updates">
+		<div class="actions">
+		  <input type="submit" name="_delete_updates" value="Delete Selected Updates"/>
+		</div>
+	 </if>
+	 </form>
+	 <br/>
+	 <form method="POST">
+		<table class="detail">
+		  <tr>
+			 <th>Poster</th>
+			 <td><select name="poster"><loop key="_people"><option value="{id}">{last_name}, {first_name}</option></loop></select></td>
+		  </tr>
+		  <tr>
+			 <th>Update</th>
+			 <td><textarea name="body" rows="4" cols="120"/></td>
+		  </tr>
+		</table>
+		<div class="actions">
+		  <input type="submit" name="_new_update" value="Post New Update"/>
+		  <input style="float: right" type="submit" name="_clear_updates" value="Clear Updates"/>
+		</div>
+	 </form>	 
+  </with>

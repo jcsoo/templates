@@ -1,0 +1,14 @@
+<with key="_record">
+  <table class="browse">
+	 <tr>
+		<th>Status</th>
+		<th>Title</th>
+	 </tr>
+	 <loop key="actions">
+		<tr href="/actions/action;id={id}/">
+		  <td>{status}</td>
+		  <td>{title|n:untitled}</td>
+		</tr>
+	 </loop>
+  </table>
+</with>

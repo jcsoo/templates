@@ -1,0 +1,57 @@
+<do>
+  <set key="a" value="ABC">
+	 <div>a = {a}</div>
+  </set>
+  <div>a = {a}</div>
+
+  <unset key="a"/>
+  <div>a = {a}</div>
+
+  <set key="a" value="ABC"/>
+  <div>a = {a}</div>
+  <del key="a"/>
+  <div>a = {a}</div>
+
+  <div>key = {key}</div>
+  <del key="key"/>
+
+  <with key="dict">
+	 a = {a}, b = {b}, c = {c}
+  </with>
+
+  <repr key="id"/>
+  <repr key="none"/>
+  <repr key="true"/>
+  <repr key="false"/>
+
+  <get key="dict.c.y"/> = YYY
+
+  # IF
+
+  TRUE = <if key="true"> TRUE <else/> FALSE</if>
+  TRUE = <if key="false"> FALSE <else/> TRUE</if>
+
+  <switch key="test">
+	 <case value="no">NO</case>
+	 <case value="ABC">YES</case>
+	 <default>DEFAULT</default>
+  </switch> = YES
+
+  <switch key="test">
+	 <case value="no">NO</case>
+	 <case value="{test}">YES</case>
+	 <default>DEFAULT</default>
+  </switch> = YES
+
+  <switch key="test">
+	 <case value="no">NO</case>
+	 <case value="yes">YES</case>
+	 <default>DEFAULT</default>
+  </switch> = DEFAULT
+
+
+
+
+
+
+</do>

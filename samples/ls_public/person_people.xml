@@ -1,0 +1,9 @@
+  <ul class="following">
+	 <with key="_record">
+	 <ifnot key="_people_followed">Not following anyone so far.</ifnot>
+	 <loop key="_people_followed">
+		<li><if key="photo"><a href="/people/{id}/" class="fthumb" style="background-image: url('{photo.t64}')"/></if><div class="name"><a href="/people/{id}/">{first_name} {last_name}</a></div><if key="title"><div class="title">{title}</div></if><if key="organization"><div class="organization">{organization}</div></if></li>
+	 </loop>
+	 </with>
+	 <div style="clear: both"/>
+  </ul>

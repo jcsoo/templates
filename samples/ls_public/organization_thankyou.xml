@@ -1,0 +1,10 @@
+<page parent="_twocol.xml">
+<chunk id="c2">
+	 <div class="instructions">
+		<h2>Thank You</h2>
+		<p>Thank you for updating your organization details. Your updates will be reviewed and posted.</p>
+		<br/><br/>
+		<p><a class="button" href="./">Continue</a></p>
+	 </div>
+</chunk>
+</page>

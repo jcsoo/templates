@@ -1,0 +1,16 @@
+<page parent="_site.xml">
+<chunk id="main">
+  <switch key="_view">
+	 <case value="pledges"><include path="action_pledges.xml"/></case>
+	 <case value="project"><include path="action_project.xml"/></case>
+	 <case value="photo"><include path="action_photo.xml"/></case>
+	 <case value="comments"><include path="_comments.xml"/></case>
+	 <case value="updates"><include path="_updates.xml"/></case>
+	 <case value="followers"><include path="_followers.xml"/></case>
+	 <case value="supporters"><include path="_supporters.xml"/></case>
+	 <case value="decliners"><include path="_decliners.xml"/></case>
+	 <case value="data"><include path="_data.xml"/></case>
+	 <case><include path="action_details.xml"/></case>
+  </switch>
+</chunk>
+</page>

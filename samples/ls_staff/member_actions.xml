@@ -1,0 +1,12 @@
+<with key="_record">
+  <table class="detail">
+	 <tr><th>Follow Project</th><td><form method="POST"><select name="project"><option/><loop key="_projects"><option value="{id}">{title}</option></loop></select> <input type="submit" name="_follow_project" value="Follow"/></form></td></tr>
+	 <if key="_data._projects">
+		<tr><th>Unfollow Project</th><td><form method="POST"><select name="project"><option/><loop key="_data._projects"><option value="{id}">{title}</option></loop></select> <input type="submit" name="_unfollow_project" value="Unfollow"/></form></td></tr>
+	 </if>
+	 <tr>
+		<th>Send Message</th>
+		<td><form method="POST"><select name="message_template"><option/><loop key="_message_templates"><option value="{id}">{label}</option></loop></select> <input type="submit" name="_preview_message" value="Preview"/></form></td>
+	 </tr>
+  </table>
+</with>

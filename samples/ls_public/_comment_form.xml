@@ -1,0 +1,8 @@
+		<if key="_session">
+		<form class="comment-form" method="POST">
+		  <div><textarea name="body" rows="4" cols="60" placeholder="Post a Comment"/></div>
+		  <div style="text-align: right"><input type="submit" name="_comment" value="Post Comment"/></div>
+		</form>
+		<else/>
+		<div class="comment-message"><a href="{_login_url}">Sign In</a> or <a href="{_register_url}">Sign Up</a> to comment.</div>
+		</if>

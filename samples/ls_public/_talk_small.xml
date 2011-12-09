@@ -1,0 +1,6 @@
+<li class="talk">
+  <a class="photo" href="/talk/{id}/"><if key="photo.t122"><img src="{photo.t122}"/><else/><img src="/static/img/GTalk_122.png"/></if></a>
+  <a class="title" href="/talk/{id}/">{title}</a>
+  <div class="description">{description|trim:100:...}</div>
+  <div style="clear: both"/>
+</li>

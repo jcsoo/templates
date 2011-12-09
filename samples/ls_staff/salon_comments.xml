@@ -1,0 +1,33 @@
+<with key="_record">
+  <table class="browse">
+	 <tr>
+		<th width="120">Posted</th>
+		<th width="120">Member</th>
+		<th>Body</th>
+	 </tr>
+	 <loop key="_comments">
+		<tr href="comment;id={_id}/">
+		  <td>{posted|dt:%y-%m-%d %H:%M}</td>
+		  <td><if key="_member">{_member.first_name} {_member.last_name}</if></td>
+		  <td>{body}</td>
+		</tr>
+	 </loop>
+  </table>
+  <form method="POST" enctype="multipart/form-data" style="margin-top: 8px">
+	 <table class="detail">
+		<tr>
+		  <th>Member</th>
+		  <td><select name="member"><option/><loop key="_members"><option value="{id}">{first_name} {last_name}</option></loop></select></td>
+		</tr>
+		<tr>
+		  <th>Body</th>
+		  <td><textarea name="body" rows="8" cols="120"/></td>
+		</tr>
+	 </table>
+	 <div class="actions">
+		<input type="submit" name="_comment" value="Post Comment"/>
+	 </div>
+  </form>
+</with>
+
+  

@@ -1,0 +1,18 @@
+<do>
+				<div class="status">
+				  <div class="goal">goal: {goal|money:$%.0f}</div>
+				  <div class="pledged">pledged: {pledged|money:$%.0f}</div>
+				  <div class="funded"><div class="p1"/><div class="p2" style="width: {percent_funded}%"/></div>
+				  <table class="scale"><tr><td class="s0">0%</td><td class="s1">50%</td><td class="s2">100%</td></tr></table>
+				  <!--<div class="scale"><div class="s0">0%</div><div class="s1">50%</div><div class="s2">100%</div></div>-->
+				  <div class="supporters">Supporters: {pledges}</div>
+				  <if key="pledges">
+					 <div class="average">average donation: {_average|money:$%.0f}</div>
+				  </if>
+				  <div class="time">{_remaining} left</div>
+				  <div class="expires">Closes On {deadline|dt:%-I:%M%P}<br/>{deadline|dt:%-m/%-d/%Y}</div>				  
+				</div>
+				<!--<if key="status" equals="RecipientTokenReceived">-->
+				  <div class="pledgenow"><a href="pledge/">PLEDGE NOW</a></div>
+            <!--</if>-->
+</do>

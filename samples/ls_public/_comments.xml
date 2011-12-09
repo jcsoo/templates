@@ -1,0 +1,12 @@
+<div>
+	 <if key="comments">
+		<ul class="comments">
+		  <ifnot key="comments">No comments so far.</ifnot>
+		  <loop key="comments">
+			 <li><with source="_people" key="poster.id"><if key="photo"><a href="/people/{id}/" class="cthumb" style="background-image: url('{photo.t60}')"/></if><a href="/people/{id}/">{first_name} {last_name}</a>: </with> {body|br} (<i>{posted|d}</i>)</li>
+		  </loop>
+		  <div style="clear: both"/>
+		</ul>
+	 </if>
+	 <include path="_comment_form.xml"/>
+</div>

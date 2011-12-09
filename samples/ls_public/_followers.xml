@@ -1,0 +1,9 @@
+<div>
+  <ul class="followers">
+	 <ifnot key="followers">No followers so far.</ifnot>
+	 <loop key="followers">
+		<with source="_people" key="_"><li><if key="photo"><a href="/people/{id}/" class="fthumb" style="background-image: url('{photo.t60}')"/></if><div class="name"><a href="/people/{id}/">{first_name} {last_name}</a></div><if key="organization"><div class="organization">{organization}</div></if><if key="title"><div class="title">{title}</div></if></li></with>
+	 </loop>
+	 <div style="clear: both"/>
+  </ul>
+</div>

@@ -1,0 +1,8 @@
+<page parent="_site.xml">
+<chunk id="main">
+  <switch key="_view">
+	 <case value="media"><include path="participant_media.xml"/></case>
+	 <case><include path="participant_details.xml"/></case>
+  </switch>
+</chunk>
+</page>

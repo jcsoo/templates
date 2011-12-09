@@ -1,0 +1,36 @@
+<form method="POST" enctype="multipart/form-data">
+  <with key="_record">
+	 <table class="detail">
+		<if key="id">
+		  <tr>
+			 <th>ID</th><td>{id}</td>
+		  </tr>
+		</if>
+		<tr><th>Creator</th><td><select name="creator"><option/><loop key="_members"><option value="{id}">{first_name} {last_name}</option></loop></select> <if key="creator"><a href="/members/member;id={creator}/">View Creator</a></if></td></tr>
+		<tr><th>Owner</th><td><select name="owner"><option/><loop key="_members"><option value="{id}">{first_name} {last_name}</option></loop></select> <if key="owner"><a href="/members/member;id={owner}/">View Owner</a></if></td></tr>
+		<tr><th>Type</th><td><input type="text" name="type" size="20"/></td></tr>
+		<tr><th>Status</th><td><input type="text" name="status" size="20"/></td></tr>
+		<tr><th>Start</th><td><input type="text" name="salon_start" size="20"/></td></tr>
+		<tr><th>End</th><td><input type="text" name="salon_end" size="20"/></td></tr>
+		<tr><th>Slot</th><td><select name="slot"><option/><loop key="_slots"><option value="{id}">{slot_start|dt:%m/%d/%y} | {slot_start|dt:%H:%M} - {slot_end|dt:%H:%M}</option></loop></select> <if key="slot"><a href="/salon_slots/salon_slot;id={slot}/">View Slot</a></if></td></tr>
+		
+		<tr><th>Staff Link</th><td><input type="text" name="link_staff" size="50"/></td></tr>
+		<tr><th>Participant Link</th><td><input type="text" name="link_participant" size="50"/></td></tr>
+		<tr><th>Public Link</th><td><input type="text" name="link_public" size="50"/></td></tr>
+		<tr><th>Title</th><td><input type="text" name="title" size="50"/></td></tr>
+		<tr><th>Description</th><td><textarea name="description" rows="4" cols="80"/></td></tr>
+		<tr><th>Tags</th><td><input type="text" size="80" name="_data.tags" value="{_data.tags|join:, }"/></td></tr>
+		<tr><th>Additional Details</th><td><textarea name="_data.additional_details" rows="8" cols="120"/></td></tr>
+		<tr><th>Additional Details</th><td><textarea name="_data.full_description" rows="8" cols="120"/></td></tr>
+	 </table>
+
+	 <div class="actions">
+		<if key="id">
+		  <input type="submit" name="_update" value="Update"/>
+		  <input type="submit" name="_delete" value="Delete"/>
+		  <else/>
+		  <input type="submit" name="_create" value="Create"/>
+		</if>
+	 </div>
+  </with>
+</form>

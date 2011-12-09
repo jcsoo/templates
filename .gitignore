@@ -1,0 +1,9 @@
+.Python
+.env
+*.pyc
+bin/
+lib/
+include/
+old/
+.hg/
+.hgignore

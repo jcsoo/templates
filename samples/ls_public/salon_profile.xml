@@ -1,0 +1,11 @@
+<with key="_record">
+  <div style="clear: both"/>
+  <if key="salon_start">
+	 <div class="schedule">Scheduled: {salon_start|d:%b %d, %Y} from {salon_start|dt:%I:%M%P} to {salon_end|dt:%I:%M%P} Eastern. <if key="link_public"><a target="_blank" href="{link_public}">View Online</a></if></div>
+  </if>  
+  <include path="_participants.xml"/>
+  <include path="_full_description.xml"/>
+  <include path="_tags.xml"/>
+  <include path="_followers.xml"/>
+  <include path="_comments.xml"/>
+</with>

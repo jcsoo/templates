@@ -1,0 +1,37 @@
+<page parent="_twocol.xml">
+<chunk id="c1">
+  <div class="instructions">
+	 <h2><text id="header">[header]</text></h2>
+	 <p><text id="instructions">[instructions]</text></p>
+  </div>
+</chunk>
+<chunk id="c2">
+	 <div>
+		<h3 style="padding-bottom: 8px">{_record.title}</h3>		
+		<form method="POST">
+		  <with key="_record._slot">
+		  <table class="simple">
+			 <tr>
+				<th>Date</th>
+				<td>{start|dt:%A, %B %-d}</td>
+			 </tr>
+			 <tr>
+				<th>Start Time</th>
+				<td>{start|dt:%-I:%M %p}</td>
+			 </tr>
+			 <tr><th>Address</th><td>{address_1}</td></tr>
+			 <tr><th></th><td>{address_2}</td></tr>
+			 <tr><th>City</th><td>{city}</td></tr>
+			 <tr><th>State</th><td>{state}</td></tr>
+			 <tr><th>Notes</th><td>{notes}</td></tr>
+		  </table>
+		  </with>
+
+		  <div class="actions" style="text-align: left">
+			 <input class="ConversationBG" type="submit" name="_participate" value="Yes, Participate"/>
+			 <input class="ConversationBG" type="submit" name="_calendar" value="No, Return to Calendar"/>
+		  </div>
+		</form>
+	 </div>
+</chunk>
+</page>

@@ -1,0 +1,33 @@
+<page parent="_site.xml">
+  <chunk id="main">
+	 <div id="main">
+		<div class="content">
+  	   <form method="POST">
+		  <h1><text id="header">How to Suggest a Fund</text></h1>
+		  <ifnot key="org">
+			 <p><text id="notorg">[To suggest a fund, you must be the authorized representative for an approved organization. If you are the authorized representative for an approved organization, please select "Suggest Non Profit" below and fill out the form.]</text></p>
+
+
+			 <input type="submit" name="_suggest" value="Suggest Non Profit"/>
+			 <else/>
+			 <switch key="org.status">
+				<case value="Created">
+				  <p><text id="orgcreated">[Your organization details have been received and will shortly be reviewed. You will be notified if additional details are required or when the review process is complete.]</text></p>
+				</case>
+				<case value="Pending">
+				  <p><text id="orgpending">[Your organization details are under review. You will be notified if additional details are required or when the review process is complete.]</text></p>
+				</case>
+				<case value="Not Approved">
+				  <p><text id="orgnotapproved">[Your organization details have been reviewed and Not Approved.]</text></p>
+				</case>
+				<case>
+				  <p>[Unknown organization status: {org.status}]</p>
+				</case>
+			 </switch>			
+			 <input type="submit" name="_return" value="Continue"/>
+		  </ifnot>
+      </form>
+		</div>		
+	 </div>
+  </chunk>
+</page>

@@ -1,0 +1,14 @@
+<page parent="_twocol.xml">
+<chunk id="c2">
+	 <div class="instructions">
+		<form method="POST">
+		<h2><text id="header">Thank You</text></h2>
+		<p><text id="message">[Thank you for registering as a new Learning Streams Member.]</text></p>
+		<br/><br/>
+		<div class="action">
+		  <input type="submit" name="_continue" value="Continue"/>
+		</div>
+		</form>
+	 </div>
+</chunk>
+</page>

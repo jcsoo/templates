@@ -1,0 +1,20 @@
+<switch key="status">
+  <case value="Authorized">
+	 <div class="editor">
+		<form method="POST">		  
+		  <if key="_is_decliner">
+			 You have declined to sponsor this Fund. If you've changed your mind, please click <input type="submit" name="_sponsor_yes" value="Yes"/> to sponsor this Fund.
+			 <else/>
+			 This Fund needs a sponsor. If you'd like be the sponsor, please click <input type="submit" name="_sponsor_yes" value="Yes"/>, otherwise click <input type="submit" name="_sponsor_no" value="No"/>.
+		  </if>
+		</form>
+	 </div>	 
+  </case>
+  <case value="Sponsored">
+	 <if key="_is_sponsor">
+		<div class="editor">This fund is currently being reviewed. You are the sponsor of this fund.</div>
+		<else/>
+		<div class="editor">You are the sponsor of this fund.</div>
+	 </if>
+  </case>
+</switch>

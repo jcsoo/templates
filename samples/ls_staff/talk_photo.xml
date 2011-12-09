@@ -1,0 +1,23 @@
+<form method="POST" enctype="multipart/form-data">
+  <with key="_record">
+	 <table class="detail">
+		<tr><th>Photo</th><td><input type="file" name="photo"/></td></tr>
+		<if key="photo.cropped">
+		  <tr><th></th><td><img src="{photo.cropped}"/></td></tr>
+		</if>
+	 </table>
+
+	 <div class="actions">
+		<if key="id">
+		  <input type="submit" name="_update_photo" value="Update Photo"/>
+		  <input type="submit" name="_delete_photo" value="Delete Photo"/>
+		  <input type="submit" name="_thumbnails" value="Generate Thumbnails"/>
+
+		  <input type="submit" name="_delete" value="Delete"/>
+		  <else/>
+		  <input type="submit" name="_create" value="Create"/>
+		</if>
+	 </div>	 
+
+  </with>
+</form>

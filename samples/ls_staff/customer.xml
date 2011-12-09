@@ -1,0 +1,83 @@
+<page parent="_site.xml">
+<chunk id="main">
+<form method="POST">
+  <with key="_record">
+	 <table class="detail">
+		<tr><th>ID</th><td>{id}</td></tr>
+		<tr><th>Type</th><td>{type}</td></tr>
+		<tr><th>Status</th><td><select name="status"><option/><option>Active</option><option>Inactive</option></select></td></tr>
+		<tr><th>Company</th><td><input type="text" name="company" size="50"/></td></tr>
+		<tr><th>Address</th><td><input type="text" name="address_1" size="50"/></td></tr>
+		<tr><th></th><td><input type="text" name="address_2" size="50"/></td></tr>
+		<tr><th>City</th><td><input type="text" name="city" size="50"/></td></tr>
+		<tr><th>State</th><td><input type="text" name="state" size="2"/></td></tr>
+		<tr><th>ZIP</th><td><input type="text" name="zip" size="15"/></td></tr>
+		<tr><th>Phone</th><td><input type="text" name="phone" size="15"/></td></tr>
+		<tr><th>Email</th><td><input type="text" name="email" size="50"/></td></tr>
+		<tr><th>Payment Token</th><td><input type="text" name="payment_token" size="50"/> <a href="payment_method;id={payment_token}/">Create / Edit</a></td></tr>
+	 </table>
+
+	 <div class="actions">
+		<if key="id">
+		  <input type="submit" name="_update" value="Update"/>
+		  <input type="submit" name="_create_invoice" value="Add Invoice"/>
+		  <input type="submit" name="_delete" value="Delete"/>
+		  <else/>
+		  <input type="submit" name="_create" value="Create"/>
+		</if>
+	 </div>	 	 
+	 <h3>Invoices</h3>
+	 
+	 <table class="browse">
+		<tr>
+		  <th width="50">ID</th>
+		  <th width="200">Date</th>
+		  <th>Status</th>
+		  <th class="r" width="75">Amount</th>
+		  <th class="r" width="75">Paid</th>
+		  <th class="r" width="75">Due</th>
+		</tr>
+		<loop key="_invoices">
+		  <tr href="invoice;id={id}/">
+			 <td>{id}</td>
+			 <td>{created|dt}</td>
+			 <td>{status}</td>
+			 <td class="r">{amount|money}</td>
+			 <td class="r">{received|money}</td>
+			 <td class="r">{due|money}</td>
+		  </tr>
+		</loop>
+	 </table>
+	 <h3>Payments</h3>
+	 
+	 <table class="browse">
+		<tr>
+		  <th width="50">ID</th>
+		  <th width="200">Date</th>
+		  <!--<th>Invoice</th>-->
+		  <th>Type</th>
+		  <th class="r" width="75">Amount</th>
+		</tr>
+		<loop key="_payments">
+		  <tr href="payment;id={id}/">
+			 <td>{id}</td>
+			 <td>{created|dt}</td>
+			 <td>{type}</td>
+			 <!--<td>{invoice}</td>-->
+			 <td class="r">{amount|money}</td>
+		  </tr>
+		</loop>
+	 </table>
+	 <!--
+	 <form method="POST">
+		<div class="actions">
+		  <input type="submit" name="_create_payment" value="Create Payment"/>
+		</div>
+	 </form>
+	 -->
+	 
+
+  </with>
+</form>
+</chunk>
+</page>

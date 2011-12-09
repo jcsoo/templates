@@ -1,0 +1,54 @@
+<div>
+  <ul class="filter">
+	 <li class="{_filter_inbox} {_filter_default}"><a href="?v=messages&amp;f=inbox">INBOX</a></li>
+	 <li class="{_filter_outbox}"><a href="?v=messages&amp;f=outbox">OUTBOX</a></li>
+	 <div style="clear: both"/>
+  </ul>
+  <div style="clear: both"/>
+  <form method="POST">
+  <table class="zebra">
+	 <thead>
+		<tr>
+		  <ifnot key="_filter" equals="outbox">
+			 <th width="20"></th>
+		  </ifnot>
+		  <th width="50">Date</th>
+		  <switch key="_filter">
+			 <case value="outbox"><th width="100">To</th></case>
+			 <case><th width="100">From</th></case>
+		  </switch>
+		  <th>Message</th>
+		</tr>
+	 </thead>
+	 <tbody>
+		<ifnot key="_messages"><tr><td colspan="4">No Messages</td></tr></ifnot>
+		<loop key="_messages">
+		  <tr>			 
+			 <ifnot key="_filter" equals="outbox">
+				<td><input type="checkbox" name="message" value="{id}"/></td>
+			 </ifnot>
+			 <td><a href="">{created|d}</a></td>
+			 <switch key="_filter">
+				<case value="outbox">
+				  <td><if key="photo"><with source="_people" key="recipient"><a href="/people/{id}/" class="fthumb" style="background-image: url('{photo.t60}')"/></with></if><a href=""><with source="_people" key="recipient"> {first_name} {last_name}</with></a></td>
+				  <td>{body|br}</td>
+				</case>
+				<case>
+				  <td><if key="photo"><with source="_people" key="sender"><a href="/people/{id}/" class="fthumb" style="background-image: url('{photo.t60}')"/></with></if><a href="/people/{sender}/"><with source="_people" key="sender">{first_name} {last_name}</with></a></td>
+				  <td>{body|br}</td>
+				  <td><a href="message/{id}/">Reply</a></td>
+				</case>
+			 </switch>
+
+
+		  </tr>
+		</loop>
+	 </tbody>
+  </table>	   
+  <ifnot key="_filter" equals="outbox">
+	 <div class="actions">
+		<input type="submit" name="_delete_messages" value="Delete Selected Messages"/>
+	 </div>
+  </ifnot>
+  </form>
+</div>

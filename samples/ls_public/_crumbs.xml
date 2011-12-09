@@ -1,0 +1,3 @@
+<chunk key="_crumbs">
+  <div id="crumbs"><loop key="_crumbs"><a href="{_path}">{_title}</a> &#187; </loop>{_title}</div>
+</chunk>

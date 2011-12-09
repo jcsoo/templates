@@ -1,0 +1,21 @@
+<page parent="_site.xml">
+  <chunk id="main">
+	 <div id="main">
+		<div class="content">
+  	   <form method="POST">
+		  <h1>Terms of Use</h1>
+		  <div class="message">
+			 <text id="message">[You must accept the terms of use to complete your registration.]</text>
+		  </div>
+		  <div class="accept-terms">
+			 <include path="_terms.xml"/>
+		  </div>
+		  <div class="actions">
+			 <input type="submit" name="_accept_terms" value="I Accept These Terms"/>
+		  </div>
+      </form>
+		</div>
+
+	 </div>
+  </chunk>
+</page>

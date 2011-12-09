@@ -1,0 +1,15 @@
+{'id' : 123, 
+ 'test' : 'ABC',
+ 'key' : 'a',
+ 'dict' : {'a' : 5, 'b' : 6, 'c' : {'x' : 'XXX', 'y' : 'YYY', 'z' : 'ZZZ'}},
+ 'string' : 'a b + < > &',
+ 'true' : True,
+ 'false' : False,
+ 'none' : None,
+ 'one' : 1,
+ 'two' : 2,
+ 'zero' : 0,
+ 'list' : [{'id' : 1},{'id' : 2},{'id' : 3}],
+ 'strings' : ['abc','def','ghi'],
+ 'items' : range(1,12)
+ }

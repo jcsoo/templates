@@ -1,0 +1,30 @@
+<page parent="_site.xml">
+<chunk id="main">
+<with key="_record">
+  <form method="POST" enctype="multipart/form-data" style="margin-top: 8px">
+	 <table class="detail">
+		<if key="_member">
+		  <tr>
+			 <th>Member</th>
+			 <td>{_member.first_name} {_member.last_name}</td>
+		  </tr>
+		</if>
+		<if key="_participant">
+		  <tr>
+			 <th>Participant</th>
+			 <td>{_participant.first_name} {_participant.last_name}</td>
+		  </tr>
+		</if>
+		<tr>
+		  <th>Body</th>
+		  <td><textarea name="body" rows="8" cols="120"/></td>
+		</tr>
+	 </table>
+	 <div class="actions">
+		<input type="submit" name="_update" value="Update"/>
+		<input type="submit" name="_delete" value="Delete"/>
+	 </div>
+  </form>
+</with>
+</chunk>
+</page>

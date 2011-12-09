@@ -1,0 +1,7 @@
+<li class="action">
+  <a class="photo" href="/action/{id}/"><if key="photo.t122"><img src="{photo.t122}"/><else/><img src="/static/img/GAction_122.png"/></if></a>
+  <a class="title" href="/action/{id}/">{title}</a>
+  <div class="description">{description|trim:100:...}</div>
+  <div class="status"><b>{status}</b> - Pledges end on {_project.deadline|d}<br/><if key="_project.percent_funded">{_project.percent_funded}% Funded<br/></if>${_project.pledged|money:%.0f} of ${_project.goal|money:%.0f} raised</div>
+  <div style="clear: both"/>
+</li>

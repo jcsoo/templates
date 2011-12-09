@@ -1,0 +1,68 @@
+<page parent="_site.xml">
+<chunk id="main">
+<with key="_record">
+<div id="main">
+<div id="talk-edit">
+<table class="two-col">
+<tr>
+  <td class="c1">
+	 <div class="instructions">
+		<h2><text id="header">[header]</text></h2>
+		<p><text id="instructions">[instructions]</text></p>
+	 </div>
+  </td>
+  <td class="c2">
+	 <form method="POST" enctype="multipart/form-data">
+		<input type="hidden" name="slot" value="{_slot.id}"/>
+		<if key="id">
+		  <h2>Update Your Conversation</h2>
+		  <else/>
+		  <h2>Suggest A Conversation</h2>
+		</if>
+		<table class="edit">
+		  <tr>
+			 <th>Conversation Slot</th>
+			 </tr>
+		  <tr>
+			 <td><with key="_slot">{start|dt:%A, %B %-d} in {city}, {state} ({start|dt:%-I:%M %p} to {end|dt:%-I:%M %p})</with></td>
+		  </tr>
+		  <tr>
+			 <td><input type="text" name="title" size="50" placeholder="Conversation Starter"/></td>
+		  </tr>
+		  <!--
+		  <tr>
+			 <th>Conversation Description</th>
+			 <td><textarea name="description" rows="16" cols="25"/></td>
+		  </tr>
+		  -->
+		  <!--
+		  <tr>
+			 <th>Conversation Tags</th>
+			 <td><input type="text" name="tags" size="25"/></td>
+		  </tr>
+		  -->
+		  <!--
+		  <tr>
+			 <th>Conversationalist 1</th>
+			 <td><select name="collaborator_1"><option/><loop key="_people" sort="last_name, first_name"><option value="{id}">{last_name}, {first_name}</option></loop></select></td>
+		  </tr>
+		  <tr>
+			 <th>Conversationalist 2</th>
+			 <td><select name="collaborator_2"><option/><loop key="_people" sort="last_name, first_name"><option value="{id}">{last_name}, {first_name}</option></loop></select></td>
+		  </tr>
+		  -->
+		</table>
+		<div class="actions" style="padding-left: 4px">
+		  <input class="ConversationBG" type="submit" name="_update" value="Suggest Conversation"/>
+		</div>
+		
+	 </form>
+  </td>
+</tr>
+</table>
+<br/>
+</div>
+</div>
+</with>
+</chunk>
+</page>

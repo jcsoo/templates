@@ -1,0 +1,18 @@
+<do>
+  LOOP
+  <loop key="list">
+	 ID: {id}
+  </loop>
+
+  LOOP with SEP
+  <loop key="list">
+	 <separator><br/></separator>
+	 ID: {id}
+  </loop>
+
+  LOOP _VALUE
+  <loop key="strings">
+	 value {_order} of {_count}: {_value}
+  </loop>
+
+</do>

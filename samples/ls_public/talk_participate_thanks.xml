@@ -1,0 +1,15 @@
+<page parent="_twocol.xml">
+<chunk id="c2">
+	 <div>
+		<h1>Participate in a Conversation</h1>
+		<h3>{_record.title}</h3>
+		<form method="POST">
+		  <p>[you've been added as a participant. thank you!]</p>
+		  <br/>
+		  <div class="actions" style="text-align: left">
+			 <input type="submit" name="_calendar" value="Return to Calendar"/>
+		  </div>
+		</form>
+	 </div>
+</chunk>
+</page>

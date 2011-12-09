@@ -1,0 +1,5 @@
+<if key="_data.tags">
+  <dl class="tags">
+	 <dd><b>Tags:</b> <loop key="_data.tags"><separator>, </separator><span class="tag">{_}</span></loop></dd>
+  </dl>
+</if>

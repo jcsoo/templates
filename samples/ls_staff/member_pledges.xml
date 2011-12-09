@@ -1,0 +1,30 @@
+<form method="POST" enctype="multipart/form-data">
+  <with key="_record"> 
+    <if key="_pledges">	 
+	 <table class="browse">
+		<tr>
+		  <th>ID</th>
+		  <th width="200">Date</th>
+		  <th>Status</th>
+		  <th class="r">Pledged</th>
+		  <th class="r">Net</th>
+		</tr>
+		<loop key="_pledges">
+		  <tr href="/pledges/pledge;id={id}/">
+			 <td>{id}</td>
+			 <td>{created}</td>
+			 <td>{status}</td>
+			 <td class="r">{pledged}</td>
+			 <td class="r">{net}</td>
+		  </tr>
+		</loop>
+	 </table>
+	 </if>
+	 <div class="actions">
+		<if key="id">
+		  <input type="submit" name="_pledge" value="Pledge"/>
+		</if>
+	 </div>	 
+
+  </with>
+</form>

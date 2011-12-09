@@ -1,0 +1,7 @@
+<do>
+  INCLUDE TEST
+  <include path="t5.xml"/>
+  <include path="sub/to_include.xml"/>
+  <include path="t1.xml"/>
+  <include path="t1.xml"/>
+</do>

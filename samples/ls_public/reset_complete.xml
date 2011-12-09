@@ -1,0 +1,11 @@
+<page parent="_site.xml">
+<chunk id="main">
+<form method="POST">
+<div id="login">
+  <div class="message">
+	 Your password has been reset. Please <a href="/login/">Sign In</a> with your new password.
+  </div>
+</div>
+</form>
+</chunk>
+</page>

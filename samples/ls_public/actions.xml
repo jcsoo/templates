@@ -1,0 +1,26 @@
+<page parent="_site.xml">
+<chunk id="sortby">
+ <div id="sortby" style="left: 170px;">
+	<a class="{_sortby_deadline}" href="?s=deadline">Ending Soonest</a>
+	<a class="{_sortby_created}" href="?s=created">Most Recent</a>
+	<a class="{_sortby_supporters}" href="?s=supporters">Most Supporters</a>
+	<a class="{_sortby_highest_goal}" href="?s=highest_goal">Highest Goal</a>
+	<a class="{_sortby_lowest_goal}" href="?s=lowest_goal">Lowest Goal</a>
+	<!--<a class="{_sortby_followed}" href="?s=followed">Most Followed</a>-->
+ </div>
+</chunk>
+<chunk id="main">
+<div id="main">
+<div id="actions">
+
+<div class="section">
+  <table class="results">
+	 <loop key="_rows"><include path="action_row.xml"/></loop>
+  </table>
+  <if key="_next"><div class="page-nav"><a href="{_next}" class="next Talk">See More Funds &#187;</a></div></if>
+</div>
+
+</div>
+</div>
+</chunk>
+</page>

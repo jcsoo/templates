@@ -1,0 +1,95 @@
+<page parent="_site.xml">
+<chunk id="main">
+<with key="_record">
+<div id="main">
+<div id="dashboard">
+<table class="two-col">
+<tr>
+ <td class="c1">
+	<if key="photo"><img src="{photo.t210}"/><xdiv class="pbox" style="background-image: url('{photo.t256}');"/></if>
+	<h2>{first_name} {last_name}</h2>
+	<div class="info">
+	  <if key="title"><div>{title}</div></if>
+	  <if key="organization"><div>{organization}</div></if>
+	  <if key="web_site"><div>{web_site}</div></if>
+
+	  <div class="about">
+		 <h4>ABOUT {first_name} {last_name}:</h4>
+		 {biography|p}
+	  </div>		 
+	  <div class="actions" style="text-align: center">
+		 <a class="edit-link" href="?v=edit">Edit Profile</a>
+		 <a class="edit-link" href="?v=photo">Edit Photo</a>
+		 <if key="_organization">
+			<!--<a class="edit-link" href="/organization/{_organization.id}/">View Organization</a>-->
+			<a class="edit-link" href="/organization_dashboard/">My Non-Profit</a>
+			<else/>
+			<a class="edit-link" href="/organization/create/?v=edit">My Non-Profit</a>
+		 </if>
+	  </div>
+	</div>
+	
+	<include path="_follow.xml"/>
+ </td>
+ <td class="c2">
+	<if key="_is_leader">
+	<div class="stream">
+	  <form method="POST">
+		 <h4>My Stream:</h4>	  
+		 <input type="text" name="body" size="50" placeholder="enter new stream"/>
+		 <input type="submit" name="_stream" value="Post"/>
+	  </form>
+	  <form method="POST">
+	  <ul>
+		 <ifnot key="updates">
+			<li>No streams posted</li>
+		 </ifnot>
+		 <loop key="updates" sort="posted desc">
+			<li><input type="checkbox" name="stream" value="{id}"/> {posted|d:%b %e, %-I:%M %P}: {body|br} </li>
+		 </loop>
+	  </ul>
+	  <if key="updates">
+		 <div class="action" style="padding: 4px;">
+			<input type="submit" name="_delete_streams" value="Delete Checked Streams"/>
+		 </div>
+	  </if>
+	  </form>
+	</div>
+	</if>
+
+<div id="tabbox" class="tabbox" >
+
+  <ul class="tabs">
+	 <li class="p {_view_people} {_view_default} "><a href="?v=people">Leaders</a></li>
+	 <li class="t {_view_talk}"><a href="?v=talk">Conversations</a></li>
+	 <li class="a {_view_action}"><a href="?v=action">Funds</a></li>
+ 	 <!--<li class="a {_view_organizations}"><a href="?v=organizations">Organizations</a></li>-->
+	 <!--<li class="m {_view_messages}"><a href="?v=messages">Messages</a></li>-->
+	 <li class="i {_view_pledges}"><a href="?v=pledges">Pledges</a></li>
+	 <if key="_is_leader">
+		<li class="i {_view_invites}"><a href="?v=invites">Accepted Invites</a></li>
+	 </if>
+	 
+  </ul>
+  <div class="separator"/>
+  <switch key="_view">
+	 <case value="invites"><include path="dashboard_invites.xml"/></case>
+	 <case value="pledges"><include path="dashboard_pledges.xml"/></case>
+	 <case value="messages"><include path="dashboard_messages.xml"/></case>
+	 <case value="talk"><include path="dashboard_talk.xml"/></case>
+	 <case value="action"><include path="dashboard_action.xml"/></case>
+	 <case value="people"><include path="dashboard_people.xml"/></case>
+	 <case value="organizations"><include path="dashboard_organizations.xml"/></case>
+	 <case><include path="dashboard_talk.xml"/></case>
+  </switch>
+</div>
+
+</td>
+</tr>
+</table>
+
+</div>
+</div>
+</with>
+</chunk>
+</page>

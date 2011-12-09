@@ -1,0 +1,32 @@
+<div class="leader">
+  <if key="_is_leader">
+	 <div id="invite"><a href="invite/">Send an Invitation</a></div>
+  </if>
+  <ul class="filter">
+	 <li class="{_filter_following} {_filter_default}"><a href="?v=people&amp;f=following">FOLLOWING</a></li>
+	 <if key="_is_leader">
+		<li class="{_filter_followed_by}"><a href="?v=people&amp;f=followed_by">FOLLOWED BY</a></li>
+		<li class="{_filter_invited}"><a href="?v=people&amp;f=invited">INVITED</a></li>
+	 </if>
+	 <div style="clear: both"/>
+  </ul>
+
+
+  <ul class="following">
+	 <with key="_record">
+    <ifnot key="_people">
+		<li style="font-size: 12px;">		  
+		  <switch key="_filter">
+			 <case value="following">You are currently not following any leaders.</case>
+			 <case value="followed_by">You are currently not being followed.</case>
+			 <case value="invited">You have not invited any leaders.</case>
+		  </switch>
+		</li>
+	 </ifnot>
+	 <loop key="_people">
+		<li><if key="photo"><a href="/people/{id}/" class="fthumb" style="background-image: url('{photo.t60}')"/></if><div class="name"><a href="/people/{id}/">{first_name} {last_name}</a></div><if key="title"><div class="title">{title}</div></if><if key="organization"><div class="organization">{organization}</div></if> <if key="_invite">Invited {created|d:%-m/%-d/%Y}</if></li>
+	 </loop>
+	 </with>
+	 <div style="clear: both"/>
+  </ul>
+</div>

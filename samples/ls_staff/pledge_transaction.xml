@@ -1,0 +1,10 @@
+  <form method="POST">
+  <with key="_record">
+	 <table class="detail">
+		<tr>
+		  <th>Transaction</th>
+		  <td><pre>{_transaction|pp}</pre></td>
+		</tr>
+	 </table>
+  </with>
+  </form>

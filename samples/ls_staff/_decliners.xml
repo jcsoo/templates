@@ -1,0 +1,32 @@
+<with key="_record">
+  <form method="POST">
+  <table class="browse">
+	 <tr><th>Decliners</th></tr>
+	 <ifnot key="_decliners">
+		<tr><td>No Decliners</td></tr>
+	 </ifnot>
+	 <loop key="_decliners">
+		<tr href="/people/person;id={id}/">
+		  <td><input type="checkbox" name="decliner" value="{id}"/> {first_name} {last_name}</td>
+		</tr>
+	 </loop>	 
+  </table>
+  <if key="_decliners">
+	 <div class="actions">
+		<input type="submit" name="_remove_decliners" value="Remove Selected Decliners"/>
+	 </div>
+  </if>
+  </form>
+  <br/>
+  <form method="POST">
+	 <table class="detail">
+		<tr>
+		  <th>Decliner</th>
+		  <td><select name="decliner"><option/><loop key="_people"><option value="{id}">{last_name}, {first_name}</option></loop></select></td>
+		</tr>
+	 </table>
+	 <div class="actions">
+		<input type="submit" name="_add_decliner" value="Add Decliner"/>
+	 </div>
+  </form>
+</with>

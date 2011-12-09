@@ -1,0 +1,12 @@
+<do>
+  PAGINATION
+
+  <paginate key="items" page="{two}" page_size="3">
+	 Page {_page_number} of {_page_count} - showing records {_record_first} to {_record_last} of {_record_count}
+	 <loop key="_records">
+		{_value}
+	 </loop>
+    Prev: {_page_prev}, Next: {_page_next}
+  </paginate>
+
+</do>

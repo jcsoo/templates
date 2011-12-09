@@ -1,0 +1,6 @@
+<table class="detail">
+  <tr>
+	 <th>Data</th>
+	 <td><pre>{_record|pp}</pre></td>
+  </tr>
+</table>

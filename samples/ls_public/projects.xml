@@ -1,0 +1,9 @@
+<page parent="_site.xml">
+<chunk id="area"><include path="_area_action.xml"/></chunk>
+<chunk id="main">
+  <switch key="_view">
+	 <case value="create"><include path="projects_create.xml"/></case>
+	 <case><include path="projects_list.xml"/></case>
+  </switch>
+</chunk>
+</page>

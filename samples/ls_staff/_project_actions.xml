@@ -1,0 +1,5 @@
+		  <switch key="status">
+			 <case value="ReviewLimit"><input type="submit" name="_pay" value="Initiate Payments"/></case>
+			 <case value="ReviewSuccess"><input type="submit" name="_pay" value="Initiate Payments"/></case>
+			 <case value="ReviewFailure"><input type="submit" name="_cancel" value="Cancel Pledges"/></case>
+		  </switch>

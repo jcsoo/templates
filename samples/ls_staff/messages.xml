@@ -1,0 +1,28 @@
+<page parent="_site.xml">
+<chunk id="main">
+<paginate key="_records" page="{_parameters.p}" page_size="30">
+<table class="browse">
+  <tr>
+	 <th width="30">ID</th>
+	 <th width="70">Date</th>
+	 <th>To</th>
+	 <th>Subject</th>
+  </tr>
+  <loop key="_records">
+	 <tr href="message;id={id}/">
+		<td>{id}</td>
+		<td>{created|dt:%Y-%m-%d}</td>
+		<td>{msg_to|h}</td>
+		<td>{subject}</td>
+	 </tr>
+  </loop>
+</table>
+<include path="_page_nav.xml"/>
+</paginate>
+<form method="POST">
+  <div class="actions">
+
+  </div>
+</form>
+</chunk>
+</page>

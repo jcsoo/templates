@@ -1,0 +1,79 @@
+<div class="conversation">
+  <if key="_is_leader">
+	 <div id="launch"><a href="/calendar/">View Conversation Calendar</a></div>
+  </if>
+
+  <ul class="filter">
+	 <if key="_is_leader">
+	 <li class="{_filter_participate}"><a href="?v=talk&amp;f=participate">PARTICIPATE</a></li>
+	 </if>
+	 <li class="{_filter_follow}"><a href="?v=talk&amp;f=follow">FOLLOW</a></li>
+	 <div style="clear: both"/>
+  </ul>
+
+  <!--
+  <ul class="sort">
+	 <li>sort by:</li>
+	 <li class="{_sort_date} {_sort_default}"><a href="">date</a></li>
+	 <li class="{_sort_title}"><a href="#">title</a></li>
+	 <div style="clear: both"/>
+  </ul>
+  -->
+  <table class="zebra">
+	 <thead>
+		<tr>
+		  <th></th>
+		  <th>
+			 <switch key="_filter">
+				<case value="follow">Aired</case>
+				<case value="participate">Status</case>
+			 </switch>
+		  </th>
+		  <th>Title</th>
+		  <th>Leaders</th>
+		  <if value="{_filter_participate}">
+			 <th width="150">Funds</th>
+		  </if>
+		</tr>
+	 </thead>
+	 <tbody>
+		<ifnot key="_talks">
+		  <tr class="odd">
+			 <td colspan="5" style="font-size: 12px">
+				<switch key="_filter">
+				  <case value="follow">You are not following any conversations.</case>
+				  <case value="participate">You are not participating in any conversations.</case>
+				</switch>
+			 </td>
+		  </tr>
+		</ifnot>
+
+		<loop key="_talks">
+		  <tr class="odd">
+			 <td width="60"><a class="photo" href="/talk/{id}/"><if key="photo.t60"><img src="{photo.t60}"/><else/><img src="/static/img/GAction_122.png"/></if></a></td>
+			 <td>
+				<switch key="_filter">
+				  <case value="follow">
+					 <if key="slot">				 
+						<with source="_slots" key="slot">{start|d:%b %e, %Y}</with>
+						<else/>
+						{created|d:%b %e, %Y}
+					 </if>
+				  </case>
+				  <case value="participate">{status}</case>
+				</switch>
+			 </td>
+			 <td><a class="title" href="/talk/{id}/">{title}</a></td>
+
+			 <td><loop key="collaborators"><with source="_people" key="_"><a class="person" href="/people/{id}/">{first_name} {last_name}</a></with></loop></td>
+			 <td><if key="_talk_funds"><if key="_talk_funds_approved"><a href="?v=action">{_talk_funds_approved_count} Approved Fund(s)</a></if> <if key="_talk_funds_suggested"><a href="?v=action&amp;talk={id}">{_talk_funds_suggested_count} Fund(s) Awaiting Reply</a></if></if></td>
+			 <if value="{_filter_host}{_filter_default}">
+				<td>
+				  <a class="edit-link" href="/action/create/?v=edit&amp;talk={id}">Launch Related Fund</a>
+				</td>
+			 </if>
+		  </tr>
+		</loop>
+	 </tbody>
+  </table>
+</div>

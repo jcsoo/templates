@@ -1,0 +1,51 @@
+<page parent="_site.xml">
+  <chunk id="main">
+	 <div id="main">
+		<div class="major">
+		  <a class="p" href="/people/"/>
+		  <a class="t" href="/talk/"/>
+		  <a class="a" href="/action/"/>
+		  <div style="clear: both"/>
+		</div>		
+		<div id="index">
+		  <table class="results">
+			 <tr>
+				<td class="col">
+				  <dl>
+					 <dd>
+						<ul>
+						  <loop limit="8" key="people" sort="last_name, first_name"><include path="_person_med.xml"/></loop>
+						  <div style="clear: both"/>
+						</ul>
+					 </dd>
+				  </dl>
+				</td>
+				<td class="space"><div class="vline"/></td>
+				<td  class="col">
+				  <dl>
+					 <dd>
+						<ul>
+						  <loop limit="8" key="talks" sort="title"><include path="_talk_med.xml"/></loop>
+						  <div style="clear: both"/>
+						</ul>
+					 </dd>
+				  </dl>
+				</td>
+				<td class="space"><div class="vline"/></td>
+				<td class="col">
+				  <dl>
+					 <dd>
+						<ul>
+						  <loop limit="8" key="actions" sort="title"><include path="_action_med.xml"/></loop>
+						  <div style="clear: both"/>
+						</ul>
+					 </dd>
+				  </dl>
+				</td>
+			 </tr>
+		  </table>
+		  <div style="clear: both"/>
+		</div>
+	 </div>
+  </chunk>
+</page>

@@ -1,0 +1,33 @@
+<page parent="_site.xml">
+<chunk id="main">
+<with key="_record">
+<div id="main">
+<div id="dashboard">
+<table class="two-col">
+<tr>
+ <td class="c1">
+	<if key="photo"><img class="photo" width="280" height="210" src="{photo.cropped}"/><else/><img src="/static/img/GAction_210.png"/></if>
+	<h2>{organization}</h2>
+	<a class="edit-link" href="/organization/{id}/?v=edit">edit organization profile</a>
+	<div class="orgstats">
+	  <b>{_total_funds}</b> funds<br/>
+	  <b>{_total_pledged|money:$%.0f}</b> pledged<br/>
+	  <i>{_total_pledges}</i> supporters<br/>
+	</div>
+	
+
+ </td>
+ <td class="c2">
+	<h1>Your update has been posted.</h1>
+	<div class="action">
+	  <a class="continue" style="background-color: #d55626; color: white" href="./">Continue</a>
+	</div>
+</td>
+</tr>
+</table>
+
+</div>
+</div>
+</with>
+</chunk>
+</page>

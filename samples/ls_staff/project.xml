@@ -1,0 +1,11 @@
+<page parent="_site.xml">
+<chunk id="main">
+  <switch key="_view">
+	 <case value="actions"><include path="project_actions.xml"/></case>
+	 <case value="media"><include path="project_media.xml"/></case>
+	 <case value="pledges"><include path="project_pledges.xml"/></case>
+	 <case value="comments"><include path="project_comments.xml"/></case>
+	 <case><include path="project_details.xml"/></case>
+  </switch>
+</chunk>
+</page>

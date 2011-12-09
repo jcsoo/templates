@@ -1,0 +1,78 @@
+<page parent="_site.xml">
+  <chunk id="main">
+	 <with key="_record">
+		<div id="main">
+		  <div id="person" class="primary">
+			 <!--
+			 <h4 class="People">Connected Leaders</h4>
+			 <h4 class="Conversation">Connected Conversation</h4>
+			 <h4 class="Funds">Connected Funds</h4>
+			 -->
+			 <table class="specific">
+				<tr>
+				  <td class="detail">
+					 <div class="detail">
+						<h1>{first_name} {last_name}</h1>
+						<!--<if key="photo.t640"><img width="560" height="420" src="{photo.cropped}"/><else/><img src="/static/img/GPeople_360.png"/></if>	 -->
+						<if key="photo.t640"><img width="280" height="210" src="{photo.cropped}"/><else/><img src="/static/img/GPeople_360.png"/></if>	 
+						<if key="title"><div class="title">{title}</div></if>
+						<if key="organization"><div class="organization">{organization}</div></if>
+						<if key="website"><div class="site"><a href="http://{website}" target="_blank">{website}</a></div></if>
+						<div class="description"><h3>ABOUT {first_name} {last_name}</h3>{biography|p}</div>			 
+
+						<if key="updates">
+						  <div class="stream">
+							 <h4 style="text-align: left">The Stream:</h4>	  
+							 <ul>
+								<loop key="updates" sort="posted desc">
+								  <li><b>{posted|d:%-m/%-d}:</b> {body|br}</li>
+								</loop>
+							 </ul>
+						  </div>
+						</if>
+						
+						<form class="actions" method="POST">
+						  <if key="_is_follower">
+							 <input class="LeaderBG" type="submit" name="_unfollow" value="stop following {first_name}"/>
+							 <else/>
+							 <if key="_session">
+								<input class="LeaderBG" type="submit" name="_follow" value="follow {first_name}"/>
+							 </if>
+						  </if>
+						  <if key="_session">
+
+							 <!--
+							 <input type="submit" name="_show_send_message" value="send a private message"/>
+							 <div class="private-message-form">
+								<div><textarea name="body" rows="4" cols="30"/></div>
+							 </div>
+							 <input type="submit" name="_send_message" value="send a private message to {first_name}"/>
+							 -->
+						  </if>
+						  
+						</form>
+						
+						<div style="clear: both"/>
+					 </div>
+				  </td>
+				  <td class="talks">
+						<div class="talks">
+						  <ul class="vlist">
+							 <loop key="_talks"><include path="_talk_small.xml"/></loop>
+						  </ul>
+						</div>
+				  </td>
+				  <td class="actions">
+						<div class="actions">
+						  <ul class="vlist">
+							 <loop key="_actions"><include path="_action_small.xml"/></loop>
+						  </ul>
+						</div>
+				  </td>
+				</tr>
+			 </table>
+		  </div>
+		</div>
+	 </with>
+  </chunk>
+</page>

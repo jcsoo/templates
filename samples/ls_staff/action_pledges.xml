@@ -1,0 +1,71 @@
+<div>
+  <form method="POST">
+	 <with key="_record">
+		<table class="browse">
+		  <tr>
+			 <th width="120">Date</th>
+			 <th>Member</th>
+			 <th>Status</th>
+			 <th class="r">Pledged</th>
+			 <th class="r">Paid</th>
+			 <th class="r">Refunded</th>
+			 <th class="r">Net</th>
+		  </tr>
+		  <loop key="_pledges">
+			 <tr href="pledge;id={id}/">
+				<td>{created|dt:%y-%m-%d %H:%M}</td>
+				<td><with source="_people" key="member">{first_name} {last_name}</with></td>
+				<td>{status}</td>
+
+				<td class="r">{pledged}</td>
+				<td class="r">{paid}</td>
+				<td class="r">{refunded}</td>
+				<td class="r">{net}</td>
+			 </tr>
+		  </loop>
+		</table>
+	 </with>
+	 <div class="actions">
+		<input type="submit" name="_execute" value="Execute All Pledges"/>
+	 </div>
+  </form>
+  <br/>
+  <h3>Make Pledge</h3>
+  <form method="POST">
+	 <table class="detail">
+		<tr>
+		  <th>Gateway</th>
+		  <td>{_record._vendor.gateway}</td>
+		</tr>
+		<tr>
+		  <th>Test Credit Card Info</th>
+		  <td>
+			 <switch key="_record._vendor.gateway">
+				<case value="authorize.net">Visa / 4007000000027</case>
+				<case value="paymentsgateway">Visa / 4673132073443896</case>
+				<case value="paypal_wpp">Visa / 4485362859528762</case>
+				<case value="paypal_payflow">Visa / 4111111111111111</case>
+			 </switch>
+		  </td>
+		</tr>
+		<tr>
+		  <th>Person</th>
+		  <td><select name="person"><option/><loop key="_people"><option value="{id}">{first_name} {last_name}</option></loop></select></td>
+		</tr>
+		<tr>
+		  <th>Amount</th>
+		  <td><input type="text" name="amount" size="15"/></td>
+		</tr>
+		<tr><th>Name</th><td><input type="text" name="name" size="50"/></td></tr>
+		<tr><th>Card Type</th><td><select name="card_type"><option>VISA</option><option>MAST</option><option>AMER</option><option>DISC</option><option>DINE</option><option>JCB</option></select></td></tr>
+		<tr><th>Credit Card #</th><td><input type="text" name="card_number" size="50"/></td></tr>
+		<tr><th>Expiration Date</th><td>Month <input type="text" name="card_month" size="2"/> Year <input type="text" name="card_year" size="4"/></td></tr>
+		<!--<tr><th>Verification</th><td><input type="text" name="card_code" size="6"/></td></tr>-->
+
+	 </table>
+	 <div class="actions">
+		<input type="submit" name="_pledge" value="Make Pledge"/>
+	 </div>
+  </form>
+</div>
+  

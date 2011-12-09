@@ -1,0 +1,19 @@
+<if key="_multiple_pages">
+<form>
+<div class="page-nav-outer">
+  <div class="page-nav">
+	 <div class="page-nav-inner">
+	   <table class="page-nav">
+	     <tr valign="middle">
+			 <td style="padding-left: 4px; font-size: 12px;"><a href="{_url_prev}"> &#171;</a></td>
+			 <td valign="middle"><select style="margin-top: 2px; margin-bottom: 1px;" name="_page_number" onChange="document.location=this.options[this.selectedIndex].getAttribute('href');"><loop key="_pages"><option value="{_value}" href="{_url}">{_value}</option></loop></select></td>
+			 <td style="padding-right: 4px; font-size: 12px"><a href="{_url_next}">&#187;</a></td>
+			 <td>Showing {_record_first} to {_record_last} of {_record_count} <if key="_record_max"><span style="color: red">(Limiting results to first {_record_limit} records)</span></if> <if key="_url_all">[<a href="{_url_all}">Show All</a>]</if></td>
+			 
+	     </tr>
+	   </table>
+	 </div>
+  </div>
+</div>      
+</form>
+</if>

@@ -1,0 +1,24 @@
+<page parent="_site.xml">
+<chunk id="main">
+<table class="browse">
+  <tr>
+	 <th width="30">ID</th>
+	 <th width="70">Date</th>
+	 <th>Status</th>
+	 <th>From</th>
+	 <th>To</th>
+	 <th>Message</th>
+  </tr>
+  <loop key="_records">
+	 <tr href="private_message;id={id}/">
+		<td>{id}</td>
+		<td>{created|dt:%Y-%m-%d}</td>
+		<td>{status}</td>
+		<td><with source="_people" key="sender">{first_name} {last_name}</with></td>
+		<td><with source="_people" key="recipient">{first_name} {last_name}</with></td>
+		<td>{subject}</td>
+	 </tr>
+  </loop>
+</table>
+</chunk>
+</page>

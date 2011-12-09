@@ -1,0 +1,7 @@
+<if key="_views">
+  <ul id="views">
+	 <loop key="_views">
+      <li class="{selected}"><a href="{link}" title="{label}">{label}</a></li>
+	 </loop>
+  </ul>
+</if>

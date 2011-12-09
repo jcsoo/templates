@@ -1,0 +1,20 @@
+<page parent="_twocol.xml">
+<chunk id="c2">
+	 <div>
+		<h1><text id="header">Pledge Withdrawn</text></h1>
+		<form method="POST">
+		<dl class="details">
+		  <dt>Fund</dt>
+		  <dd>{_action.title}</dd>
+		  <dt>Non Profit</dt>
+		  <dd>{_organization.organization}</dd>
+		</dl>
+		<p><text id="message">[Your pledge has been withdrawn]</text></p>
+		<div class="actions" style="text-align: left;">
+		  <input type="submit" name="_dashboard" value="Return to Profile"/>
+		</div>
+		</form>
+
+	 </div>
+</chunk>
+</page>

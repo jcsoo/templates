@@ -1,0 +1,24 @@
+<page parent="_site.xml">
+<chunk id="main">
+	 <table class="browse">
+		<tr>
+		  <th>ID</th>
+		  <th>Date</th>
+		  <th>Status</th>
+		  <th>Amount</th>
+		  <th>Paid</th>
+		  <th>Due</th>
+		</tr>
+		<loop key="_records">
+		  <tr href="invoice;id={id}/">
+			 <td>{id}</td>
+			 <td>{created|dt}</td>
+			 <td>{status}</td>
+			 <td>{amount|money}</td>
+			 <td>{received|money}</td>
+			 <td>{due|money}</td>
+		  </tr>
+		</loop>
+	 </table>
+</chunk>
+</page>

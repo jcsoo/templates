@@ -1,0 +1,34 @@
+<page parent="_site.xml">
+<chunk id="main">
+<div id="main">
+<div id="people">
+<table id="l1">
+<tr>
+  <td id="lc">
+	 sort by: 
+	 <ul class="sort">
+		<li class="{_sort_followed} {_sort_default}"><a href="?s=followed">most followed</a></li>
+		<li class="{_sort_actions}"><a  href="?s=actions">most actions</a></li>
+		<li class="{_sort_talks}"><a href="?s=talks">most talks</a></li>
+	 </ul>
+  </td>
+  <td id="rc">
+	 <div id="people">
+		<include path="people_grid.xml"/>
+	 </div>
+	 <br/>
+	 <!--
+	 <ul class="followers">
+		<loop key="_people" sort="first_name, last_name">
+		  <li><if key="photo"><a href="/people/{id}/" class="fthumb" style="background-image: url('{photo.t64}')"/></if><div class="name"><a href="/people/{id}/">{first_name} {last_name}</a></div><if key="title"><div class="title">{title}</div></if><if key="organization"><div class="organization">{organization}</div></if></li>
+		</loop>
+		<div style="clear: both"/>
+	 </ul>
+	 -->
+  </td>
+</tr>
+</table>
+</div>
+</div>
+</chunk>
+</page>

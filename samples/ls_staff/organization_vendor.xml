@@ -1,0 +1,36 @@
+<with key="_record">
+<form method="POST">
+  <with key="_vendor">
+	 <table class="detail">
+		<if key="created">
+		  <tr><th>Created</th><td>{created|dt}</td></tr>
+		  <tr><th>Modified</th><td>{modified|dt}</td></tr>
+		</if>
+		<tr><th>Status</th><td><select name="status"><option>Disabled</option><option>Test</option><option>Live</option></select></td></tr>
+		<tr><th>Email</th><td><input type="text" name="email" size="50"/></td></tr>
+		<tr><th>First Name</th><td><input type="text" name="first_name" size="50"/></td></tr>
+		<tr><th>Last Name</th><td><input type="text" name="last_name" size="50"/></td></tr>
+		<tr><th>Company</th><td><input type="text" name="company" size="50"/></td></tr>
+		<tr><th>Address</th><td><input type="text" name="address_1" size="50"/></td></tr>
+		<tr><th></th><td><input type="text" name="address_2" size="50"/></td></tr>
+		<tr><th>City</th><td><input type="text" name="city" size="50"/></td></tr>
+		<tr><th>State</th><td><input type="text" name="state" size="2"/></td></tr>
+		<tr><th>ZIP</th><td><input type="text" name="zip" size="15"/></td></tr>
+		<tr><th>Phone</th><td><input type="text" name="phone" size="15"/></td></tr>
+		<tr><th>Gateway</th><td><select name="gateway"><option/><option value="authorize.net">Authorize.Net</option><option value="paymentsgateway">ACH Direct / PaymentsGateway</option><option value="paypal_wpp">Paypal / Website Payments Pro</option><option value="paypal_payflow">Paypal / Payflow Pro</option></select></td></tr>
+		<tr><th>Gateway Login / ID</th><td><input type="text" name="gateway_id" size="50"/></td></tr>
+		<tr><th>Gateway Password</th><td><input type="text" name="gateway_password" size="50"/></td></tr>
+		<tr><th>Gateway Public Key</th><td><input type="text" name="gateway_public_key" size="50"/></td></tr>
+		<tr><th>Gateway Private Key</th><td><input type="text" name="gateway_private_key" size="50"/></td></tr>
+      <!--
+		<tr><th>Gateway Test URL</th><td><input type="text" name="gateway_url_test" size="80"/></td></tr>
+		<tr><th>Gateway Live URL</th><td><input type="text" name="gateway_url_live" size="80"/></td></tr>
+      -->
+	 </table>
+
+	 <div class="actions">
+		<input type="submit" name="_update_vendor" value="Update"/>
+	 </div>	 	 
+  </with>
+</form>
+</with>
