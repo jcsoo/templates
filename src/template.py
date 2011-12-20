@@ -333,7 +333,7 @@ class TagPaginate(Element):
       if records is None:
          records = []
       record_count = len(records)
-
+      full_uri = ctx.get('_full_uri')
       page_number = self.fill(self.attr.get('page'),ctx)
       page_size = self.fill(self.attr.get('page_size'),ctx)
 
@@ -341,7 +341,7 @@ class TagPaginate(Element):
 	 page_size= len(records)
       else:
          page_size = int(page_size)
-      if page_number is None:
+      if page_number is None or page_number == '':
          page_number = 1
       else:
          page_number = int(page_number)
@@ -352,7 +352,9 @@ class TagPaginate(Element):
       pages = []
       _site_page = None
       for p in range(1,page_count+1):
-         d = {'_value' : p}
+         d = {'_value' : p, '_url' : full_uri.make_url(_p=p)}
+         if p == page_number:
+            d['_class'] = 'active'
          pages.append(d)
          p_start = (p-1) * page_size
          p_end = p * page_size
@@ -381,6 +383,11 @@ class TagPaginate(Element):
       data['_pages'] = pages
       data['_page_prev'] = page_prev
       data['_page_next'] = page_next
+      if page_number > 1:
+         data['_url_prev'] = full_uri.make_url(_p=page_prev)
+      if page_number < page_count:
+         data['_url_next'] = full_uri.make_url(_p=page_next)
+      data['_multiple_pages'] = (pages > 1)
 
       return self.render_children(ctx, data)
 
