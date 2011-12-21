@@ -331,7 +331,44 @@ class TagSeparator(Element):
 @tag_class('paginate')
 class TagPaginate(Element):
    def render(self, ctx):
-      records = self.value(ctx)
+      r = self.value(ctx)
+      if isinstance(r,dict):
+         return self.render_page(ctx, r)
+      else:
+         return self.render_records(ctx, r)
+
+   def render_page(self, ctx, page):
+      full_uri = ctx.get('_full_uri')
+      m_front = int(self.attr.get('before',4))
+      m_back = int(self.attr.get('after',4))
+      page_number = page['_page']
+      page_count = page['_page_count']
+      page_prev = max(page_number-1,1)
+      page_next = min(page_number+1,page_count)
+      data = {}
+      data['_page_prev'] = page_prev
+      data['_page_next'] = page_next
+      data['_url_first'] = full_uri.make_url(_p=1)
+      data['_url_last'] = full_uri.make_url(_p=page_count)
+      if page_number > 1:
+         data['_url_prev'] = full_uri.make_url(_p=page_prev)
+      if page_number < page_count:
+         data['_url_next'] = full_uri.make_url(_p=page_next)
+      pages = []
+      for p in range(1,page_count+1):
+         d = {'_value' : p, '_url' : full_uri.make_url(_p=p)}
+         if p == page_number:
+            d['_class'] = 'active'
+         pages.append(d)
+      if len(pages) > (m_front + m_back + 1):
+         p_start = min(max(1,page_number-m_front),page_count-(m_front+m_back))
+         p_end = p_start + (m_front+m_back+1)
+         data['_pages'] = pages[p_start-1:p_end-1]
+      else:
+         data['_pages'] = pages
+      return self.render_children(ctx, data)
+   
+   def render_records(self, ctx, records):
       if records is None:
          records = []
       record_count = len(records)
@@ -528,3 +565,4 @@ class TagDoctype(Element):
 if __name__ == '__main__':
    import sys
    print Template(sys.argv[1])()
+
