@@ -89,8 +89,8 @@ class Template(object):
       if ctx is None:
          ctx = Context()
       elif not isinstance(ctx,Context):
-         ctx = Context(**ctx)
-      return self.root.render(Context(ctx))
+         ctx = Context(ctx)
+      return self.root.render(ctx)
 
    def _include(self, tag, attr, children):
       return Template(os.path.join(os.path.dirname(self.path),dict(attr)['path']),chunks=self.chunks)
@@ -308,10 +308,12 @@ class TagLoop(Element):
             evenodd = 'odd'
          else:
             evenodd = 'even'
-         ctx.push({'_index' : i, '_order' : i+1, '_count' : len(v), '_value' : o, '_evenodd' : evenodd})
+         ctx.push({'_index' : i, '_order' : i+1, '_value' : o, '_evenodd' : evenodd})
          if i and sep is not None:
-            s += sep
-         if hasattr(o,'items'):
+            s += sep         
+         if isinstance(o,tuple):
+            ctx.push(o._asdict())
+         elif hasattr(o,'items'):
             ctx.push(o)
          else:
             ctx.push({'_' : o})

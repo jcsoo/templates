@@ -56,7 +56,8 @@ class PathEvaluator(object):
    def evaluate_step(self, step):        
       if hasattr(step,'evaluate'):
          step = step.evaluate(self.top)
-
+      if isinstance(self.current,tuple):
+         return getattr(self.current, step)
       if hasattr(self.current,'items'):
          return self.current.get(step)
       if type(self.current) == type([]):

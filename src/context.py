@@ -4,9 +4,10 @@ class NotExist(object):
    pass
 
 class Context(object):
-   def __init__(self, *args, **kw):
+   def __init__(self, item):
       self.stack = []
-      self.push(*args, **kw)
+      self.push(item)
+      #self.push(*args, **kw)
    
    def copy(self):
       c = Context()
@@ -16,9 +17,14 @@ class Context(object):
    def clear(self):
       self.stack = [None]
       
-   def push(self, *args, **kw):
+   def push(self, v):
+      self.stack.append(v)
+
+   def push_old(self, *args, **kw):
       if args and args[0] is None:
          self.stack.append(None)
+      elif args and isinstance(args[0],tuple):
+         self.stack.append(args[0])
       else:
          self.stack.append(dict(*args, **kw))
 
@@ -27,8 +33,11 @@ class Context(object):
 
    def has_key(self, key):
       for d in reversed(self.stack):
-         if d is not None and key in d:
-            return (d[key] is not NotExist)
+         if d is not None:
+            if key in d:
+               return (d[key] is not NotExist)
+            elif hasattr(d,key):
+               return getattr(d,key)
       return False
 
    def unset(self, key):
@@ -37,12 +46,15 @@ class Context(object):
 
    def get(self, key, default=None):
       for d in reversed(self.stack):
-         if d is not None and key in d:
-            v = d[key]
-            if v is NotExist:
-               return default
-            else:
-               return v
+         if d is not None:
+            if hasattr(d, key):
+               return getattr(d,key)
+            elif key in d:
+               v = d[key]
+               if v is NotExist:
+                  return default
+               else:
+                  return v
       return default
 
    def update(self, data):
