@@ -250,7 +250,11 @@ class TagSwitch(Element):
 @tag_class('with')
 class TagWith(Element):
    def render(self, ctx):
-      return self.render_children(ctx,self.value(ctx))
+      v = self.value(ctx)
+      if v is not None:
+         return self.render_children(ctx,self.value(ctx))
+      else:
+         return ''
 
 @tag_class('get')
 class TagGet(Element):
@@ -338,7 +342,7 @@ class TagPaginate(Element):
          return self.render_records(ctx, r)
 
    def render_page(self, ctx, page):
-      full_uri = ctx.get('_full_uri')
+      #full_uri = ctx.get('_full_uri')
       m_front = int(self.attr.get('before',4))
       m_back = int(self.attr.get('after',4))
       page_number = page['_page']
@@ -346,17 +350,20 @@ class TagPaginate(Element):
       page_prev = max(page_number-1,1)
       page_next = min(page_number+1,page_count)
       data = {}
-      data['_page_prev'] = page_prev
-      data['_page_next'] = page_next
-      data['_url_first'] = full_uri.make_url(_p=1)
-      data['_url_last'] = full_uri.make_url(_p=page_count)
       if page_number > 1:
-         data['_url_prev'] = full_uri.make_url(_p=page_prev)
+         data['_page_prev'] = page_prev
       if page_number < page_count:
-         data['_url_next'] = full_uri.make_url(_p=page_next)
+         data['_page_next'] = page_next
+      #data['_url_first'] = ''
+      #data['_url_last'] = full_uri.make_url(_p=page_count)
+      #if page_number > 1:
+      #   data['_url_prev'] = full_uri.make_url(_p=page_prev)
+      #if page_number < page_count:
+      #   data['_url_next'] = full_uri.make_url(_p=page_next)
       pages = []
       for p in range(1,page_count+1):
-         d = {'_value' : p, '_url' : full_uri.make_url(_p=p)}
+         #d = {'_value' : p, '_url' : full_uri.make_url(_p=p)}
+         d = {'_value' : p}
          if p == page_number:
             d['_class'] = 'active'
          pages.append(d)

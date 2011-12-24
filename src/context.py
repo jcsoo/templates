@@ -50,7 +50,7 @@ class Context(object):
             if hasattr(d, key):
                return getattr(d,key)
             elif key in d:
-               v = d[key]
+               v = d.get(key)
                if v is NotExist:
                   return default
                else:

@@ -53,8 +53,8 @@ class PathEvaluator(object):
             return None
       return self.current
    
-   def evaluate_step(self, step):        
-      if hasattr(step,'evaluate'):
+   def evaluate_step(self, step):    
+      if hasattr(step,'evaluate'):         
          step = step.evaluate(self.top)
       if isinstance(self.current,tuple):
          return getattr(self.current, step)
