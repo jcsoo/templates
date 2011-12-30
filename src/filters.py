@@ -123,6 +123,18 @@ def _md5(f_arr, v, mapping):
    m.update(v)
    return m.hexdigest()
 
+def _eq(f_arr, v, mapping):
+   if (f_arr[1] == v):
+      return f_arr[2]
+   elif len(f_arr) > 3:
+      return f_arr[3]
+
+def _ne(f_arr, v, mapping):
+   if (not f_arr[1] == v):
+      return f_arr[2]
+   elif len(f_arr) > 3:
+      return f_arr[3]
+
 
 def _if(f_arr, v, mapping):
    arg = ':'.join(f_arr[1:])
@@ -134,6 +146,20 @@ def _if(f_arr, v, mapping):
          return arg_arr[1]
       else:
          return ''
+
+
+
+
+def _cond(f_arr, v, mapping):
+   i = 1
+   while i < len(f_arr):
+      if v == f_arr[i]:
+         if len(f_arr) > i+1:
+            return f_arr[i+1]
+         else:
+            return ''
+      i += 2
+   return ''
 
 def _p(f_arr, v, mapping):
    if v:
@@ -210,11 +236,13 @@ filters = {'upper' : _upper,
            'date' : _datetime,           
            'dt' : _datetime,
            'datetime' : _datetime,
+           'eq' : _eq,
            'f' : _format,
            'format' : _format,
            'trim' : _trim,
            'strip' : _strip,
            'n' : _none,
+           'ne' : _ne,
            'none' : _none,
            'j' : _javascript,
            'js' : _javascript,
@@ -231,4 +259,5 @@ filters = {'upper' : _upper,
            'r' : _repr,
            'money' : _money,
            'pp' : _prettyprint,
+           'cond' : _cond,
            }

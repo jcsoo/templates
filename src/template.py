@@ -8,6 +8,12 @@ from context import Context
 from path import evaluate_path
 from text import TextTemplate
 
+hdefs = dict(name2codepoint)
+del hdefs['amp']
+del hdefs['gt']
+del hdefs['lt']
+del hdefs['quot']
+
 _tags = {}
 _tags_openclose = {u'br':1}
 
@@ -27,8 +33,8 @@ def parse_string(s, **kw):
    return Template(StringIO(s), **kw)
 
 def htmlentitydecode(s):
-   return re.sub('&(%s);' % '|'.join(name2codepoint), 
-                 lambda m: unichr(name2codepoint[m.group(1)]), s)
+   return re.sub('&(%s);' % '|'.join(hdefs), 
+                 lambda m: unichr(hdefs[m.group(1)]), s)
 
 class NotExist(object):
    pass
@@ -363,7 +369,7 @@ class TagPaginate(Element):
       pages = []
       for p in range(1,page_count+1):
          #d = {'_value' : p, '_url' : full_uri.make_url(_p=p)}
-         d = {'_value' : p}
+         d = {'_value' : p, '_order' : page['_order']}
          if p == page_number:
             d['_class'] = 'active'
          pages.append(d)
