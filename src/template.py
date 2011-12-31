@@ -156,9 +156,9 @@ class Element(object):
       if v is None:
          return ''
       elif isinstance(v, basestring):
-         return escape(v)
+         return escape(v,True)
       else:
-         return escape(unicode(v))
+         return escape(unicode(v),True)
 
    def render(self, ctx):
       if self.tag in _tags_openclose:
