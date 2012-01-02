@@ -1,6 +1,6 @@
 import unittest
 
-from text_template import TextTemplate
+from template.text import TextTemplate
 
 class TextTemplateTestCase(unittest.TestCase):
    def testText(self):

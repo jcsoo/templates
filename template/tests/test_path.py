@@ -1,5 +1,5 @@
 import unittest
-from path_evaluator import evaluate_path, PathEvaluator, ParseException
+from template.path import evaluate_path, PathEvaluator, ParseException
 
 tree = {
    'a' : 123,
