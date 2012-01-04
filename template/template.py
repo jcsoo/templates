@@ -213,10 +213,17 @@ class Element(object):
          return bool(v)
 
    def form_value(self, ctx):
+      if '_form_data' in ctx:
+         ctx.push(ctx['_form_data'])
       if 'key' in self.attr:
-         return self.get(self.attr['key'], ctx)
+         v = self.get(self.attr['key'], ctx)
       elif 'name' in self.attr:
-         return self.get(self.attr['name'], ctx)
+         v = self.get(self.attr['name'], ctx)
+      if '_form_data' in ctx:
+         ctx.pop()
+      return v
+
+      
 
       
 class TagConditional(Element):
