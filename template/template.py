@@ -531,6 +531,8 @@ class TagInput(FormElement):
          attr.append(('value',value))
          if self.value_selected(v, value):
             attr.append(('checked','checked'))
+      elif v:
+         attr.append(('checked','checked'))
       return self.tag_open(attr)
 
 @tag_class('textarea')
@@ -573,7 +575,7 @@ class TagOption(FormElement):
 @tag_class('doctype')
 class TagDoctype(Element):
    def render(self, ctx):
-      return '<DOCTYPE HTML>'
+      return '<!DOCTYPE HTML>'
 
 if __name__ == '__main__':
    import sys
