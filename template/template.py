@@ -230,7 +230,7 @@ class TagConditional(Element):
    def render_conditional(self, ctx, b):
       s = ''
       for c in self.children:
-         if c.tag == 'else':
+         if isinstance(c,Element) and c.tag == 'else':
             b = not b
          elif b:
             s += c.render(ctx)
