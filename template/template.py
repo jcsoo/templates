@@ -207,7 +207,7 @@ class Element(object):
    def bool(self, ctx):
       v = self.value(ctx)
       if 'equals' in self.attr:
-         e = self.fill(self.attr['equals'])
+         e = self.fill(self.attr['equals'],ctx)
          return bool(v == e)
       else:
          return bool(v)
