@@ -183,7 +183,7 @@ def _br(f_arr, v, mapping):
 def _join(f_arr, v, mapping):
    if v:
       if len(f_arr) > 1:
-         return f_arr[1].join(v)
+         return f_arr[1].join([x for x in v if x])
       else:
          return ''.join(v)
 
