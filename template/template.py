@@ -40,7 +40,8 @@ class NotExist(object):
    pass
 
 class Template(object):
-   def __init__(self, source, chunks=None, path=''):
+   def __init__(self, source, chunks=None, path='',ctx=None):
+      self.ctx = ctx
       self.path = path
       if isinstance(source, basestring):
          self.path = source
@@ -99,12 +100,16 @@ class Template(object):
       return self.root.render(ctx)
 
    def _include(self, tag, attr, children):
-      return Template(os.path.join(os.path.dirname(self.path),dict(attr)['path']),chunks=self.chunks)
+      return Template(os.path.join(os.path.dirname(self.path),dict(attr)['path']),chunks=self.chunks,ctx=self.ctx)
 
    def _page(self, tag, attr, children):
       a = dict(attr)
       if 'parent' in a:
-         return Page(Template(os.path.join(os.path.dirname(self.path),a['parent']),chunks=self.chunks))
+         if self.ctx:
+            parent = TextTemplate(unicode(a['parent']))(self.ctx)
+         else:
+            parent = a['parent']
+         return Page(Template(os.path.join(os.path.dirname(self.path),parent),chunks=self.chunks,ctx=self.ctx))
       else:
          return Page()
 
