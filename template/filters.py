@@ -135,6 +135,12 @@ def _ne(f_arr, v, mapping):
    elif len(f_arr) > 3:
       return f_arr[3]
 
+def _match(f_arr, v, mapping):
+   if re.match(f_arr[1],v):
+      return f_arr[2]
+   elif len(f_arr) > 3:
+      return f_arr[3]
+
 
 def _if(f_arr, v, mapping):
    arg = ':'.join(f_arr[1:])
@@ -146,9 +152,6 @@ def _if(f_arr, v, mapping):
          return arg_arr[1]
       else:
          return ''
-
-
-
 
 def _cond(f_arr, v, mapping):
    i = 1
@@ -241,6 +244,7 @@ filters = {'upper' : _upper,
            'format' : _format,
            'trim' : _trim,
            'strip' : _strip,
+           'match' : _match,
            'n' : _none,
            'ne' : _ne,
            'none' : _none,
