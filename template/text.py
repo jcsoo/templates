@@ -64,6 +64,8 @@ class TextTemplate(object):
                   v = m(f_arr, v, mapping)
             if v is None:
                v = u''
+            elif type(v) == type(''):
+               v = v.decode('utf-8')
             elif v is not unicode:
                v = unicode(v)
             out += v

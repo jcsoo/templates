@@ -50,6 +50,8 @@ def to_time(v):
       else:
          h,min,s = 0,0,0
       v = datetime.datetime(int(y),int(month),int(d),int(h),int(min),int(float(s)))
+   elif type(v) in (int, float):
+      v = datetime.datetime.fromtimestamp(v)
    elif not isinstance(v, datetime.datetime):
       v = datetime.datetime(v.year, v.month, v.day, v.hour, v.minute, int(v.second))
    return v
