@@ -224,6 +224,8 @@ class Element(object):
          v = self.get(self.attr['key'], ctx)
       elif 'name' in self.attr:
          v = self.get(self.attr['name'], ctx)
+      else:
+         v = None
       if '_form_data' in ctx:
          ctx.pop()
       return v
