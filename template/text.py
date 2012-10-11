@@ -41,6 +41,8 @@ class TextTemplate(object):
       return steps
 
    def parse_tag(self, s):
+      if s[0] == '{' and s[-1] == '}':
+         return '{'+s+'}'
       s_arr = s.split(u'|')
       pe = path.PathEvaluator(s_arr[0])
       filters = [self.parse_filter(f) for f in s_arr[1:]]
