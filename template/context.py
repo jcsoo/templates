@@ -45,6 +45,8 @@ class Context(object):
       del top[key]
 
    def get(self, key, default=None):
+      if key is None:
+         return default
       for d in reversed(self.stack):
          if d is not None:
             if hasattr(d, key):
