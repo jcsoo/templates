@@ -313,7 +313,7 @@ class TagLoop(Element):
       i = 0
       sep = None
       for e in self.children:
-         if e.tag == 'separator' and sep is None:
+         if isinstance(e,Element) and e.tag == 'separator' and sep is None:
             sep = e.render_children(ctx)
 
       if v is None:
